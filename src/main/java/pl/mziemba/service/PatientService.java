@@ -19,4 +19,11 @@ public class PatientService {
         return patientRepository.findAll();
     }
 
+    public List<Patient> findByPatientFirstNameAndLastName(String firstName, String lastName) {
+        return patientRepository.findByFirstNameAndLastName(firstName, lastName);
+    }
+
+
+
+
 }

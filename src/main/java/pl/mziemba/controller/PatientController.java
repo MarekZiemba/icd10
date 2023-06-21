@@ -1,6 +1,7 @@
 package pl.mziemba.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.mziemba.entity.Patient;
 import pl.mziemba.service.PatientService;
@@ -22,5 +23,13 @@ public class PatientController {
 
         return patients.toString();
     }
+
+    @GetMapping(path = "/patients", produces = "text/plain;charset=utf-8", params = {"firstName", "lastName"})
+    String findAllByPatientFirstNameAndLastName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
+        final List<Patient> books = patientService.findByPatientFirstNameAndLastName(firstName, lastName);
+        return books.toString();
+    }
+
+
 
 }

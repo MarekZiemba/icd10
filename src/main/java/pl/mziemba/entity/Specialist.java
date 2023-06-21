@@ -40,4 +40,8 @@ public class Specialist {
     @ManyToOne(fetch = FetchType.LAZY)
     private Specialization specialization;
 
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
 }

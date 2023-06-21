@@ -3,6 +3,7 @@ package pl.mziemba.entity;
 
 import jakarta.validation.constraints.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -27,6 +28,7 @@ import java.util.List;
 @ToString
 @Setter
 @Getter
+@NoArgsConstructor
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,14 +50,19 @@ public class Patient {
     private String pesel;
 
     @NotEmpty
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     private List<Category> categories = new ArrayList<>();
 
     @NotEmpty
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     private List<Specialist> specialists = new ArrayList<>();
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Insurance insurance;
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
 }
