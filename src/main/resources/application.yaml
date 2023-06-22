@@ -18,6 +18,5 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 #  security:
-#    user:
-#      name: admin
-#      password: admin
+#    logout:
+#      logout-success-url: /login

@@ -3,16 +3,13 @@ package pl.mziemba.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Table(name = "categories")
 @Setter
 @Getter
-@ToString
+@Data
 @NoArgsConstructor
 public class Category {
     @Id

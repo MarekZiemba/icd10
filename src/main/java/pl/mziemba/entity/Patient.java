@@ -21,7 +21,9 @@ import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.pl.PESEL;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "patients")
@@ -49,17 +51,17 @@ public class Patient {
     @PESEL
     private String pesel;
 
-    @NotEmpty
-    @ManyToMany(fetch = FetchType.LAZY)
-    private List<Category> categories = new ArrayList<>();
-
-    @NotEmpty
-    @ManyToMany(fetch = FetchType.LAZY)
-    private List<Specialist> specialists = new ArrayList<>();
-
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Insurance insurance;
+
+    @NotNull
+    @ManyToMany
+    private Set<Category> categories = new HashSet<>();
+
+    @NotNull
+    @ManyToMany
+    private Set<Specialist> specialists = new HashSet<>();
 
     public String getFullName() {
         return firstName + " " + lastName;
