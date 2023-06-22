@@ -16,11 +16,12 @@
     <div>Last Name: <form:input path="lastName"/><form:errors path="lastName" cssClass="error"/></div>
     <div>Date Of Birth: <form:input path="dateOfBirth"/><form:errors path="dateOfBirth" cssClass="error"/></div>
     <div>PESEL: <form:input path="pesel"/><form:errors path="pesel" cssClass="error"/></div>
-    <div>Insurance: <form:select path="insurance.insuranceNumber" items="${insurance}" itemLabel="name" itemValue="insuranceNumber"/><form:errors path="insurance" cssClass="error"/></div>
-    <div>Categories: <form:select path="categories" items="${categories}" itemLabel="name" itemValue="id"
-                               multiple="true"/><form:errors path="categories" cssClass="error"/></div>
-    <div>Specialists: <form:select path="specialists" items="${specialists}" itemLabel="fullName" itemValue="id"
-                               multiple="true"/><form:errors path="specialists" cssClass="error"/></div>
+    <div>Insurance: <form:input path="insurance.insuranceNumber"/><form:errors path="insurance.insuranceNumber" cssClass="error"/></div>
+<%--    <div>Insurance: <form:select path="insurance.insuranceNumber" items="${insurance}" itemLabel="insuranceNumber" itemValue="insuranceNumber"/><form:errors path="insurance" cssClass="error"/></div>--%>
+<%--    <div>Categories: <form:select path="category.id" items="${categories}" itemLabel="name" itemValue="id"--%>
+<%--                               multiple="true"/><form:errors path="category.id" cssClass="error"/></div>--%>
+<%--    <div>Specialists: <form:select path="specialist.id" items="${specialists}" itemLabel="fullName" itemValue="id"--%>
+<%--                               multiple="true"/><form:errors path="specialist.id" cssClass="error"/></div>--%>
     <input type="submit" value="Add patient">
 </form:form>
 
