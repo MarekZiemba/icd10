@@ -2,6 +2,7 @@ package pl.mziemba.entity;
 
 import jakarta.persistence.*;
 
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,7 +26,15 @@ public class User {
 
     private String password;
 
-//    private int enabled;
+    private int enabled;
+
+    @NotEmpty
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Specialist specialist;
+
+    @NotEmpty
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Role role;
 
 //    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = JoinColumn(name = "role_id"))

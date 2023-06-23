@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="save before major schema mod">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecialistRepository.java" afterDir="false" />
+    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="schema mod in: specializations, specialists, services, visits.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/SpecialistController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecialistService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Insurance.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/PatientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ValidationMessages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ValidationMessages_pl.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/import.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +119,7 @@
       <workItem from="1687422433813" duration="38318000" />
       <workItem from="1687476687424" duration="1140000" />
       <workItem from="1687515716087" duration="8346000" />
-      <workItem from="1687528396077" duration="6420000" />
+      <workItem from="1687528396077" duration="13903000" />
     </task>
     <task id="LOCAL-00001" summary="Firts Commit">
       <created>1687203685991</created>
@@ -165,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687518364643</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="schema mod in: specializations, specialists, services, visits.">
+      <option name="closed" value="true" />
+      <created>1687540101783</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687540101783</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +179,8 @@
     <MESSAGE value="expanded PatientService + Patient List View + Add Patient Form" />
     <MESSAGE value="Patient Form ver2" />
     <MESSAGE value="save before major schema mod" />
-    <option name="LAST_COMMIT_MESSAGE" value="save before major schema mod" />
+    <MESSAGE value="schema mod in: specializations, specialists, services, visits." />
+    <option name="LAST_COMMIT_MESSAGE" value="schema mod in: specializations, specialists, services, visits." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

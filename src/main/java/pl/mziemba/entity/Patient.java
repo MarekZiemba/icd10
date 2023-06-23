@@ -18,7 +18,6 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.pl.PESEL;
 
 import java.util.ArrayList;

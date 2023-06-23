@@ -1,4 +1,3 @@
-insert into users(username, password) values ('mziemba', '$2a$10$t0aGfAueWe2cHnxe2pmZGey5Qd5xpv2NoE3vCusI.31dr3NBgfREa');
 insert into specializations(id, name) values (1, 'psychiatra'), (2, 'psychoterapeuta'), (3, 'psychoterapeuta uzależnień');
 
 insert into patients(insurance, dateOfBirth, firstName, lastName, pesel) values ('1234567891', '2000-01-01', 'Jan', 'Kowalski', '00010101150'), ('1234567892', '2002-01-01', 'Adam', 'Nowak', '02010101350'), ('1234567893', '1990-01-01', 'Jerzy', 'Wójcik', '90010101150');

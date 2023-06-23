@@ -25,11 +25,15 @@ public class Visit {
 
     @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
-    private Specialist specialist;
+    private Patient patient;
 
     @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private Service service;
+
+    @NotEmpty
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Specialist specialist;
 
     @Size(max = 600)
     private String description;

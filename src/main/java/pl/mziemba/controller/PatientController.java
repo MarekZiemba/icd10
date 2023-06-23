@@ -99,5 +99,4 @@ String findByPatientPesel(@PathVariable @RequestParam("pesel") String pesel) {
         return patients.toString();
     }
 
-
 }
