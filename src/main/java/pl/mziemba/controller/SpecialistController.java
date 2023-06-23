@@ -1,27 +1,26 @@
 package pl.mziemba.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import pl.mziemba.entity.Category;
-import pl.mziemba.entity.Patient;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 import pl.mziemba.entity.Specialist;
 import pl.mziemba.entity.Specialization;
 import pl.mziemba.service.SpecialistService;
+import pl.mziemba.service.SpecializationService;
 
-import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @RestController
+@RequiredArgsConstructor
 public class SpecialistController {
-    private final SpecialistService specialistService;
 
-    public SpecialistController(SpecialistService specialistService) {
-        this.specialistService = specialistService;
-    }
+    private final SpecialistService specialistService;
+    private final SpecializationService specializationService;
+
+//    public SpecialistController(SpecialistService specialistService, SpecializationService specializationService) {
+//        this.specialistService = specialistService;
+//        this.specializationService = specializationService;
+//    }
 
     @PostMapping(path = "/specialist")
     void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String name) {
@@ -72,6 +71,12 @@ public class SpecialistController {
     String findByInsuranceByNumber(@RequestParam("insuranceNumber") String name) {
         final List<Specialist> specialists = specialistService.findBySpecializationByName(name);
         return specialists.toString();
+    }
+
+    // umieszczenie w modelu pod kluczem 'specializations' kolekcji obiektow Specialization
+    @ModelAttribute("specializations")
+    Collection<Specialization> findAllSpecializations() {
+        return specializationService.findAll();
     }
 
 }

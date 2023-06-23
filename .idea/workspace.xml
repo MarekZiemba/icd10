@@ -4,15 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="schema mod in: specializations, specialists, services, visits.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/SpecialistController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecialistService.java" afterDir="false" />
+    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="new for Specialist: Repository, Controller, Service">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/SpecialistFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecializationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecializationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/MvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/SpecialistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/SpecialistController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Specialist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Specialist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecialistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecialistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecialistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecialistService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -119,7 +125,7 @@
       <workItem from="1687422433813" duration="38318000" />
       <workItem from="1687476687424" duration="1140000" />
       <workItem from="1687515716087" duration="8346000" />
-      <workItem from="1687528396077" duration="13903000" />
+      <workItem from="1687528396077" duration="22833000" />
     </task>
     <task id="LOCAL-00001" summary="Firts Commit">
       <created>1687203685991</created>
@@ -167,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687540101783</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new for Specialist: Repository, Controller, Service">
+      <option name="closed" value="true" />
+      <created>1687548741158</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687548741158</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +194,8 @@
     <MESSAGE value="Patient Form ver2" />
     <MESSAGE value="save before major schema mod" />
     <MESSAGE value="schema mod in: specializations, specialists, services, visits." />
-    <option name="LAST_COMMIT_MESSAGE" value="schema mod in: specializations, specialists, services, visits." />
+    <MESSAGE value="new for Specialist: Repository, Controller, Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="new for Specialist: Repository, Controller, Service" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

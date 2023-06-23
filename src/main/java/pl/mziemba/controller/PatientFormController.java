@@ -6,11 +6,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import pl.mziemba.entity.Category;
 import pl.mziemba.entity.Patient;
+import pl.mziemba.entity.Specialist;
 import pl.mziemba.service.PatientService;
+import pl.mziemba.service.SpecialistService;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -18,6 +24,8 @@ import java.util.List;
 public class PatientFormController {
 
     private final PatientService patientService;
+    //    private final CategoryService categoryService;
+    private final SpecialistService specialistService;
 
     // wyswietlenie formularza dodawania pacjenta
     @GetMapping(path = "/patient/add")
@@ -67,20 +75,62 @@ public class PatientFormController {
         return "patient/list";
     }
 
-//    @ModelAttribute("insurance")
-//    Collection<Insurance> insurances() {
-//        return insuranceService.findAll();
-//    }
-//
-//    @ModelAttribute("authors")
+    @GetMapping(path = "/patient/search")
+    String showSearchPatientForm() {
+        return "patient/search";
+    }
+
+    // np. http://localhost:8080/patient/search?firstName&lastName=Jan+Kowalski
+    @GetMapping(path = "/patient/search", params = {"firstName", "lastName"})
+    String findByFirstNameAndLastName(@RequestParam String firstName, @RequestParam String lastName, Model model) {
+        List<Patient> patients = patientService.findByFirstNameAndLastName(firstName,  lastName);
+        model.addAttribute("patients", patients);
+        return "patient/list";
+    }
+
+    @GetMapping(path = "/patient/search", params = "dateofbirth")
+    String findByDateOfBirth(@RequestParam String dateofbirth, Model model) {
+        List<Patient> patients = patientService.findByDateOfBirth(dateofbirth);
+        model.addAttribute("patients", patients);
+        return "patient/list";
+    }
+
+    @GetMapping(path = "/patient/search", params = "pesel")
+    String findByPesel(@RequestParam String pesel, Model model) {
+        List<Patient> patients = patientService.findByPesel(pesel);
+        model.addAttribute("patients", patients);
+        return "patient/list";
+    }
+
+    @GetMapping(path = "/patient/search", params = "insurance")
+    String findByInsurance(@RequestParam String insurance, Model model) {
+        List<Patient> patients = patientService.findByInsurance(insurance);
+        model.addAttribute("patients", patients);
+        return "patient/list";
+    }
+
+    @GetMapping(path = "/patient/search/specialist", params = {"firstName", "lastName"})
+    String findBySpecialist(@RequestParam String firstName, @RequestParam String lastName, Model model) {
+        List<Patient> patients = patientService.findBySpecialistFullName(firstName, lastName);
+        model.addAttribute("patients", patients);
+        return "patient/list";
+    }
+
+    @GetMapping(path = "/patient/search/category", params = "name")
+    String findByCategory(@RequestParam String name, Model model) {
+        List<Patient> patients = patientService.findByCategoryName(name);
+        model.addAttribute("patients", patients);
+        return "patient/list";
+    }
+
+//    @ModelAttribute("categories")
 //    Collection<Category> categories() {
 //        return categoryService.findAll();
 //    }
-//
-//    Collection<Specialist> specialists() {
-//        return specialistService.findAll();
-//    }
 
-
+    @ModelAttribute("specialists")
+    Collection<Specialist> specialists() {
+        return specialistService.findAll();
+    }
 
 }

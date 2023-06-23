@@ -42,8 +42,6 @@ public class PatientController {
         patientService.save(patient);
     }
 
-
-
     @GetMapping(path = "/patients", produces = "text/plain;charset=utf-8")
     String findAll() {
         final List<Patient> patients = patientService.findAll();

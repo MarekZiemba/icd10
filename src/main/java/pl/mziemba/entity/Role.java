@@ -1,5 +1,6 @@
 package pl.mziemba.entity;
 
+import jakarta.validation.constraints.*;
 import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import lombok.Getter;
@@ -20,6 +21,5 @@ public class Role {
     private int id;
 
     private String name;
-
 }
 
