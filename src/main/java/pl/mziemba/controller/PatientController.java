@@ -1,16 +1,13 @@
 package pl.mziemba.controller;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.mziemba.entity.Category;
-import pl.mziemba.entity.Insurance;
 import pl.mziemba.entity.Patient;
 import pl.mziemba.entity.Specialist;
 import pl.mziemba.service.PatientService;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -22,7 +19,7 @@ public class PatientController {
     }
 
     @PostMapping(path = "/patient")
-    void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String insuranceNumber, @RequestParam("categoryId") Long[] categoryIds, @RequestParam("specialistId") Long[] specialistIds) {
+    void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String insurance, @RequestParam("categoryId") Long[] categoryIds, @RequestParam("specialistId") Long[] specialistIds) {
 
         final Patient patient = new Patient();
 
@@ -30,9 +27,6 @@ public class PatientController {
         patient.setLastName(lastName);
         patient.setDateOfBirth(dateOfBirth);
         patient.setPesel(pesel);
-
-        Insurance insurance = new Insurance();
-        insurance.setInsuranceNumber(insuranceNumber);
         patient.setInsurance(insurance);
 
         Set<Category> categories = Arrays.stream(categoryIds)
@@ -81,15 +75,9 @@ String findByPatientPesel(@PathVariable @RequestParam("pesel") String pesel) {
 }
      */
 
-    @GetMapping(path = "/patient/insurance", produces = "text/plain;charset=utf-8", params = "id")
-    String findByInsurance(Insurance insurance) {
+    @GetMapping(path = "/patient/insurance", produces = "text/plain;charset=utf-8")
+    String findByInsurance(@RequestParam("insurance") String insurance) {
         final List<Patient> patients = patientService.findByInsurance(insurance);
-        return patients.toString();
-    }
-
-    @GetMapping(path = "/patient/insurance", produces = "text/plain;charset=utf-8", params = "insuranceNumber")
-    String findByInsuranceByNumber(@RequestParam("insuranceNumber") String insuranceNumber) {
-        final List<Patient> patients = patientService.findByInsuranceByInsuranceNumber(insuranceNumber);
         return patients.toString();
     }
 

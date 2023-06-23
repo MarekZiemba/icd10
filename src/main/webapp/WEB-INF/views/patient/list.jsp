@@ -25,7 +25,7 @@
             <td>${patient.lastName}</td>
             <td>${patient.dateOfBirth}</td>
             <td>${patient.pesel}</td>
-            <td>${patient.insurance.insuranceNumber}</td>
+            <td>${patient.insurance}</td>
             <td>
                 <c:forEach items="${patient.categories}" var="category">
                     ${category.name}

@@ -16,7 +16,7 @@
     <div>Last Name: <form:input path="lastName"/><form:errors path="lastName" cssClass="error"/></div>
     <div>Date Of Birth: <form:input path="dateOfBirth"/><form:errors path="dateOfBirth" cssClass="error"/></div>
     <div>PESEL: <form:input path="pesel"/><form:errors path="pesel" cssClass="error"/></div>
-    <div>Insurance: <form:input path="insurance.insuranceNumber"/><form:errors path="insurance" cssClass="error"/></div>
+    <div>Insurance: <form:input path="insurance"/><form:errors path="insurance" cssClass="error"/></div>
 <%--    <div>Categories: <form:select path="category.id" items="${patients.categories}" itemLabel="name" itemValue="id"--%>
 <%--                               multiple="true"/><form:errors path="category.id" cssClass="error"/></div>--%>
     <div>Categories:

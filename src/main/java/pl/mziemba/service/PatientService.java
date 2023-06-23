@@ -3,7 +3,6 @@ package pl.mziemba.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.mziemba.entity.Insurance;
 import pl.mziemba.entity.Patient;
 import pl.mziemba.entity.Category;
 import pl.mziemba.repository.PatientRepository;
@@ -48,13 +47,9 @@ public class PatientService {
         return patientRepository.findByPesel(pesel);
     }
 
-    public  List<Patient> findByInsurance(Insurance insurance) {
+    public  List<Patient> findByInsurance(String insurance) {
         return patientRepository.findByInsurance(insurance);
     }
-    public  List<Patient> findByInsuranceByInsuranceNumber(String insuranceNumber) {
-        return patientRepository.findByInsuranceInsuranceNumberContains(insuranceNumber);
-    }
-
 
     public List<Patient> findByCategory(Category category) {
         return patientRepository.findByCategoriesContains(category);

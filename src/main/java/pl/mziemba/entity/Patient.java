@@ -18,6 +18,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.pl.PESEL;
 
 import java.util.ArrayList;
@@ -52,8 +53,8 @@ public class Patient {
     private String pesel;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Insurance insurance;
+    @Size(min = 10, max = 26, message = "{not.between.error}")
+    private String insurance;
 
     @NotNull
     @ManyToMany
