@@ -28,12 +28,12 @@
             <td>${patient.insurance.insuranceNumber}</td>
             <td>
                 <c:forEach items="${patient.categories}" var="category">
-                    ${categories.name}
+                    ${category.name}
                 </c:forEach>
             </td>
             <td>
                 <c:forEach items="${patient.specialists}" var="specialist">
-                    ${specialists.fullName}
+                    ${specialist.fullName}
                 </c:forEach>
             </td>
             <td><a href="<c:url value='/patient/edit?id=${patient.id}'/>">Edit</a></td>
