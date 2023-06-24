@@ -34,6 +34,10 @@
             <a href="<c:url value='/patient/search'/>" class="button">Search patient</a>
             <a href="<c:url value='/patient/list'/>" class="button">List of all patients</a>
         </div>
+        <form action="/logout" method="post">
+            <sec:csrfInput/>
+            <input type="submit" value="Logout" class="button" id="red-logout"/>
+        </form>
     </div>
 </body>
 </html>

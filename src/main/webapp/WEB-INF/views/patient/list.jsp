@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>All patients</title>
@@ -42,7 +43,7 @@
                     </td>
                     <td>
                         <a href="<c:url value='/patient/edit?id=${patient.id}'/>" class="button" id="yellow-button">Edit</a>
-                        <a href="<c:url value='/patient/remove?id=${patient.id}'/>" class="button" id="red-button"onclick="return confirm('Are you sure?')">Remove</a>
+                        <a href="<c:url value='/patient/remove?id=${patient.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -52,6 +53,10 @@
             <a href="<c:url value='/patient/search'/>" class="button">Search patient</a>
             <a href="<c:url value='/patient/list'/>" class="button">List of all patients</a>
         </div>
+        <form action="/logout" method="post">
+            <sec:csrfInput/>
+            <input type="submit" value="Logout" class="button" id="red-logout"/>
+        </form>
     </div>
 </body>
 </html>

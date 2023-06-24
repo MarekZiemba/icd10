@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
@@ -57,6 +57,10 @@
             <a href="<c:url value='/patient/search'/>" class="button">Search patient</a>
             <a href="<c:url value='/patient/list'/>" class="button">List of all patients</a>
         </div>
+        <form action="/logout" method="post">
+            <sec:csrfInput/>
+            <input type="submit" value="Logout" class="button" id="red-logout"/>
+        </form>
     </div>
 </body>
 </html>

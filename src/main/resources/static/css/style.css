@@ -94,6 +94,13 @@ table {
     background-color: #ff5959;
 }
 
+#red-logout {
+    padding: 4px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: #ff5959;
+}
+
 .error {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
