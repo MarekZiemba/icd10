@@ -23,13 +23,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @NotBlank(message = "{not.empty.error}")
-//    @Size(min = 2, message = "{too.short.error}")
-//    @Column(nullable = false, unique = true, length = 60)
+    @NotBlank(message = "{not.empty.error}")
+    @Size(min = 2, message = "{too.short.error}")
+    @Column(nullable = false, unique = true, length = 60)
     private String username;
 
-//    @NotBlank(message = "{not.empty.error}")
-//    @Size(min = 2, message = "{too.short.error}")
+    @NotBlank(message = "{not.empty.error}")
+    @Size(min = 2, message = "{too.short.error}")
     private String password;
 
     private int enabled;

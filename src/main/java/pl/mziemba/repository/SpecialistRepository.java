@@ -33,6 +33,5 @@ public interface SpecialistRepository extends JpaRepository<Specialist, Long> {
 
     @EntityGraph(attributePaths = "specialization")
     List<Specialist> findBySpecializationName(String name);
-//    List<Specialist> findBySpecializationNameContains(String name);
 
 }

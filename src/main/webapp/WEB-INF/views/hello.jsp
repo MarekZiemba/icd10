@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Hello world!</h1>
-
+<div><a href="<c:url value='/patient/list'/>">List of all patients</a></div><br>
 <form action="/logout" method="post">
     <sec:csrfInput/>
     <div><input type="submit" value="Logout"/></div>

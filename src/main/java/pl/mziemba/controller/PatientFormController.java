@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.mziemba.entity.Category;
 import pl.mziemba.entity.Patient;
 import pl.mziemba.entity.Specialist;
+import pl.mziemba.service.CategoryService;
 import pl.mziemba.service.PatientService;
 import pl.mziemba.service.SpecialistService;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -24,14 +24,14 @@ import java.util.List;
 public class PatientFormController {
 
     private final PatientService patientService;
-    //    private final CategoryService categoryService;
+    private final CategoryService categoryService;
     private final SpecialistService specialistService;
 
     // wyswietlenie formularza dodawania pacjenta
     @GetMapping(path = "/patient/add")
     String showAddPatientForm(Model model) {
         model.addAttribute("patient", new Patient());
-//            model.addAttribute("categories", categoryService.getAllCategories());
+//    model.addAttribute("categories", categoryService.getAllCategories());
 //    model.addAttribute("specialists", specialistService.getAllSpecialists())
         return "patient/add";
     }
@@ -88,9 +88,9 @@ public class PatientFormController {
         return "patient/list";
     }
 
-    @GetMapping(path = "/patient/search", params = "dateofbirth")
-    String findByDateOfBirth(@RequestParam String dateofbirth, Model model) {
-        List<Patient> patients = patientService.findByDateOfBirth(dateofbirth);
+    @GetMapping(path = "/patient/search", params = "dateOfBirth")
+    String findByDateOfBirth(@RequestParam String dateOfBirth, Model model) {
+        List<Patient> patients = patientService.findByDateOfBirth(dateOfBirth);
         model.addAttribute("patients", patients);
         return "patient/list";
     }
@@ -123,10 +123,10 @@ public class PatientFormController {
         return "patient/list";
     }
 
-//    @ModelAttribute("categories")
-//    Collection<Category> categories() {
-//        return categoryService.findAll();
-//    }
+    @ModelAttribute("categories")
+    Collection<Category> categories() {
+        return categoryService.findAll();
+    }
 
     @ModelAttribute("specialists")
     Collection<Specialist> specialists() {

@@ -49,7 +49,7 @@ public class SpecialistController {
         return specialists.toString();
     }
 
-    @GetMapping(path = "/specialist/dateofbirth", produces = "text/plain;charset=utf-8")
+    @GetMapping(path = "/specialist/dateOfbirth", produces = "text/plain;charset=utf-8")
     String findAllByPatientDateOfBirth(@RequestParam("dateOfBirth") String dateOfBirth) {
         final List<Specialist> specialists = specialistService.findByDateOfBirth(dateOfBirth);
         return specialists.toString();

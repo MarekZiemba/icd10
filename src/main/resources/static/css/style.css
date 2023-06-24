@@ -1,14 +1,101 @@
 body {
     margin: 0;
-    padding: 64px 80px;
-    font-family: 'gilroylight', sans-serif;
-    font-size: 18px;
-    line-height: 32px;
-    color: black;
-    background-color: beige;
+    padding: 80px;
+    font-family: 'gilroy', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000;
+    /*background-color: #f3f3f3;*/
 }
 
-.error{
+p {
+    font-size: 16px;
     font-weight: 600;
-    color: red;
+}
+
+h3 {
+    margin: 0px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 1px 1px #e8e8e8;
+}
+
+th{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px;
+    border: 1px solid #000000;
+    background-color: #fae9df;
+}
+
+td {
+    font-size: 13px;
+    padding: 8px;
+    border: 1px solid #000000;
+    background-color: #faf2df;
+}
+
+a {
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 2px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 40px;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    background-color: #a2d8ff; /* Dodatkowy kolor dla zawartości tekstowej */
+}
+
+#add-edit-search-container {
+    max-width: 480px;
+}
+
+.sub-container {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    background-color: #faf2df;
+}
+
+#title-container {
+    font-size: 16px;
+    background-color: #edfadf;
+}
+
+.button {
+    display: inline-block;
+    min-width: 50px;
+    padding: 4px 8px;
+    margin: 4px;
+    border: 2px solid #333333;
+    border-radius: 4px;
+    background-color: #83c58b;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#yellow-button {
+    background-color: #ffca59;
+}
+
+#red-button {
+    background-color: #ff5959;
+}
+
+.error {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #b01111;
 }
