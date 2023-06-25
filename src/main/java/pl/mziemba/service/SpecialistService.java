@@ -54,5 +54,4 @@ public class SpecialistService {
         return specialistRepository.findBySpecializationName(name);
     }
 
-
 }

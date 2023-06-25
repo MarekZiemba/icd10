@@ -61,14 +61,14 @@ public class SpecialistController {
         return specialists.toString();
     }
 
-    @GetMapping(path = "/specialist/insurance", produces = "text/plain;charset=utf-8", params = "id")
-    String findByInsurance(Specialization specialization) {
+    @GetMapping(path = "/specialist/specialization", produces = "text/plain;charset=utf-8", params = "id")
+    String findBySpecialization(Specialization specialization) {
         final List<Specialist> specialists = specialistService.findBySpecialization(specialization);
         return specialists.toString();
     }
 
-    @GetMapping(path = "/specialist/insurance", produces = "text/plain;charset=utf-8", params = "insuranceNumber")
-    String findByInsuranceByNumber(@RequestParam("insuranceNumber") String name) {
+    @GetMapping(path = "/specialist/specialization", produces = "text/plain;charset=utf-8", params = "name")
+    String findBySpecializationName(@RequestParam("name") String name) {
         final List<Specialist> specialists = specialistService.findBySpecializationByName(name);
         return specialists.toString();
     }

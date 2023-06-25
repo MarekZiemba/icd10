@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="NEW: Category: Repository, Service, Controller + style.css">
+    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="New Treatment, Visit: Repositorium, Service, Controller">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/TreatmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/TreatmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/VisitRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/TreatmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/VisitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/SpecialistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/SpecialistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Treatment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecialistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecialistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecializationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecializationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecialistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecialistService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/marek/Programowanie/06_Modul/SpringSecurity/Marcin/ONL_JEE_W_20-spring-boot-demo",
+    "last_opened_file_path": "/home/marek/Programowanie/06_Modul/Projekt koncowy/Ten/icd10/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,8 +73,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/static/css" />
@@ -118,7 +125,8 @@
       <workItem from="1687476687424" duration="1140000" />
       <workItem from="1687515716087" duration="8346000" />
       <workItem from="1687528396077" duration="23356000" />
-      <workItem from="1687597450429" duration="23525000" />
+      <workItem from="1687597450429" duration="23703000" />
+      <workItem from="1687695556318" duration="9362000" />
     </task>
     <task id="LOCAL-00001" summary="Firts Commit">
       <created>1687203685991</created>
@@ -190,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687648178297</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="MOD: style.css &amp; Forms">
+      <option name="closed" value="true" />
+      <created>1687649711595</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687649711595</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +222,8 @@
     <MESSAGE value="new for Specialist: Repository, Controller, Service" />
     <MESSAGE value="new for Patient: search" />
     <MESSAGE value="NEW: Category: Repository, Service, Controller + style.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="NEW: Category: Repository, Service, Controller + style.css" />
+    <MESSAGE value="MOD: style.css &amp; Forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="MOD: style.css &amp; Forms" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

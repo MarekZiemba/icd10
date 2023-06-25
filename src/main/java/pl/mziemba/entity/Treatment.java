@@ -15,7 +15,7 @@ import lombok.ToString;
 @Getter
 @ToString
 @NoArgsConstructor
-public class Service {
+public class Treatment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

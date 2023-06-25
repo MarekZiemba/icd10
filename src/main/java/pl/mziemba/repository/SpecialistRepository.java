@@ -12,26 +12,26 @@ import java.util.Optional;
 public interface SpecialistRepository extends JpaRepository<Specialist, Long> {
 
     @Override
-    @EntityGraph(attributePaths = "specialization")
+    @EntityGraph(attributePaths = "specializations")
     List<Specialist> findAll();
 
     @Override
-    @EntityGraph(attributePaths = "specialization")
+    @EntityGraph(attributePaths = "specializations")
     Optional<Specialist> findById(Long id);
 
-    @EntityGraph(attributePaths = "specialization")
+    @EntityGraph(attributePaths = "specializations")
     List<Specialist> findByFirstNameContainsAndLastNameContains(String firstName, String lastName);
 
-    @EntityGraph(attributePaths = "specialization")
+    @EntityGraph(attributePaths = "specializations")
     List<Specialist> findByDateOfBirth(String dateOfBirth);
 
-    @EntityGraph(attributePaths = "specialization")
+    @EntityGraph(attributePaths = "specializations")
     List<Specialist> findByPesel(String pesel);
 
-    @EntityGraph(attributePaths = "specialization")
+    @EntityGraph(attributePaths = "specializations")
     List<Specialist> findBySpecialization(@Param("specialization") Specialization specialization);
 
-    @EntityGraph(attributePaths = "specialization")
+    @EntityGraph(attributePaths = "specializations")
     List<Specialist> findBySpecializationName(String name);
 
 }

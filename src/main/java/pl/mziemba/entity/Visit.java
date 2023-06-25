@@ -21,6 +21,9 @@ public class Visit {
     private Long id;
 
     @NotBlank(message = "{not.empty.error}")
+    private String dateOfVisit;
+
+    @NotBlank(message = "{not.empty.error}")
     private String timeOfVisit;
 
     @NotEmpty
@@ -29,7 +32,7 @@ public class Visit {
 
     @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
-    private Service service;
+    private Treatment treatment;
 
     @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
