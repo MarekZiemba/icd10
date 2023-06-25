@@ -19,13 +19,13 @@ public interface VisitRepository extends JpaRepository<Visit, Long> {
     Optional<Visit> findById(Long id);
 
     @EntityGraph(attributePaths = {"patients", "treatments", "specialists"})
-    List<Visit> findByDateAAndTimeOfVisit(String dateOfVisit, String timeOfVisit);
+    List<Visit> findByDateOfVisitAndTimeOfVisit(String dateOfVisit, String timeOfVisit);
 
     @EntityGraph(attributePaths = {"patients", "treatments", "specialists"})
     List<Visit> findByPatient(@Param("patient") Patient patient);
 
     @EntityGraph(attributePaths = {"patients", "treatments", "specialists"})
-    List<Visit> findByPatientsFirstNameAndSpecialistsLastName(String firstName, String lastName);
+    List<Visit> findByPatientFirstNameAndPatientLastName(String firstName, String lastName);
 
     @EntityGraph(attributePaths = {"patients", "treatments", "specialists"})
     List<Visit> findByTreatment(@Param("treatment") Treatment treatment);
@@ -37,6 +37,6 @@ public interface VisitRepository extends JpaRepository<Visit, Long> {
     List<Visit> findBySpecialist(@Param("specialist") Specialist specialist);
 
     @EntityGraph(attributePaths = {"patients", "treatments", "specialists"})
-    List<Visit> findBySpecialistsFirstNameAndSpecialistsLastName(String firstName, String lastName);
+    List<Visit> findBySpecialistFirstNameAndSpecialistLastName(String firstName, String lastName);
 
 }

@@ -4,13 +4,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pl.mziemba.entity.Specialist;
 import pl.mziemba.entity.Treatment;
-import pl.mziemba.entity.Specialization;
 import pl.mziemba.service.SpecialistService;
 import pl.mziemba.service.TreatmentService;
-import pl.mziemba.service.SpecializationService;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,16 +21,22 @@ public class TreatmentController {
     private final SpecialistService specialistService;
 
     @PostMapping(path = "/treatment")
-    void save(@RequestParam String name, @RequestParam String firstName,  @RequestParam String lastName) {
+    void save(@RequestParam String name, @RequestParam String firstName,  @RequestParam String lastName, @RequestParam("specialistId") Long[] specialistIds) {
 
         final Treatment treatment = new Treatment();
 
         treatment.setName(name);
 
-        Specialist specialist = new Specialist();
-        specialist.setFirstName(firstName);
-        specialist.setLastName(lastName);
-        treatment.setSpecialist(specialist);
+//        Specialist specialist = new Specialist();
+//        specialist.setFirstName(firstName);
+//        specialist.setLastName(lastName);
+//        treatment.setSpecialists(specialist);
+
+        Set<Specialist> specialists = Arrays.stream(specialistIds)
+                .map(id -> new Specialist())
+                .collect(Collectors.toSet());
+        treatment.setSpecialists(specialists);
+        treatmentService.save(treatment);
     }
 
     @GetMapping(path = "/treatments", produces = "text/plain;charset=utf-8")
@@ -44,11 +51,11 @@ public class TreatmentController {
         return treatments.toString();
     }
 
-    @GetMapping(path = "/treatment/specialist", produces = "text/plain;charset=utf-8", params = "id")
-    String findBySpecialist(Specialist specialist) {
-        final List<Treatment> treatments = treatmentService.findBySpecialist(specialist);
-        return treatments.toString();
-    }
+//    @GetMapping(path = "/treatment/specialist", produces = "text/plain;charset=utf-8", params = "id")
+//    String findBySpecialist(Specialist specialist) {
+//        final List<Treatment> treatments = treatmentService.findBySpecialist(specialist);
+//        return treatments.toString();
+//    }
 
     @GetMapping(path = "/treatment/specialist", produces = "text/plain;charset=utf-8", params = {"firstName", "lastName"})
     String findBySpecialistFullName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
@@ -57,7 +64,7 @@ public class TreatmentController {
     }
 
     // umieszczenie w modelu pod kluczem 'specializations' kolekcji obiektow Specialist
-    @ModelAttribute("specialist")
+    @ModelAttribute("specialists")
     Collection<Specialist> findAllSpecialists() {
         return specialistService.findAll();
     }

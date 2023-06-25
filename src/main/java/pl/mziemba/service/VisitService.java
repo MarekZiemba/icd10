@@ -35,16 +35,22 @@ public class VisitService {
         return visitRepository.findById(id).get();
     }
 
+    public List<Visit> findByDateAndTime(String dateOfVisit, String timeOfVisit) {
+        return visitRepository.findByDateOfVisitAndTimeOfVisit(dateOfVisit, timeOfVisit);
+    }
+
     public  List<Visit> findByPatient(Patient patient) {
         return visitRepository.findByPatient(patient);
     }
+
     public  List<Visit> findByPatientByFullName(String firstName, String lastName) {
-        return visitRepository.findByPatientsFirstNameAndSpecialistsLastName(firstName, lastName);
+        return visitRepository.findByPatientFirstNameAndPatientLastName(firstName, lastName);
     }
 
     public  List<Visit> findByTreatment(Treatment treatment) {
         return visitRepository.findByTreatment(treatment);
     }
+
     public  List<Visit> findByTreatmentByName(String name) {
         return visitRepository.findByTreatmentName(name);
     }
@@ -52,8 +58,8 @@ public class VisitService {
     public  List<Visit> findBySpecialist(Specialist specialist) {
         return visitRepository.findBySpecialist(specialist);
     }
-    public  List<Visit> findBySpecialistByFullName(String firstNAme, String lastName) {
-        return visitRepository.findBySpecialistsFirstNameAndSpecialistsLastName(firstNAme, lastName);
+    public  List<Visit> findBySpecialistByFullName(String firstName, String lastName) {
+        return visitRepository.findBySpecialistFirstNameAndSpecialistLastName(firstName, lastName);
     }
 
 }

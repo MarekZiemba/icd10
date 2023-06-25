@@ -40,12 +40,11 @@ public class TreatmentService {
         return treatmentRepository.findByName(name);
     }
 
-
-    public  List<Treatment> findBySpecialist(Specialist specialist) {
-        return treatmentRepository.findBySpecialist(specialist);
-    }
+//    public  List<Treatment> findBySpecialist(Specialist specialist) {
+//        return treatmentRepository.findBySpecialist(specialist);
+//    }
     public  List<Treatment> findBySpecialistFullName(String firstName, String lastName) {
-        return treatmentRepository.findBySpecialistFirstNameContainsAndLastNameContains(firstName, lastName);
+        return treatmentRepository.findBySpecialistsFirstNameAndSpecialistsLastName(firstName, lastName);
     }
     
 }

@@ -26,6 +26,9 @@ public class Visit {
     @NotBlank(message = "{not.empty.error}")
     private String timeOfVisit;
 
+    @Size(max = 600)
+    private String description;
+
     @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private Patient patient;
@@ -37,8 +40,5 @@ public class Visit {
     @NotEmpty
     @ManyToOne(fetch = FetchType.LAZY)
     private Specialist specialist;
-
-    @Size(max = 600)
-    private String description;
 
 }

@@ -17,11 +17,6 @@ public class SpecialistController {
     private final SpecialistService specialistService;
     private final SpecializationService specializationService;
 
-//    public SpecialistController(SpecialistService specialistService, SpecializationService specializationService) {
-//        this.specialistService = specialistService;
-//        this.specializationService = specializationService;
-//    }
-
     @PostMapping(path = "/specialist")
     void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String name) {
 

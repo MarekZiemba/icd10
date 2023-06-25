@@ -3,11 +3,15 @@ package pl.mziemba.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "services")
@@ -27,8 +31,8 @@ public class Treatment {
     @Size(max = 600)
     private String description;
 
-    @NotEmpty
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Specialist specialist;
+    @NotNull
+    @ManyToMany
+    private Set<Specialist> specialists = new HashSet<>();
 
 }
