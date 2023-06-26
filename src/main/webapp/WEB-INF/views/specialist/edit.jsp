@@ -4,13 +4,13 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>Uptade specialist</title>
+    <title>Update specialist</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <div class="container" id="add-edit-search-container">
-        <div class="sub-container" id="title-container">
-            <h3>Uptade existing Specialist Information</h3>
+        <div class="sub-container" id="title-container-2">
+            <h3>Update existing Specialist Information</h3>
         </div>
         <div class="sub-container">
             <form:form method="post" modelAttribute="specialist">
@@ -44,14 +44,15 @@
             </form:form>
         </div>
         <div class="sub-container">
+            <a href="<c:url value='/hello'/>" class="button" id="blue-button">Back to main</a>
             <a href="<c:url value='/specialist/add'/>" class="button">Add new specialist</a>
             <a href="<c:url value='/specialist/search'/>" class="button">Search specialist</a>
             <a href="<c:url value='/specialist/list'/>" class="button">List of all specialists</a>
+            <form action="/logout" method="post">
+                <sec:csrfInput/>
+                <input type="submit" value="Logout" class="button" id="red-logout"/>
+            </form>
         </div>
-        <form action="/logout" method="post">
-            <sec:csrfInput/>
-            <input type="submit" value="Logout" class="button" id="red-logout"/>
-        </form>
     </div>
 </body>
 </html>

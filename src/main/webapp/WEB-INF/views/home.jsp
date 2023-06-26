@@ -4,10 +4,14 @@
 <html lang="en">
 <head>
     <title>Spring Security Example</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<h1>Welcome to ICD10!</h1>
-
-<p><a href="<c:url value='/hello'/>">Click to see a greeting.</a></p>
+    <div class="container">
+        <h1>Welcome to ICD10!</h1>
+        <div class="sub-container">
+            <p><a href="<c:url value='/hello'/>" class="button">Click to start.</a></p>
+        </div>
+    </div>
 </body>
 </html>

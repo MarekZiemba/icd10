@@ -38,14 +38,15 @@
             </c:forEach>
         </table>
         <div class="sub-container">
+            <a href="<c:url value='/hello'/>" class="button" id="blue-button">Back to main</a>
             <a href="<c:url value='/specialist/add'/>" class="button">Add new specialist</a>
             <a href="<c:url value='/specialist/search'/>" class="button">Search specialist</a>
             <a href="<c:url value='/specialist/list'/>" class="button">List of all specialists</a>
+            <form action="/logout" method="post">
+                <sec:csrfInput/>
+                <input type="submit" value="Logout" class="button" id="red-logout"/>
+            </form>
         </div>
-        <form action="/logout" method="post">
-            <sec:csrfInput/>
-            <input type="submit" value="Logout" class="button" id="red-logout"/>
-        </form>
     </div>
 </body>
 </html>
