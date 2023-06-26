@@ -21,7 +21,7 @@
             </form:form>
         </div>
         <div class="sub-container">
-            <a href="<c:url value='/hello'/>" class="button" id="blue-button">Back to main</a>
+            <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
             <a href="<c:url value='/category/add'/>" class="button">Add new category</a>
             <a href="<c:url value='/category/search'/>" class="button">Search category</a>
             <a href="<c:url value='/category/list'/>" class="button">List of all categories</a>

@@ -13,6 +13,7 @@
             For specialist:
             <a href="<c:url value='/patient/list'/>" class="button">List of patients</a>
             <a href="<c:url value='/specialist/list'/>" class="button">List of specialists</a>
+            <a href="<c:url value='/treatment/list'/>" class="button">List of treatments</a>
         </div>
         <div class="sub-container">
             For administrator:

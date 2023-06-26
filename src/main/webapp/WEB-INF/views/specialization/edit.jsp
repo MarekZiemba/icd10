@@ -19,7 +19,7 @@
             </form:form>
         </div>
         <div class="sub-container">
-            <a href="<c:url value='/hello'/>" class="button" id="blue-button">Back to main</a>
+            <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
             <a href="<c:url value='/specialization/add'/>" class="button">Add new specialization</a>
             <a href="<c:url value='/specialization/search'/>" class="button">Search specialization</a>
             <a href="<c:url value='/specialization/list'/>" class="button">List of all specializations</a>

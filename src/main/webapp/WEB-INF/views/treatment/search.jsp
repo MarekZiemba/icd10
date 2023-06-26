@@ -4,13 +4,13 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>Search specializations in registry</title>
+    <title>Search treatments in registry</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 <div class="container" id="add-edit-search-container">
-    <div class="sub-container" id="title-container-2">
-            <h3>Search Specializations in Registry</h3>
+    <div class="sub-container" id="title-container">
+            <h3>Search Treatments in Registry</h3>
         </div>
         <div class="sub-container">
             <p>Find by Name</p>
@@ -22,12 +22,25 @@
                 <input type="submit" value="Search" class="button">
             </form>
         </div>
-
+        <div class="sub-container">
+            <p>Find by Specialist</p>
+            <form action="<c:url value='/treatment/search/specialist'/>">
+                <div class="form-group">
+                    <label for="sfirstName">Specialist first name:</label>
+                    <input id="sfirstName" name="firstName" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="slastName">Specialist last name:</label>
+                    <input id="slastName" name="lastName" type="text">
+                </div>
+                <input type="submit" value="Search" class="button">
+            </form>
+        </div>
         <div class="sub-container">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/specialization/add'/>" class="button">Add new specialization</a>
-            <a href="<c:url value='/specialization/search'/>" class="button">Search specialization</a>
-            <a href="<c:url value='/specialization/list'/>" class="button">List of all specializations</a>
+            <a href="<c:url value='/treatment/add'/>" class="button">Add new treatment</a>
+            <a href="<c:url value='/treatment/search'/>" class="button">Search treatment</a>
+            <a href="<c:url value='/treatment/list'/>" class="button">List of all treatments</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

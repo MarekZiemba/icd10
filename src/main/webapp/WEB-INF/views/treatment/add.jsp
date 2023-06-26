@@ -4,27 +4,30 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>Update category</title>
+    <title>Add treatment</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    <div class="container" id="add-edit-search-container-2">
-        <div class="sub-container" id="title-container">
-            <h3>Update existing Category Information</h3>
+<div class="container" id="add-edit-search-container">
+        <div class="sub-container" id="title-container-2">
+            <h3>Add new Treatment to Registry</h3>
         </div>
         <div class="sub-container">
-            <form:form method="post" modelAttribute="category">
+            <form:form method="post" modelAttribute="treatment">
                 <div><p>Name:</p> <form:input path="name"/><form:errors path="name" cssClass="error"/></div>
-                <div><p>Evaluation Criteria:</p> <form:textarea path="evaluationCriteria" rows="4" cols="50"/><form:errors path="evaluationCriteria" cssClass="error"/></div>
                 <div><p>Description:</p> <form:textarea path="description" rows="4" cols="50"/><form:errors path="description" cssClass="error"/></div>
-                <input type="submit" value="Update category" class="button" id="yellow-button">
+                <div><p>Specialists:</p>
+                    <form:select path="specialists" items="${specialists}" itemLabel="fullName" itemValue="id" multiple="true"/>
+                    <form:errors path="specialists" cssClass="error"/>
+                </div>
+                <input type="submit" value="Add treatment" class="button" id="yellow-button">
             </form:form>
         </div>
         <div class="sub-container">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/category/add'/>" class="button">Add new category</a>
-            <a href="<c:url value='/category/search'/>" class="button">Search category</a>
-            <a href="<c:url value='/category/list'/>" class="button">List of all categories</a>
+            <a href="<c:url value='/treatment/add'/>" class="button">Add new treatment</a>
+            <a href="<c:url value='/treatment/search'/>" class="button">Search treatment</a>
+            <a href="<c:url value='/treatment/list'/>" class="button">List of all treatments</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

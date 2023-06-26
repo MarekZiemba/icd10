@@ -54,7 +54,7 @@
             </form:form>
         </div>
         <div class="sub-container">
-            <a href="<c:url value='/hello'/>" class="button" id="blue-button">Back to main</a>
+            <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
             <a href="<c:url value='/patient/add'/>" class="button">Add new patient</a>
             <a href="<c:url value='/patient/search'/>" class="button">Search patient</a>
             <a href="<c:url value='/patient/list'/>" class="button">List of all patients</a>
