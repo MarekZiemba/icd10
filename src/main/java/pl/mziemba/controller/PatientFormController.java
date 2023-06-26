@@ -123,6 +123,7 @@ public class PatientFormController {
         return "patient/list";
     }
 
+    // umieszczenie w modelu pod kluczem 'categories' kolekcji obiektow Category
     @ModelAttribute("categories")
     Collection<Category> categories() {
         return categoryService.findAll();

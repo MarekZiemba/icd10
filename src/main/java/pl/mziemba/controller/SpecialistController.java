@@ -7,7 +7,6 @@ import pl.mziemba.entity.Specialization;
 import pl.mziemba.service.SpecialistService;
 import pl.mziemba.service.SpecializationService;
 
-import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -18,7 +17,7 @@ public class SpecialistController {
     private final SpecializationService specializationService;
 
     @PostMapping(path = "/specialist")
-    void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String name) {
+    void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String specializationName) {
 
         final Specialist specialist = new Specialist();
 
@@ -28,8 +27,11 @@ public class SpecialistController {
         specialist.setPesel(pesel);
 
         Specialization specialization = new Specialization();
-        specialization.setName(name);
-        specialist.setSpecialization (specialization);
+        specialization.setName(specializationName);
+        specializationService.save(specialization); // Zapisz encję Specialization przed zapisem Specialist
+        specialist.setSpecialization(specialization);
+
+        specialistService.save(specialist);
     }
 
     @GetMapping(path = "/specialists", produces = "text/plain;charset=utf-8")
@@ -68,10 +70,9 @@ public class SpecialistController {
         return specialists.toString();
     }
 
-    // umieszczenie w modelu pod kluczem 'specializations' kolekcji obiektow Specialization
-    @ModelAttribute("specializations")
-    Collection<Specialization> findAllSpecializations() {
-        return specializationService.findAll();
+    @DeleteMapping(path = "/specialist/{id}")
+    void deleteById(@PathVariable Long id) {
+        specialistService.deleteById(id);
     }
 
 }

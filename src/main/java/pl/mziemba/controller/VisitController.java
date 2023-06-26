@@ -18,7 +18,7 @@ public class VisitController {
     private final SpecialistService specialistService;
 
     @PostMapping(path = "/visit")
-    void save(@RequestParam String dateOfVisit, @RequestParam String timeOfVisit, @RequestParam String description, @RequestParam String patientFirstName, @RequestParam String patientLastName, @RequestParam String name, @RequestParam String firstName, @RequestParam String lastName) {
+    void save(@RequestParam String dateOfVisit, @RequestParam String timeOfVisit, @RequestParam String description, @RequestParam String patientFirstName, @RequestParam String patientLastName, @RequestParam String name, @RequestParam String specialistFirstName, @RequestParam String specialistLastName) {
 
         final Visit visit = new Visit();
 
@@ -36,8 +36,8 @@ public class VisitController {
         visit.setTreatment (treatment);
 
         Specialist specialist = new Specialist();
-        specialist.setFirstName(firstName);
-        specialist.setLastName(lastName);
+        specialist.setFirstName(specialistFirstName);
+        specialist.setLastName(specialistLastName);
         visit.setSpecialist (specialist);
     }
 

@@ -33,7 +33,6 @@ public class PatientController {
                 .map(id -> new Category())
                 .collect(Collectors.toSet());
         patient.setCategories(categories);
-        patientService.save(patient);
 
         Set<Specialist> specialists = Arrays.stream(specialistIds)
                 .map(id -> new Specialist())
@@ -65,6 +64,7 @@ public class PatientController {
         final List<Patient> patients = patientService.findByPesel(pesel);
         return patients.toString();
     }
+
     /*
     @GetMapping(path = "/patient/{pesel}", produces = "text/plain;charset=utf-8")
 String findByPatientPesel(@PathVariable @RequestParam("pesel") String pesel) {
@@ -92,9 +92,14 @@ String findByPatientPesel(@PathVariable @RequestParam("pesel") String pesel) {
     }
 
     @GetMapping(path = "/patient/specialist", produces = "text/plain;charset=utf-8", params = {"firstName", "lastName"})
-    String findByCategoryName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
+    String findBySpecialistFullName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
         final List<Patient> patients = patientService.findBySpecialistFullName(firstName, lastName);
         return patients.toString();
+    }
+
+    @DeleteMapping(path = "/patient/{id}")
+    void deleteById(@PathVariable Long id) {
+        patientService.deleteById(id);
     }
 
 }
