@@ -10,14 +10,19 @@
     <div class="container">
     <h1>ICD10</h1>
         <div class="sub-container">
+            For specialist:
             <a href="<c:url value='/patient/list'/>" class="button">List of patients</a>
             <a href="<c:url value='/specialist/list'/>" class="button">List of specialists</a>
-            <a href="<c:url value='/category/list'/>" class="button">List of categories</a>
-            <form action="/logout" method="post">
-                <sec:csrfInput/>
-                <input type="submit" value="Logout" class="button" id="red-logout"/>
-            </form>
         </div>
+        <div class="sub-container">
+            For administrator:
+            <a href="<c:url value='/category/list'/>" class="button-admin">List of categories</a>
+            <a href="<c:url value='/specialization/list'/>" class="button-admin">List of specializations</a>
+        </div>
+        <form action="/logout" method="post">
+            <sec:csrfInput/>
+            <input type="submit" value="Logout" class="button" id="red-logout"/>
+        </form>
     </div>
 </body>
 </html>

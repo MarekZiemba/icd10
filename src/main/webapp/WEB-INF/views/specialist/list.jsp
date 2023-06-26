@@ -31,7 +31,7 @@
                     <td>${specialist.pesel}</td>
                     <td>${specialist.specialization.name}</td>
                     <td>
-                        <a href="<c:url value='/specialist/edit?id=${specialist.id}'/>" class="button" id="yellow-button">Edit</a>
+                        <a href="<c:url value='/specialist/edit?id=${specialist.id}'/>" class="button-admin">Edit</a>
                         <a href="<c:url value='/specialist/remove?id=${specialist.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
                 </tr>
@@ -39,7 +39,7 @@
         </table>
         <div class="sub-container">
             <a href="<c:url value='/hello'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/specialist/add'/>" class="button">Add new specialist</a>
+            <a href="<c:url value='/specialist/add'/>" class="button-admin">Add new specialist</a>
             <a href="<c:url value='/specialist/search'/>" class="button">Search specialist</a>
             <a href="<c:url value='/specialist/list'/>" class="button">List of all specialists</a>
             <form action="/logout" method="post">

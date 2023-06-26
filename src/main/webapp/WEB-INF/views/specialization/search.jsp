@@ -4,13 +4,13 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>Search categories in registry</title>
+    <title>Search specializations in registry</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 <div class="container" id="add-edit-search-container">
     <div class="sub-container" id="title-container-2">
-            <h3>Search Categories in Registry</h3>
+            <h3>Search Specializations in Registry</h3>
         </div>
         <div class="sub-container">
             <p>Find by Name</p>
@@ -25,9 +25,9 @@
 
         <div class="sub-container">
             <a href="<c:url value='/hello'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/category/add'/>" class="button">Add new category</a>
-            <a href="<c:url value='/category/search'/>" class="button">Search category</a>
-            <a href="<c:url value='/category/list'/>" class="button">List of all categories</a>
+            <a href="<c:url value='/specialization/add'/>" class="button">Add new specialization</a>
+            <a href="<c:url value='/specialization/search'/>" class="button">Search specialization</a>
+            <a href="<c:url value='/specialization/list'/>" class="button">List of all specializations</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>
