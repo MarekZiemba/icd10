@@ -31,7 +31,7 @@
                         </c:forEach>
                     </td>
                     <td>
-                        <a href="<c:url value='/treatment/edit?id=${treatment.id}'/>" class="button-admin>Edit</a>
+                        <a href="<c:url value='/treatment/edit?id=${treatment.id}'/>" class="button-admin">Edit</a>
                         <a href="<c:url value='/treatment/remove?id=${treatment.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
                 </tr>

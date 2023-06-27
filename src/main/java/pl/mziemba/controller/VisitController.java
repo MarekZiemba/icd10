@@ -29,16 +29,21 @@ public class VisitController {
         Patient patient = new Patient();
         patient.setFirstName(patientFirstName);
         patient.setLastName(patientLastName);
+        patientService.save(patient);
         visit.setPatient (patient);
 
         Treatment treatment = new Treatment();
         treatment.setName(name);
+        treatmentService.save(treatment);
         visit.setTreatment (treatment);
 
         Specialist specialist = new Specialist();
         specialist.setFirstName(specialistFirstName);
         specialist.setLastName(specialistLastName);
+        specialistService.save(specialist);
         visit.setSpecialist (specialist);
+
+        visitService.save(visit);
     }
 
     @GetMapping(path = "/visits", produces = "text/plain;charset=utf-8")
@@ -47,8 +52,14 @@ public class VisitController {
         return visits.toString();
     }
 
+    @GetMapping(path = "/visit/Date", produces = "text/plain;charset=utf-8")
+    String findByDateAndTime(@RequestParam("dateOfVisit") String dateOfVisit) {
+        final List<Visit> visits = visitService.findByDate(dateOfVisit);
+        return visits.toString();
+    }
+
     @GetMapping(path = "/visit/DateAndTime", produces = "text/plain;charset=utf-8")
-    String findByPatientPesel(@RequestParam("dateOfVisit") String dateOfVisit, @RequestParam("timeOfVisit") String timeOfVisit) {
+    String findByDateAndTime(@RequestParam("dateOfVisit") String dateOfVisit, @RequestParam("timeOfVisit") String timeOfVisit) {
         final List<Visit> visits = visitService.findByDateAndTime(dateOfVisit, timeOfVisit);
         return visits.toString();
     }
@@ -72,7 +83,7 @@ public class VisitController {
     }
 
     @GetMapping(path = "/visit/treatment", produces = "text/plain;charset=utf-8", params = "name")
-    String findByTreatment(@RequestParam("name") String name) {
+    String findByTreatmentByName(@RequestParam("name") String name) {
         final List<Visit> visits = visitService.findByTreatmentByName(name);
         return visits.toString();
     }
@@ -89,21 +100,8 @@ public class VisitController {
         return visits.toString();
     }
 
-    // umieszczenie w modelu pod odpowiednimi kluczami, kolekcji odpowiadających obiektów
-    @ModelAttribute("patients")
-    Collection<Patient> findAllPatients() {
-        return patientService.findAll();
+    @DeleteMapping(path = "/visit/{id}")
+    void deleteById(@PathVariable Long id) {
+        visitService.deleteById(id);
     }
-
-    @ModelAttribute("treatments")
-    Collection<Treatment> findAllTreatments() {
-        return treatmentService.findAll();
-    }
-
-    @ModelAttribute("specialists")
-    Collection<Specialist> findAllSpecialists() {
-        return specialistService.findAll();
-    }
-
-
 }

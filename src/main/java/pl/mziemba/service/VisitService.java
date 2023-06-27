@@ -35,6 +35,10 @@ public class VisitService {
         return visitRepository.findById(id).get();
     }
 
+    public List<Visit> findByDate(String dateOfVisit) {
+        return visitRepository.findByDateOfVisitOrderByTimeOfVisit(dateOfVisit);
+    }
+
     public List<Visit> findByDateAndTime(String dateOfVisit, String timeOfVisit) {
         return visitRepository.findByDateOfVisitAndTimeOfVisit(dateOfVisit, timeOfVisit);
     }
