@@ -2,12 +2,15 @@ package pl.mziemba.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "visits")
@@ -20,24 +23,26 @@ public class Visit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "{not.empty.error}")
-    private String dateOfVisit;
+//    @NotBlank(message = "{not.empty.error}")
+    @Column(name = "dateOfVisit")
+    private LocalDate dateOfVisit;
 
-    @NotBlank(message = "{not.empty.error}")
-    private String timeOfVisit;
+//    @NotBlank(message = "{not.empty.error}")
+    @Column(name = "timeOfVisit")
+    private LocalTime timeOfVisit;
 
     @Size(max = 600)
     private String description;
 
-    @NotEmpty
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Patient patient;
 
-    @NotEmpty
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Treatment treatment;
 
-    @NotEmpty
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Specialist specialist;
 

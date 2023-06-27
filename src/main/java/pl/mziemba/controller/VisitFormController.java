@@ -2,6 +2,7 @@ package pl.mziemba.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.mziemba.entity.*;
 import pl.mziemba.service.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -64,7 +67,7 @@ public class VisitFormController {
 
     // wyswietlanie listy wszystkich specjalistów
     @GetMapping(path = "/visit/list")
-    String showVisitList(Model model) {
+    String showVisitList( Model model) {
         List<Visit> visits = visitService.findAll();
         model.addAttribute("visits", visits);
         return "visit/list";
@@ -76,15 +79,22 @@ public class VisitFormController {
     }
 
     @GetMapping(path = "/visit/search", params = "dateOfVisit")
-    String findByDate(@RequestParam String dateOfVisit, Model model) {
+    String findByDate(@RequestParam LocalDate dateOfVisit, Model model) {
         List<Visit> visits = visitService.findByDate(dateOfVisit);
         model.addAttribute("visits", visits);
         return "visit/list";
     }
 
     @GetMapping(path = "/visit/search", params = {"dateOfVisit", "timeOfVisit"})
-    String findByDateAndTime(@RequestParam String dateOfVisit, String timeOfVisit, Model model) {
+    String findByDateAndTime(@RequestParam LocalDate dateOfVisit, LocalTime timeOfVisit, Model model) {
         List<Visit> visits = visitService.findByDateAndTime(dateOfVisit, timeOfVisit);
+        model.addAttribute("visits", visits);
+        return "visit/list";
+    }
+
+    @GetMapping(path = "/visit/search", params = {"dateOfVisit1", "dateOfVisit2"})
+    String findByDateBetween(@RequestParam LocalDate dateOfVisit1, LocalDate dateOfVisit2, Model model) {
+        List<Visit> visits = visitService.findByDateBetween(dateOfVisit1, dateOfVisit2);
         model.addAttribute("visits", visits);
         return "visit/list";
     }
@@ -111,19 +121,19 @@ public class VisitFormController {
     }
 
 // umieszczenie w modelu pod kluczamim 'patients' kolekcji obiektow Patient,
-    @ModelAttribute("specializations")
+    @ModelAttribute("patients")
     Collection<Patient> patients() {
         return patientService.findAll();
     }
 
 //umieszczenie w modelu pod kluczamim 'treatments' kolekcji obiektow Treatment
-    @ModelAttribute("specializations")
+    @ModelAttribute("treatments")
     Collection<Treatment> treatments() {
         return treatmentService.findAll();
     }
 
 //    mieszczenie w modelu pod kluczamim 'specialists' kolekcji obiektow Specialist
-    @ModelAttribute("specializations")
+    @ModelAttribute("specialists")
     Collection<Specialist> specialists() {
         return specialistService.findAll();
     }

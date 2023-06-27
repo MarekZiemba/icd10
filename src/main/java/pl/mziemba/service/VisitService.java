@@ -1,11 +1,14 @@
 package pl.mziemba.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.*;
 import pl.mziemba.repository.VisitRepository;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -35,12 +38,16 @@ public class VisitService {
         return visitRepository.findById(id).get();
     }
 
-    public List<Visit> findByDate(String dateOfVisit) {
+    public List<Visit> findByDate(LocalDate dateOfVisit) {
         return visitRepository.findByDateOfVisitOrderByTimeOfVisit(dateOfVisit);
     }
 
-    public List<Visit> findByDateAndTime(String dateOfVisit, String timeOfVisit) {
+    public List<Visit> findByDateAndTime(LocalDate dateOfVisit, LocalTime timeOfVisit) {
         return visitRepository.findByDateOfVisitAndTimeOfVisit(dateOfVisit, timeOfVisit);
+    }
+
+    public List<Visit> findByDateBetween(LocalDate dateOfVisit1, LocalDate dateOfVisit2) {
+        return visitRepository.findByDateOfVisitBetweenOrderByDateOfVisit(dateOfVisit1, dateOfVisit2);
     }
 
     public  List<Visit> findByPatient(Patient patient) {

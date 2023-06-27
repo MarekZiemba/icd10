@@ -38,6 +38,21 @@
         </form>
     </div>
 
+    <div class="sub-container">
+        <p>Find by Date Of Visit between</p>
+        <form>
+            <div class="form-group">
+                <label for="dateOfVisit1">Initial Date:</label>
+                <input id="dateOfVisit1" name="dateOfVisit1" type="text">
+            </div>
+            <div class="form-group">
+                <label for="dateOfVisit2">End Date:</label>
+                <input id="dateOfVisit2" name="dateOfVisit2" type="text">
+            </div>
+            <input type="submit" value="Search" class="button">
+        </form>
+    </div>
+
         <div class="sub-container">
             <p>Find by Patient</p>
             <form action="<c:url value='/visit/search/patient'/>">
@@ -55,7 +70,7 @@
         <p>Find by Treatment</p>
         <form action="<c:url value='/visit/search/treatment'/>">
             <div class="form-group">
-                <label for="tname">Treatment name:</label>
+                <label for="tname">Treatment Name:</label>
                 <input id="tname" name="name" type="text">
             </div>
             <input type="submit" value="Search" class="button">

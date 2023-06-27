@@ -1,10 +1,15 @@
 package pl.mziemba.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 import pl.mziemba.entity.*;
 import pl.mziemba.service.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,7 +23,7 @@ public class VisitController {
     private final SpecialistService specialistService;
 
     @PostMapping(path = "/visit")
-    void save(@RequestParam String dateOfVisit, @RequestParam String timeOfVisit, @RequestParam String description, @RequestParam String patientFirstName, @RequestParam String patientLastName, @RequestParam String name, @RequestParam String specialistFirstName, @RequestParam String specialistLastName) {
+    void save(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateOfVisit, @RequestParam LocalTime timeOfVisit, @RequestParam String description, @RequestParam String patientFirstName, @RequestParam String patientLastName, @RequestParam String name, @RequestParam String specialistFirstName, @RequestParam String specialistLastName) {
 
         final Visit visit = new Visit();
 
@@ -30,18 +35,18 @@ public class VisitController {
         patient.setFirstName(patientFirstName);
         patient.setLastName(patientLastName);
         patientService.save(patient);
-        visit.setPatient (patient);
+        visit.setPatient(patient);
 
         Treatment treatment = new Treatment();
         treatment.setName(name);
         treatmentService.save(treatment);
-        visit.setTreatment (treatment);
+        visit.setTreatment(treatment);
 
         Specialist specialist = new Specialist();
         specialist.setFirstName(specialistFirstName);
         specialist.setLastName(specialistLastName);
         specialistService.save(specialist);
-        visit.setSpecialist (specialist);
+        visit.setSpecialist(specialist);
 
         visitService.save(visit);
     }
@@ -52,15 +57,51 @@ public class VisitController {
         return visits.toString();
     }
 
+//    @GetMapping(path = "/visits", produces = "text/plain;charset=utf-8")
+//    String findAll() {
+//        Sort sort = Sort.by("dateOfVisit").ascending().and(Sort.by("timeOfVisit").ascending());
+//        final List<Visit> visits = visitService.findAll(sort);
+//        return visits.toString();
+//    }
+
+//    @GetMapping(path = "/visit/list", produces = "text/plain;charset=utf-8")
+//    String findAll(@RequestParam(value = "sortField", defaultValue = "id") String sortField,
+//                   @RequestParam(value = "sortOrder", defaultValue = "asc") String sortOrder) {
+//        Sort sort = Sort.by(Sort.Direction.fromString(sortOrder), sortField);
+//        final List<Visit> visits = visitService.findAll(sort);
+//        return visits.toString();
+//    }
+
+//    @GetMapping(path = "/visits", produces = "text/html;charset=utf-8")
+//    public String findAll(Model model, @RequestParam(defaultValue = "dateOfVisit") String sortField,
+//                          @RequestParam(defaultValue = "asc") String sortOrder) {
+//
+//        Sort sort = Sort.by(sortField).ascending();
+//        if (sortOrder.equalsIgnoreCase("desc")) {
+//            sort = sort.descending();
+//        }
+//
+//        final List<Visit> visits = visitService.findAll(sort);
+//        model.addAttribute("visits", visits);
+//
+//        return "visits";
+//    }
+
     @GetMapping(path = "/visit/Date", produces = "text/plain;charset=utf-8")
-    String findByDateAndTime(@RequestParam("dateOfVisit") String dateOfVisit) {
+    String findByDate(@RequestParam("dateOfVisit") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateOfVisit) {
         final List<Visit> visits = visitService.findByDate(dateOfVisit);
         return visits.toString();
     }
 
     @GetMapping(path = "/visit/DateAndTime", produces = "text/plain;charset=utf-8")
-    String findByDateAndTime(@RequestParam("dateOfVisit") String dateOfVisit, @RequestParam("timeOfVisit") String timeOfVisit) {
+    String findByDateAndTime(@RequestParam("dateOfVisit") LocalDate dateOfVisit, @RequestParam("timeOfVisit") LocalTime timeOfVisit) {
         final List<Visit> visits = visitService.findByDateAndTime(dateOfVisit, timeOfVisit);
+        return visits.toString();
+    }
+
+    @GetMapping(path = "/visit/DateAndTimeBetween", produces = "text/plain;charset=utf-8")
+    String findByDateBetween(@RequestParam("dateOfVisit") LocalDate dateOfVisit1, @RequestParam("timeOfVisit") LocalDate dateOfVisit2) {
+        final List<Visit> visits = visitService.findByDateBetween(dateOfVisit1, dateOfVisit2);
         return visits.toString();
     }
 

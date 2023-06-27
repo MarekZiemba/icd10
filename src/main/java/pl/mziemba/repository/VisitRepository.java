@@ -1,10 +1,13 @@
 package pl.mziemba.repository;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import pl.mziemba.entity.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,10 +22,13 @@ public interface VisitRepository extends JpaRepository<Visit, Long> {
     Optional<Visit> findById(Long id);
 
     @EntityGraph(attributePaths = {"patient", "treatment", "specialist"})
-    List<Visit> findByDateOfVisitOrderByTimeOfVisit(String dateOfVisit);
+    List<Visit> findByDateOfVisitOrderByTimeOfVisit(LocalDate dateOfVisit);
 
     @EntityGraph(attributePaths = {"patient", "treatment", "specialist"})
-    List<Visit> findByDateOfVisitAndTimeOfVisit(String dateOfVisit, String timeOfVisit);
+    List<Visit> findByDateOfVisitAndTimeOfVisit(LocalDate dateOfVisit, LocalTime timeOfVisit);
+
+    @EntityGraph(attributePaths = {"patient", "treatment", "specialist"})
+    List<Visit> findByDateOfVisitBetweenOrderByDateOfVisit(LocalDate dateOfVisit1, LocalDate dateOfVisit2);
 
     @EntityGraph(attributePaths = {"patient", "treatment", "specialist"})
     List<Visit> findByPatient(@Param("patient") Patient patient);

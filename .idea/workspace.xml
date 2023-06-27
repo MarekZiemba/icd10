@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="NEW: Treatment Form">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/VisitFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/search.jsp" afterDir="false" />
+    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="NEW: Visit Form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/VisitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/VisitFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/VisitFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/VisitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/VisitRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/VisitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/import.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/search.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -137,7 +134,7 @@
       <workItem from="1687803164135" duration="3414000" />
       <workItem from="1687806601149" duration="9670000" />
       <workItem from="1687873527470" duration="10876000" />
-      <workItem from="1687892423349" duration="960000" />
+      <workItem from="1687892423349" duration="15130000" />
     </task>
     <task id="LOCAL-00001" summary="Firts Commit">
       <created>1687203685991</created>
@@ -265,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687821878077</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="NEW: Visit Form">
+      <option name="closed" value="true" />
+      <created>1687893395473</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1687893395473</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +293,8 @@
     <MESSAGE value="NEW: Category Form" />
     <MESSAGE value="NEW: Specializations Form" />
     <MESSAGE value="NEW: Treatment Form" />
-    <option name="LAST_COMMIT_MESSAGE" value="NEW: Treatment Form" />
+    <MESSAGE value="NEW: Visit Form" />
+    <option name="LAST_COMMIT_MESSAGE" value="NEW: Visit Form" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
