@@ -20,6 +20,7 @@
             For administrator:
             <a href="<c:url value='/category/list'/>" class="button-admin">Categories</a>
             <a href="<c:url value='/specialization/list'/>" class="button-admin">Specializations</a>
+            <a href="<c:url value='/role/list'/>" class="button-admin">Roles</a>
         </div>
         <form action="/logout" method="post">
             <sec:csrfInput/>
