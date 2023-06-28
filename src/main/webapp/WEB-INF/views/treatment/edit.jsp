@@ -29,11 +29,11 @@
                 <input type="submit" value="Update treatment" class="button" class="button" id="yellow-button">
             </form:form>
         </div>
-        <div class="sub-container">
+        <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
             <a href="<c:url value='/treatment/add'/>" class="button">Add new treatment</a>
-            <a href="<c:url value='/treatment/search'/>" class="button">Search treatment</a>
-            <a href="<c:url value='/treatment/list'/>" class="button">List of all treatments</a>
+            <a href="<c:url value='/treatment/search'/>" class="button">Search in treatments</a>
+            <a href="<c:url value='/treatment/list'/>" class="button">Treatments List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

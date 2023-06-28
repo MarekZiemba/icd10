@@ -31,7 +31,7 @@ public class Visit {
     @Column(name = "timeOfVisit")
     private LocalTime timeOfVisit;
 
-    @Size(max = 600)
+    @Size(max = 6400)
     private String description;
 
     @NotNull

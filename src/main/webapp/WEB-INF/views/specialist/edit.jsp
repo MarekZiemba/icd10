@@ -43,11 +43,11 @@
                 <input type="submit" value="Update specialist" class="button" class="button" id="yellow-button">
             </form:form>
         </div>
-        <div class="sub-container">
+        <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
             <a href="<c:url value='/specialist/add'/>" class="button">Add new specialist</a>
-            <a href="<c:url value='/specialist/search'/>" class="button">Search specialist</a>
-            <a href="<c:url value='/specialist/list'/>" class="button">List of all specialists</a>
+            <a href="<c:url value='/specialist/search'/>" class="button">Search in specialists</a>
+            <a href="<c:url value='/specialist/list'/>" class="button">Specialists List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

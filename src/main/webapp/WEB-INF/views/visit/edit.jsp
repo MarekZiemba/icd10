@@ -41,18 +41,18 @@
                 </div>
                 <div class="form-group">
                     <label for="description"><p>Description:</p></label>
-                    <form:textarea path="description" id="description" rows="4" cols="50"/>
+                    <form:textarea path="description" id="description" rows="40" cols="80"/>
                     <form:errors path="description" cssClass="error"/>
                 </div>
                 <input type="hidden" path="id"/>
-                <input type="submit" value="Update visit" class="button" class="button" id="yellow-button">
+                <input type="submit" value="Update" class="button" class="button" id="yellow-button-big">
             </form:form>
         </div>
-        <div class="sub-container">
+        <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
             <a href="<c:url value='/visit/add'/>" class="button">Add new visit</a>
-            <a href="<c:url value='/visit/search'/>" class="button">Search visit</a>
-            <a href="<c:url value='/visit/list'/>" class="button">List of all visits</a>
+            <a href="<c:url value='/visit/search'/>" class="button">Search in visits</a>
+            <a href="<c:url value='/visit/list'/>" class="button">Visits List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>
