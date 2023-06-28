@@ -4,36 +4,41 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>All specializations</title>
+    <title>All users</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <div class="container">
         <div class="sub-container" id="title-container-2">
-            <h3>List of all Specializations in Database</h3>
+            <h3>List of all Users in Database</h3>
         </div>
         <table>
             <tr>
                 <th>No.</th>
-                <th>Name</th>
+                <th>Username</th>
+                <th>Specialist</th>
+                <th>Role</th>
                 <th>Actions</th>
             </tr>
-            <c:forEach items="${specializations}" var="specialization">
+            <c:forEach items="${users}" var="user">
                 <tr>
-                    <td>${specialization.id}</td>
-                    <td>${specialization.name}</td>
+                    <td>${user.id}</td>
+                    <td>${user.username}</td>
+                    <td>${user.specialist.firstName} ${user.specialist.lastName}</td>
+                    <td>${user.role.name}</td>
                     <td>
-                        <a href="<c:url value='/specialization/edit?id=${specialization.id}'/>" class="button-admin">Edit</a>
-                        <a href="<c:url value='/specialization/remove?id=${specialization.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
+                        <a href="<c:url value='/user/edit?id=${user.id}'/>" class="button">Edit</a>
+                        <a href="<c:url value='/user/remove?id=${user.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
+
                 </tr>
             </c:forEach>
         </table>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/specialization/add'/>" class="button-admin">Add specialization</a>
-            <a href="<c:url value='/specialization/search'/>" class="button">Search in specializations</a>
-            <a href="<c:url value='/specialization/list'/>" class="button">Specializations List</a>
+            <a href="<c:url value='/user/add'/>" class="button">Add new user</a>
+            <a href="<c:url value='/user/search'/>" class="button">Search in users</a>
+            <a href="<c:url value='/user/list'/>" class="button">Users List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

@@ -22,7 +22,7 @@
         </div>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/category/add'/>" class="button">Add new category</a>
+            <a href="<c:url value='/category/add'/>" class="button-admin">Add new category</a>
             <a href="<c:url value='/category/search'/>" class="button">Search in categories</a>
             <a href="<c:url value='/category/list'/>" class="button">Categories List</a>
             <form action="/logout" method="post">

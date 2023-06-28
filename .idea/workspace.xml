@@ -4,18 +4,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="Mod: All forms HTML+CSS tweaks">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/RoleFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/search.jsp" afterDir="false" />
+    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="NEW: Role Repo, Service, Controllers, Forms">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/UserFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/exceptions/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/exceptions/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/add.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/search.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/RoleFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/RoleFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/VisitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/VisitFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/VisitFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/VisitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/VisitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/security/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/VisitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialization/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialization/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialization/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialization/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialization/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialization/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialization/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialization/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +86,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/marek/Programowanie/06_Modul/Projekt koncowy/Ten/icd10/src/main/webapp/WEB-INF/views/role",
+    "last_opened_file_path": "/home/marek/Programowanie/06_Modul/Projekt koncowy/Ten/icd10/src/main/webapp/WEB-INF/views/user",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,18 +106,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/visit" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/treatment" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialization" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/category" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/css" />
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/templates" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/x" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pl.mziemba" />
@@ -136,7 +171,9 @@
       <workItem from="1687806601149" duration="9670000" />
       <workItem from="1687873527470" duration="10876000" />
       <workItem from="1687892423349" duration="18795000" />
-      <workItem from="1687946546110" duration="1075000" />
+      <workItem from="1687946546110" duration="1126000" />
+      <workItem from="1687962772023" duration="1212000" />
+      <workItem from="1687964002576" duration="13592000" />
     </task>
     <task id="LOCAL-00001" summary="Firts Commit">
       <created>1687203685991</created>
@@ -288,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687911584365</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="NEW: Role Repo, Service, Controllers, Forms">
+      <option name="closed" value="true" />
+      <created>1687947659136</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1687947659137</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +359,8 @@
     <MESSAGE value="NEW: Visit Form" />
     <MESSAGE value="Mod: Visit Form" />
     <MESSAGE value="Mod: All forms HTML+CSS tweaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mod: All forms HTML+CSS tweaks" />
+    <MESSAGE value="NEW: Role Repo, Service, Controllers, Forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="NEW: Role Repo, Service, Controllers, Forms" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

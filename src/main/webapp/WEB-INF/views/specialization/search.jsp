@@ -25,7 +25,7 @@
 
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/specialization/add'/>" class="button">Add specialization</a>
+            <a href="<c:url value='/specialization/add'/>" class="button-admin">Add specialization</a>
             <a href="<c:url value='/specialization/search'/>" class="button">Search in specializations</a>
             <a href="<c:url value='/specialization/list'/>" class="button">Specializations List</a>
             <form action="/logout" method="post">

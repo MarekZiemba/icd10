@@ -126,32 +126,16 @@ public class VisitFormController {
         return patientService.findAll();
     }
 
-//umieszczenie w modelu pod kluczamim 'treatments' kolekcji obiektow Treatment
+// umieszczenie w modelu pod kluczamim 'treatments' kolekcji obiektow Treatment
     @ModelAttribute("treatments")
     Collection<Treatment> treatments() {
         return treatmentService.findAll();
     }
 
-//    mieszczenie w modelu pod kluczamim 'specialists' kolekcji obiektow Specialist
+//  umieszczenie w modelu pod kluczamim 'specialists' kolekcji obiektow Specialist
     @ModelAttribute("specialists")
     Collection<Specialist> specialists() {
         return specialistService.findAll();
     }
 
-
-//    // umieszczenie w modelu pod odpowiednimi kluczami, kolekcji odpowiadających obiektów
-//    @ModelAttribute("patients")
-//    Collection<Patient> findAllPatients() {
-//        return patientService.findAll();
-//    }
-//
-//    @ModelAttribute("treatments")
-//    Collection<Treatment> findAllTreatments() {
-//        return treatmentService.findAll();
-//    }
-//
-//    @ModelAttribute("specialists")
-//    Collection<Specialist> findAllSpecialists() {
-//        return specialistService.findAll();
-//    }
 }

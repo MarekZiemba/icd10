@@ -74,5 +74,5 @@ public class RoleFormController {
         model.addAttribute("roles", roles);
         return "role/list";
     }
-    
+
 }

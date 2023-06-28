@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="sub-container" id="title-container-2">
-            <h3>List of all Roles in Registry</h3>
+            <h3>List of all Roles in Database</h3>
         </div>
         <table>
             <tr>

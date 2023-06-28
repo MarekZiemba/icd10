@@ -15,11 +15,12 @@
             <a href="<c:url value='/specialist/list'/>" class="button">Specialists</a>
             <a href="<c:url value='/treatment/list'/>" class="button">Treatments</a>
             <a href="<c:url value='/visit/list'/>" class="button">Visits</a>
+            <a href="<c:url value='/category/list'/>" class="button">Categories</a>
+            <a href="<c:url value='/specialization/list'/>" class="button">Specializations</a>
         </div>
         <div class="sub-container">
-            For administrator:
-            <a href="<c:url value='/category/list'/>" class="button-admin">Categories</a>
-            <a href="<c:url value='/specialization/list'/>" class="button-admin">Specializations</a>
+            For Administrator:
+            <a href="<c:url value='/user/list'/>" class="button-admin">Users</a>
             <a href="<c:url value='/role/list'/>" class="button-admin">Roles</a>
         </div>
         <form action="/logout" method="post">

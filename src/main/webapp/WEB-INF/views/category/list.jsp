@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="sub-container" id="title-container-2">
-            <h3>List of all Categories in Registry</h3>
+            <h3>List of all Categories in Database</h3>
         </div>
         <table>
             <tr>
@@ -27,7 +27,7 @@
                     <td>${category.evaluationCriteria}</td>
                     <td>${category.description}</td>
                     <td>
-                        <a href="<c:url value='/category/edit?id=${category.id}'/>" class="button" id="yellow-button">Edit</a>
+                        <a href="<c:url value='/category/edit?id=${category.id}'/>" class="button-admin">Edit</a>
                         <a href="<c:url value='/category/remove?id=${category.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
                 </tr>
@@ -35,7 +35,7 @@
         </table>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/category/add'/>" class="button">Add new category</a>
+            <a href="<c:url value='/category/add'/>" class="button-admin">Add new category</a>
             <a href="<c:url value='/category/search'/>" class="button">Search in categories</a>
             <a href="<c:url value='/category/list'/>" class="button">Categories List</a>
             <form action="/logout" method="post">

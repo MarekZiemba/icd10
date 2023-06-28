@@ -1,16 +1,13 @@
 package pl.mziemba.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Sort;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.ui.Model;
 import pl.mziemba.entity.*;
 import pl.mziemba.service.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -56,36 +53,6 @@ public class VisitController {
         final List<Visit> visits = visitService.findAll();
         return visits.toString();
     }
-
-//    @GetMapping(path = "/visits", produces = "text/plain;charset=utf-8")
-//    String findAll() {
-//        Sort sort = Sort.by("dateOfVisit").ascending().and(Sort.by("timeOfVisit").ascending());
-//        final List<Visit> visits = visitService.findAll(sort);
-//        return visits.toString();
-//    }
-
-//    @GetMapping(path = "/visit/list", produces = "text/plain;charset=utf-8")
-//    String findAll(@RequestParam(value = "sortField", defaultValue = "id") String sortField,
-//                   @RequestParam(value = "sortOrder", defaultValue = "asc") String sortOrder) {
-//        Sort sort = Sort.by(Sort.Direction.fromString(sortOrder), sortField);
-//        final List<Visit> visits = visitService.findAll(sort);
-//        return visits.toString();
-//    }
-
-//    @GetMapping(path = "/visits", produces = "text/html;charset=utf-8")
-//    public String findAll(Model model, @RequestParam(defaultValue = "dateOfVisit") String sortField,
-//                          @RequestParam(defaultValue = "asc") String sortOrder) {
-//
-//        Sort sort = Sort.by(sortField).ascending();
-//        if (sortOrder.equalsIgnoreCase("desc")) {
-//            sort = sort.descending();
-//        }
-//
-//        final List<Visit> visits = visitService.findAll(sort);
-//        model.addAttribute("visits", visits);
-//
-//        return "visits";
-//    }
 
     @GetMapping(path = "/visit/Date", produces = "text/plain;charset=utf-8")
     String findByDate(@RequestParam("dateOfVisit") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateOfVisit) {

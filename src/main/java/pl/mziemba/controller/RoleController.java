@@ -37,5 +37,5 @@ public class RoleController {
     void deleteById(@PathVariable Long id) {
         roleService.deleteById(id);
     }
-    
+
 }

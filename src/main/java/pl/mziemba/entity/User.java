@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Set;
-
 @Entity
 @Table(name = "users")
 @Setter

@@ -23,21 +23,22 @@ public class SecurityConfiguration {
         http
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/", "/home", "/registration", "/logout").permitAll()
+                        .requestMatchers("/patient").hasRole("USER")
+                        .requestMatchers("/specialist").hasRole("USER")
+                        .requestMatchers("/treatment").hasRole("USER")
+                        .requestMatchers("/visit").hasRole("USER")
+                        .requestMatchers("/category").hasRole("USER")
+                        .requestMatchers("/specialization").hasRole("USER")
+                        .requestMatchers("/user").hasRole("ADMIN")
+                        .requestMatchers("/admin").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .permitAll()
                 )
-//                .logout((logout) -> logout.logoutUrl("/logout").permitAll());
                 .logout((logout) -> logout.logoutUrl("/logout").logoutSuccessUrl("/login")
                         .invalidateHttpSession(true).deleteCookies("JSESSIONID").permitAll());
-//                .logout()
-//                .logoutUrl("/logout") // endpoint do wylogowania
-//                .logoutSuccessUrl("/login?logout") // przekierowanie po wylogowaniu
-//                .invalidateHttpSession(true) // unieważnienie sesji po wylogowaniu
-//                .deleteCookies("JSESSIONID") // usunięcie cookies po wylogowaniu
-//                .permitAll(); // dostęp do endpointu /logout dla wszystkich
 
         return http.build();
     }

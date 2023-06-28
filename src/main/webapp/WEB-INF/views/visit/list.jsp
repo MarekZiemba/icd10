@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="sub-container" id="title-container">
-            <h3>List of all Visit in Registry</h3>
+            <h3>List of all Visits in Database</h3>
         </div>
         <table>
             <tr>
