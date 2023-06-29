@@ -55,6 +55,10 @@ public class Patient {
 
     @NotNull
     @ManyToMany
+    private Set<Diagnosis> diagnosis = new HashSet<>();
+
+    @NotNull
+    @ManyToMany
     private Set<Specialist> specialists = new HashSet<>();
 
     public String getFullName() {

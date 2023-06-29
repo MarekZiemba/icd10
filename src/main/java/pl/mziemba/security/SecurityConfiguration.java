@@ -23,14 +23,14 @@ public class SecurityConfiguration {
         http
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/", "/home", "/registration", "/logout").permitAll()
-                        .requestMatchers("/patient").hasRole("USER")
-                        .requestMatchers("/specialist").hasRole("USER")
-                        .requestMatchers("/treatment").hasRole("USER")
-                        .requestMatchers("/visit").hasRole("USER")
-                        .requestMatchers("/category").hasRole("USER")
-                        .requestMatchers("/specialization").hasRole("USER")
-                        .requestMatchers("/user").hasRole("ADMIN")
-                        .requestMatchers("/admin").hasRole("ADMIN")
+                        .requestMatchers("/patient").hasRole("user")
+                        .requestMatchers("/specialist").hasRole("user")
+                        .requestMatchers("/treatment").hasRole("user")
+                        .requestMatchers("/visit").hasRole("user")
+                        .requestMatchers("/category").hasRole("user")
+                        .requestMatchers("/specialization").hasRole("user")
+                        .requestMatchers("/user").hasRole("admin")
+                        .requestMatchers("/admin").hasRole("admin")
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form

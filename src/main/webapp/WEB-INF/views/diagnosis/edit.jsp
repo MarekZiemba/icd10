@@ -4,27 +4,27 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>Update Category</title>
+    <title>Update diagnosis</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <div class="container" id="add-edit-search-container-2">
         <div class="sub-container" id="title-container">
-            <h3>Update existing Category Information</h3>
+            <h3>Update existing Diagnosis (ICD 10) Information</h3>
         </div>
         <div class="sub-container">
-            <form:form method="post" modelAttribute="category">
+            <form:form method="post" modelAttribute="diagnosis">
                 <div><p>Name:</p> <form:input path="name"/><form:errors path="name" cssClass="error"/></div>
-                <div><p>Evaluation Criteria:</p> <form:textarea path="evaluationCriteria" rows="4" cols="50"/><form:errors path="evaluationCriteria" cssClass="error"/></div>
+                <div><p>Diagnosis Criteria (ICD 10):</p> <form:textarea path="diagnosisCriteria" rows="4" cols="50"/><form:errors path="diagnosisCriteria" cssClass="error"/></div>
                 <div><p>Description:</p> <form:textarea path="description" rows="4" cols="50"/><form:errors path="description" cssClass="error"/></div>
-                <input type="submit" value="Update category" class="button" id="yellow-button">
+                <input type="submit" value="Update diagnosis" class="button" id="yellow-button">
             </form:form>
         </div>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/category/add'/>" class="button-admin">Add new category</a>
-            <a href="<c:url value='/category/search'/>" class="button">Search in categories</a>
-            <a href="<c:url value='/category/list'/>" class="button">Categories List</a>
+            <a href="<c:url value='/diagnosis/add'/>" class="button-admin">Add new diagnosis</a>
+            <a href="<c:url value='/diagnosis/search'/>" class="button">Search in diagnosis</a>
+            <a href="<c:url value='/diagnosis/list'/>" class="button">Diagnosis List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

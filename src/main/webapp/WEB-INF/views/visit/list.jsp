@@ -33,7 +33,7 @@
                     <td>${visit.treatment.name}</td>
                     <td>${visit.specialist.firstName} ${visit.specialist.lastName}</td>
                     <td>
-                        <a href="<c:url value='/visit/edit?id=${visit.id}'/>" class="button">Edit</a>
+                        <a href="<c:url value='/visit/edit?id=${visit.id}'/>" class="button" id="yellow-button">Edit</a>
                         <a href="<c:url value='/visit/remove?id=${visit.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
 

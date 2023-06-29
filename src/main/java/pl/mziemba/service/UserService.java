@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.*;
+import pl.mziemba.exceptions.*;
+import pl.mziemba.exceptions.ValidationException;
 import pl.mziemba.repository.UserRepository;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +19,21 @@ import java.util.Optional;
 public class UserService {
 
     public final UserRepository userRepository;
+    public final UserServiceTest userServiceTest;
 
+//    public void save(User user) {
+//        registerUser.userServiceTest;
+//        userRepository.save(user);
+//    }
+//
+//    private List<String> validate(User user) {
+//        Optional<User> byLogin = userRepository.findByUsername(user.getUsername());
+//        if(byLogin.isPresent()){
+//            return Arrays.asList("loginAlreadyExists");
+//        }
+//        return Collections.emptyList();
+//    }
+//
     public void save(User user) {
         userRepository.save(user);
     }

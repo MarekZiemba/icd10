@@ -13,10 +13,6 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-//    public CategoryController(CategoryService categoryService) {
-//        this.categoryService = categoryService;
-//    }
-
     @PostMapping(path = "/category")
     void save(@RequestParam String name, @RequestParam String evaluationCriteria, @RequestParam String description) {
 

@@ -1,7 +1,9 @@
 package pl.mziemba.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pl.mziemba.entity.Category;
+import pl.mziemba.entity.Diagnosis;
 import pl.mziemba.entity.Patient;
 import pl.mziemba.entity.Specialist;
 import pl.mziemba.service.PatientService;
@@ -12,14 +14,12 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
+@AllArgsConstructor
 public class PatientController {
     private final PatientService patientService;
-    public PatientController(PatientService patientService) {
-        this.patientService = patientService;
-    }
 
     @PostMapping(path = "/patient")
-    void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String insurance, @RequestParam("categoryId") Long[] categoryIds, @RequestParam("specialistId") Long[] specialistIds) {
+    void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String insurance, @RequestParam("diagnosisId") Long[] diagnosisId, @RequestParam("categoryId") Long[] categoryIds,@RequestParam("specialistId") Long[] specialistIds) {
 
         final Patient patient = new Patient();
 
@@ -33,6 +33,11 @@ public class PatientController {
                 .map(id -> new Category())
                 .collect(Collectors.toSet());
         patient.setCategories(categories);
+
+        Set<Diagnosis> diagnoses = Arrays.stream(diagnosisId)
+                .map(id -> new Diagnosis())
+                .collect(Collectors.toSet());
+        patient.setDiagnosis(diagnoses);
 
         Set<Specialist> specialists = Arrays.stream(specialistIds)
                 .map(id -> new Specialist())

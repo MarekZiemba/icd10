@@ -45,6 +45,7 @@
                     <td>
                         <a href="<c:url value='/patient/edit?id=${patient.id}'/>" class="button" id="yellow-button">Edit</a>
                         <a href="<c:url value='/patient/remove?id=${patient.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
+                        <a href="<c:url value='/visit/add?id=${patient.id}'/>" class="button">Add new visit</a>
                     </td>
                 </tr>
             </c:forEach>
