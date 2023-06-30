@@ -47,4 +47,5 @@ public interface VisitRepository extends JpaRepository<Visit, Long> {
     @EntityGraph(attributePaths = {"patient", "treatment", "specialist"})
     List<Visit> findBySpecialistFirstNameAndSpecialistLastName(String firstName, String lastName);
 
+
 }

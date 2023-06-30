@@ -1,7 +1,6 @@
 package pl.mziemba.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,16 +32,23 @@ public class Visit {
     @Size(max = 6400)
     private String description;
 
-    @NotNull
+//    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Patient patient;
 
-    @NotNull
+//    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Treatment treatment;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
+//    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Specialist specialist;
+
+    public void removePatient() {
+        if (patient != null) {
+            patient.getVisits().remove(this);
+            patient = null;
+        }
+    }
 
 }

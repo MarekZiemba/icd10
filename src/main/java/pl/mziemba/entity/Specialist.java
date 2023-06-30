@@ -9,7 +9,9 @@ import lombok.ToString;
 import org.hibernate.validator.constraints.pl.PESEL;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "specialists")
@@ -38,15 +40,20 @@ public class Specialist {
     private String pesel;
 
 //    @NotNull
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Patient> patients = new HashSet<>();
+
+//    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Specialization specialization;
 
-//    @OneToMany(fetch = FetchType.LAZY)
-//    @JoinColumn(name="specialist_id")
-//    private List<User> users = new ArrayList<>();
-
     public String getFullName() {
         return firstName + " " + lastName;
+    }
+
+    public void removePatient(Patient patient) {
+        patients.remove(patient);
+        patient.getSpecialists().remove(this);
     }
 
 }

@@ -30,7 +30,7 @@ public class Treatment {
     @Size(max = 600)
     private String description;
 
-    @NotNull
+//    @NotNull
     @ManyToMany
     private Set<Specialist> specialists = new HashSet<>();
 

@@ -43,4 +43,6 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     @EntityGraph(attributePaths = {"diagnoses", "specialists"})
     List<Patient> findBySpecialistsFirstNameAndSpecialistsLastName(String firstName, String lastName);
 
+    Patient findById(Class<Patient> patientClass, Long id);
+
 }

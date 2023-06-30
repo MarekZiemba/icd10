@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.*;
+import pl.mziemba.repository.PatientRepository;
 import pl.mziemba.repository.VisitRepository;
 
 import java.time.LocalDate;
@@ -16,6 +17,7 @@ import java.util.List;
 public class VisitService {
 
     public final VisitRepository visitRepository;
+    private final PatientRepository patientRepository;
 
     public void save(Visit visit) {
         visitRepository.save(visit);
@@ -26,6 +28,9 @@ public class VisitService {
     }
 
     public void deleteById(Long id){
+//        Patient patient = patientRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid patient Id:" + id));
+//        List<Visit> visits = visitRepository.findByPatient(patient);
+//        visitRepository.deleteAll(visits);
         visitRepository.deleteById(id);
     }
 
