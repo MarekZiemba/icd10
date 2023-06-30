@@ -2,7 +2,6 @@ package pl.mziemba.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import pl.mziemba.entity.Category;
 import pl.mziemba.entity.Diagnosis;
 import pl.mziemba.entity.Patient;
 import pl.mziemba.entity.Specialist;
@@ -29,15 +28,10 @@ public class PatientController {
         patient.setPesel(pesel);
         patient.setInsurance(insurance);
 
-        Set<Category> categories = Arrays.stream(categoryIds)
-                .map(id -> new Category())
-                .collect(Collectors.toSet());
-        patient.setCategories(categories);
-
         Set<Diagnosis> diagnoses = Arrays.stream(diagnosisId)
                 .map(id -> new Diagnosis())
                 .collect(Collectors.toSet());
-        patient.setDiagnosis(diagnoses);
+        patient.setDiagnoses(diagnoses);
 
         Set<Specialist> specialists = Arrays.stream(specialistIds)
                 .map(id -> new Specialist())
@@ -84,15 +78,21 @@ String findByPatientPesel(@PathVariable @RequestParam("pesel") String pesel) {
         return patients.toString();
     }
 
-    @GetMapping(path = "/patient/category", produces = "text/plain;charset=utf-8", params = "id")
-    String findByCategory(Category category) {
-        final List<Patient> patients = patientService.findByCategory(category);
+    @GetMapping(path = "/patient/diagnosis", produces = "text/plain;charset=utf-8", params = "id")
+    String findByDiagnosis(Diagnosis diagnosis) {
+        final List<Patient> patients = patientService.findByDiagnosisContains(diagnosis);
         return patients.toString();
     }
 
-    @GetMapping(path = "/patient/category", produces = "text/plain;charset=utf-8", params = "name")
-    String findByCategoryName(@RequestParam("name") String name) {
-        final List<Patient> patients = patientService.findByCategoryName(name);
+    @GetMapping(path = "/patient/diagnosis", produces = "text/plain;charset=utf-8", params = "name")
+    String findByDiagnosisName(@RequestParam("name") String name) {
+        final List<Patient> patients = patientService.findByDiagnosisNameContains(name);
+        return patients.toString();
+    }
+
+    @GetMapping(path = "/patient/specialist", produces = "text/plain;charset=utf-8", params = "id")
+    String findBySpecialist(Specialist specialist) {
+        final List<Patient> patients = patientService.findBySpecialist(specialist);
         return patients.toString();
     }
 

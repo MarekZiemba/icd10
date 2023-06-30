@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "roles")
 @Setter
@@ -21,5 +24,9 @@ public class Role {
     private int id;
 
     private String name;
+
+//    @OneToMany(fetch = FetchType.LAZY)
+//    @JoinColumn(name="role_id")
+//    private List<User> users = new ArrayList<>();
 }
 

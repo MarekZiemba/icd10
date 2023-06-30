@@ -16,16 +16,14 @@
             <tr>
                 <th>No.</th>
                 <th>Name</th>
-                <th>Diagnosis Criteria (ICD 10)</th>
-                <th>Description</th>
+                <th>Evaluation Criteria (ICD 10)</th>
                 <th>Actions</th>
             </tr>
-            <c:forEach items="${categories}" var="diagnosis">
+            <c:forEach items="${diagnoses}" var="diagnosis">
                 <tr>
                     <td>${diagnosis.id}</td>
                     <td>${diagnosis.name}</td>
-                    <td>${diagnosis.diagnosisCriteria}</td>
-                    <td>${diagnosis.description}</td>
+                    <td>${diagnosis.evaluationCriteria}</td>
                     <td>
                         <a href="<c:url value='/diagnosis/edit?id=${diagnosis.id}'/>" class="button-admin">Edit</a>
                         <a href="<c:url value='/diagnosis/remove?id=${diagnosis.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>

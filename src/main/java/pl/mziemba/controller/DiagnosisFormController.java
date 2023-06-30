@@ -71,7 +71,7 @@ public class DiagnosisFormController {
     }
 
     @GetMapping(path = "/diagnosis/search", params = "name")
-    String findByPesel(@RequestParam String name, Model model) {
+    String findByName(@RequestParam String name, Model model) {
         List<Diagnosis> diagnoses = diagnosisService.findByName(name);
         model.addAttribute("diagnoses", diagnoses);
         return "diagnosis/list";

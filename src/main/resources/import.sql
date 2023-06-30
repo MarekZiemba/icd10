@@ -2,7 +2,7 @@ insert into specializations(id, name) values (1, 'psychiatra'), (2, 'psychoterap
 
 insert into patients(insurance, dateOfBirth, firstName, lastName, pesel) values ('1234567891', '2000-01-01', 'Jan', 'Kowalski', '00010101150'), ('1234567892', '2002-01-01', 'Adam', 'Nowak', '02010101350'), ('1234567893', '1990-01-01', 'Jerzy', 'Wójcik', '90010101150');
 
-insert into diagnoses(id, description, evaluationCriteria, name) values (1, 'choroba ciężka i przewlekła, mająca tendencje do nawrotów', 'obnizenie nastroju, brak energii, brak radośći, itp.', 'Depresja'), (2, 'pacjent w różnych okresach wpadas w manię lub przygnębienie, depresję', 'okresy manii, hipomanii i depresji', 'Choroba afektywna dwubiegunowa'), (3, 'głębokie zaburzenia, w których przebiegu występuje brak spójności między myśleniem, emocjami i zachowaniem', 'urojenia, omamy, zaburzenia mowy, dezorganizacja zachowania', 'Schozofrenia');
+insert into diagnoses(id, name, evaluationCriteria) values (1, 'Otępienia w chorobie Alzheimera', '• obecność:</br>— zaburzeń pamięci (”najwyraźniejsze w zakresie uczenia się nowych informacji”)</br>— zaburzeń innych funkcji poznawczych (osądu, myślenia, planowania, organizowania, ogólnego przetwarzania informacji), które pogorszyły się w stosunku do wcześniejszego, wyższego poziomu; w obu przypadkach w stopniu powodującym zaburzenia funkcjonowania w życiu codziennym; istnienie tych zaburzeń udokumentowano w rzetelnym wywiadzie od osób z najbliższego otoczenia chorego i, w miarę możliwości, w wynikach badania neuropsychologicznego lub „ilościowymi metodami oceny procesów poznawczych”</br>• zachowana „świadomość otoczenia”, tj. brak przymglenia świadomości (definiowanego jako „zmniejszona jasność” rozpoznawania otoczenia, z mniejszą zdolnością koncentracji, podtrzymywania i przemieszczania uwagi), przynajmniej przez czas niezbędny do stwierdzenia zaburzeń funkcji poznawczych; „w przypadku nawarstwienia się epizodów zaburzeń świadomości (delirium) rozpoznanie otępienia należy odroczyć”</br>• zmniejszenie emocjonalnej kontroli nad motywacją albo zmiana zachowań społecznych przejawiająca się co najmniej jednym z następujących objawów:</br>— chwiejność emocjonalna</br>— drażliwość</br>— apatia</br>— prymitywizacja zachowań społecznych</br>• występowanie zaburzeń pamięci oraz innych funkcji poznawczych od co najmniej 6 miesięcy</br>');
 
 insert into specialists(id, specialization_id, dateOfBirth, firstName, lastName, pesel) values (1, 1, '1950-05-05', 'Jan', 'Frojd', '50050550550'), (2, 2, '1970-08-08', 'Anna', 'Terapia', '70080850881'), (3, 3, '1965-06-06', 'Zdzisław', 'Warga-Dziąślak', '65060650560'), (4, 4, '1990-05-05', 'Daniel', 'Nowy', '90050505550');
 
@@ -19,10 +19,10 @@ insert into patients_specialists(patients_id, specialists_id)values (1, 1);
 insert into patients_specialists(patients_id, specialists_id)values (2, 2);
 insert into patients_specialists(patients_id, specialists_id)values (3, 1);
 insert into patients_specialists(patients_id, specialists_id)values (3, 2);
-insert into patients_categories(patients_id, categories_id)values (1, 1);
-insert into patients_categories(patients_id, categories_id)values (2, 2);
-insert into patients_categories(patients_id, categories_id)values (3, 1);
-insert into patients_categories(patients_id, categories_id)values (3, 3);
+insert into patients_diagnoses(patients_id, diagnoses_id)values (1, 1);
+insert into patients_diagnoses(patients_id, diagnoses_id)values (2, 1);
+insert into patients_diagnoses(patients_id, diagnoses_id)values (3, 1);
+# insert into patients_diagnoses(patients_id, diagnoses_id)values (3, 2);
 insert into treatments_specialists(specialists_id, treatments_id)values (1, 4);
 insert into treatments_specialists(specialists_id, treatments_id)values (2, 1);
 insert into treatments_specialists(specialists_id, treatments_id)values (2, 2);

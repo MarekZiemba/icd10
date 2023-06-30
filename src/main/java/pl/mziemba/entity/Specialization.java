@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "specializations")
 @Setter
@@ -22,4 +25,8 @@ public class Specialization {
     @NotBlank(message = "{not.empty.error}")
     @Size(min = 2, message = "{too.short.error}")
     private String name;
+
+//    @OneToMany(fetch = FetchType.LAZY)
+//    @JoinColumn(name="specialization_id")
+//    private List<Specialist> specialists = new ArrayList<>();
 }

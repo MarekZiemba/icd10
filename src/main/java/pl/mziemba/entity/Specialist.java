@@ -8,6 +8,9 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.pl.PESEL;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "specialists")
 @Setter
@@ -34,9 +37,13 @@ public class Specialist {
     @PESEL
     private String pesel;
 
-    @NotNull
+//    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Specialization specialization;
+
+//    @OneToMany(fetch = FetchType.LAZY)
+//    @JoinColumn(name="specialist_id")
+//    private List<User> users = new ArrayList<>();
 
     public String getFullName() {
         return firstName + " " + lastName;

@@ -40,9 +40,9 @@
                     <form:errors path="insurance" cssClass="error"/>
                 </div>
                 <div class="form-group">
-                    <label for="categories"><p>Categories:</p></label>
-                    <form:select path="categories" items="${categories}" itemLabel="name" itemValue="id" multiple="true"/>
-                    <form:errors path="categories" cssClass="error"/>
+                    <label for="diagnoses"><p>Diagnoses:</p></label>
+                    <form:select path="diagnoses" items="${diagnoses}" itemLabel="name" itemValue="id" multiple="true"/>
+                    <form:errors path="diagnoses" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="specialists"><p>Specialists:</p></label>

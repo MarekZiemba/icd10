@@ -23,9 +23,7 @@ public class Diagnosis {
     @Size(min = 2, message = "{too.short.error}")
     private String name;
 
-    @Size(max = 600)
-    private String diagnosisCriteria;
+    @Size(max = 2000)
+    private String evaluationCriteria;
 
-    @Size(max = 600)
-    private String description;
 }

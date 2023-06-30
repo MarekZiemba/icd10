@@ -15,8 +15,7 @@
         <div class="sub-container">
             <form:form method="post" modelAttribute="diagnosis">
                 <div><p>Name:</p> <form:input path="name"/><form:errors path="name" cssClass="error"/></div>
-                <div><p>Diagnosis Criteria (ICD 10):</p> <form:textarea path="diagnosisCriteria" rows="4" cols="50"/><form:errors path="diagnosisCriteria" cssClass="error"/></div>
-                <div><p>Description:</p> <form:textarea path="description" rows="4" cols="50"/><form:errors path="description" cssClass="error"/></div>
+                <div><p>Evaluation Criteria:</p> <form:textarea path="evaluationCriteria" rows="4" cols="50"/><form:errors path="evaluationCriteria" cssClass="error"/></div>
                 <input type="submit" value="Update diagnosis" class="button" id="yellow-button">
             </form:form>
         </div>

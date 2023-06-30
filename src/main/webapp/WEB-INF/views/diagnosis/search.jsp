@@ -19,6 +19,10 @@
                     <label for="name">Name:</label>
                     <input id="name" name="name" type="text">
                 </div>
+<%--                <div><p>Diagnosis Name (ICD 10):</p>--%>
+<%--                    <form:select path="diagnoses" items="${diagnoses}" itemLabel="name" itemValue="id" multiple="true"/>--%>
+<%--                    <form:errors path="diagnoses" cssClass="error"/>--%>
+<%--                </div>--%>
                 <input type="submit" value="Search" class="button">
             </form>
         </div>

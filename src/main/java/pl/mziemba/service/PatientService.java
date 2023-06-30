@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.Diagnosis;
 import pl.mziemba.entity.Patient;
-import pl.mziemba.entity.Category;
 import pl.mziemba.entity.Specialist;
 import pl.mziemba.repository.PatientRepository;
 
@@ -53,20 +52,12 @@ public class PatientService {
         return patientRepository.findByInsurance(insurance);
     }
 
-    public List<Patient> findByCategory(Category category) {
-        return patientRepository.findByCategoriesContains(category);
-    }
-
-    public List<Patient> findByCategoryName(String name) {
-        return patientRepository.findByCategoriesNameContains(name);
-    }
-
     public List<Patient> findByDiagnosisContains(Diagnosis diagnosis) {
-        return patientRepository.findByDiagnosisContains(diagnosis);
+        return patientRepository.findByDiagnosesContains(diagnosis);
     }
 
     public List<Patient> findByDiagnosisNameContains(String name) {
-        return patientRepository.findByDiagnosisNameContains(name);
+        return patientRepository.findByDiagnosesNameContains(name);
     }
 
     public List<Patient> findBySpecialist(Specialist specialist) {

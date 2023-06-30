@@ -27,11 +27,6 @@ public class TreatmentController {
 
         treatment.setName(name);
 
-//        Specialist specialist = new Specialist();
-//        specialist.setFirstName(firstName);
-//        specialist.setLastName(lastName);
-//        treatment.setSpecialists(specialist);
-
         Set<Specialist> specialists = Arrays.stream(specialistIds)
                 .map(id -> new Specialist())
                 .collect(Collectors.toSet());
@@ -51,16 +46,15 @@ public class TreatmentController {
         return treatments.toString();
     }
 
-//    @GetMapping(path = "/treatment/specialist", produces = "text/plain;charset=utf-8", params = "id")
-//    String findBySpecialist(Specialist specialist) {
-//        final List<Treatment> treatments = treatmentService.findBySpecialist(specialist);
-//        return treatments.toString();
-//    }
-
     @GetMapping(path = "/treatment/specialist", produces = "text/plain;charset=utf-8", params = {"firstName", "lastName"})
     String findBySpecialistFullName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
         final List<Treatment> treatments = treatmentService.findBySpecialistFullName(firstName, lastName);
         return treatments.toString();
+    }
+
+    @DeleteMapping(path = "/treatment/{id}")
+    void deleteById(@PathVariable Long id) {
+        treatmentService.deleteById(id);
     }
 
     // umieszczenie w modelu pod kluczem 'specializations' kolekcji obiektow Specialist

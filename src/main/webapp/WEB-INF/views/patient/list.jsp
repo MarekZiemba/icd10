@@ -20,7 +20,7 @@
                 <th>Date Of Birth</th>
                 <th>PESEL</th>
                 <th>Insurance</th>
-                <th>Categories</th>
+                <th>Diagnoses (ICD 10)(</th>
                 <th>Specialists</th>
                 <th>Actions</th>
             </tr>
@@ -33,8 +33,8 @@
                     <td>${patient.pesel}</td>
                     <td>${patient.insurance}</td>
                     <td>
-                        <c:forEach items="${patient.categories}" var="category">
-                            ${category.name}
+                        <c:forEach items="${patient.diagnoses}" var="diagnosis">
+                            ${diagnosis.name}
                         </c:forEach>
                     </td>
                     <td>

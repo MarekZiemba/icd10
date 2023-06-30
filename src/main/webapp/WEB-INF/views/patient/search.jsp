@@ -76,10 +76,10 @@
         </div>
 
         <div class="sub-container">
-            <p>Find by Category</p>
-            <form action="<c:url value='/patient/search/category'/>">
+            <p>Find by Diagnosis (ICD 10)</p>
+            <form action="<c:url value='/patient/search/diagnosis'/>">
                 <div class="form-group">
-                    <label for="cname">Category name:</label>
+                    <label for="cname">Diagnosis name:</label>
                     <input id="cname" name="name" type="text">
                 </div>
                 <input type="submit" value="Search" class="button">

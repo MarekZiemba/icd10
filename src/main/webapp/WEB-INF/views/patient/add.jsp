@@ -19,9 +19,9 @@
                 <div><p>Date Of Birth:</p> <form:input path="dateOfBirth"/><form:errors path="dateOfBirth" cssClass="error"/></div>
                 <div><p>PESEL:</p> <form:input path="pesel"/><form:errors path="pesel" cssClass="error"/></div>
                 <div><p>Insurance:</p> <form:input path="insurance"/><form:errors path="insurance" cssClass="error"/></div>
-                <div><p>Categories:</p>
-                    <form:select path="categories" items="${categories}" itemLabel="name" itemValue="id" multiple="true"/>
-                    <form:errors path="categories" cssClass="error"/>
+                <div><p>Diagnoses (ICD 10):</p>
+                    <form:select path="diagnoses" items="${diagnoses}" itemLabel="name" itemValue="id" multiple="true"/>
+                    <form:errors path="diagnoses" cssClass="error"/>
                 </div>
                 <div><p>Specialists:</p>
                     <form:select path="specialists" items="${specialists}" itemLabel="fullName" itemValue="id" multiple="true"/>

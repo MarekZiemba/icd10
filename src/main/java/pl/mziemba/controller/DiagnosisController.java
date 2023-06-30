@@ -1,10 +1,7 @@
 package pl.mziemba.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.mziemba.entity.Diagnosis;
 import pl.mziemba.service.DiagnosisService;
 
@@ -17,13 +14,14 @@ public class DiagnosisController {
     private final DiagnosisService diagnosisService;
     
     @PostMapping(path = "/diagnosis")
-    void save(@RequestParam String name, @RequestParam String diagnosisCriteria, @RequestParam String description) {
+    void save(@RequestParam String name, @RequestParam String evaluationCriteria, @RequestParam String description) {
 
         final Diagnosis diagnosis = new Diagnosis();
 
         diagnosis.setName(name);
-        diagnosis.setDiagnosisCriteria(diagnosisCriteria);
-        diagnosis.setDescription(description);
+        diagnosis.setEvaluationCriteria(evaluationCriteria);
+        diagnosisService.save(diagnosis);
+
     }
 
     @GetMapping(path = "/diagnoses", produces = "text/plain;charset=utf-8")
@@ -33,8 +31,13 @@ public class DiagnosisController {
     }
 
     @GetMapping(path = "/diagnosis/name", produces = "text/plain;charset=utf-8")
-    String findByPatientPesel(@RequestParam("name") String name) {
+    String findByName(@RequestParam("name") String name) {
         final List<Diagnosis> diagnoses = diagnosisService.findByName(name);
         return diagnoses.toString();
+    }
+
+    @DeleteMapping(path = "/diagnosis/{id}")
+    void deleteById(@PathVariable Long id) {
+        diagnosisService.deleteById(id);
     }
 }

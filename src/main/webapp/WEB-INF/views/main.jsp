@@ -15,7 +15,7 @@
             <a href="<c:url value='/specialist/list'/>" class="button">Specialists</a>
             <a href="<c:url value='/treatment/list'/>" class="button">Treatments</a>
             <a href="<c:url value='/visit/list'/>" class="button">Visits</a>
-            <a href="<c:url value='/category/list'/>" class="button">Categories</a>
+            <a href="<c:url value='/diagnosis/list'/>" class="button">Diagnoses</a>
             <a href="<c:url value='/specialization/list'/>" class="button">Specializations</a>
         </div>
         <div class="sub-container">

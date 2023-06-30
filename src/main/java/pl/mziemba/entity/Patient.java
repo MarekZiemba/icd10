@@ -1,17 +1,12 @@
 package pl.mziemba.entity;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.pl.PESEL;
@@ -51,11 +46,7 @@ public class Patient {
 
     @NotNull
     @ManyToMany
-    private Set<Category> categories = new HashSet<>();
-
-    @NotNull
-    @ManyToMany
-    private Set<Diagnosis> diagnosis = new HashSet<>();
+    private Set<Diagnosis> diagnoses = new HashSet<>();
 
     @NotNull
     @ManyToMany

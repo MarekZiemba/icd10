@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import pl.mziemba.entity.Category;
+import pl.mziemba.entity.Diagnosis;
 import pl.mziemba.entity.Patient;
 import pl.mziemba.entity.Specialist;
-import pl.mziemba.service.CategoryService;
+import pl.mziemba.service.DiagnosisService;
 import pl.mziemba.service.PatientService;
 import pl.mziemba.service.SpecialistService;
 
@@ -24,14 +24,14 @@ import java.util.List;
 public class PatientFormController {
 
     private final PatientService patientService;
-    private final CategoryService categoryService;
+    private final DiagnosisService diagnosisService;
     private final SpecialistService specialistService;
 
     // wyswietlenie formularza dodawania pacjenta
     @GetMapping(path = "/patient/add")
     String showAddPatientForm(Model model) {
         model.addAttribute("patient", new Patient());
-//    model.addAttribute("categories", categoryService.getAllCategories());
+//    model.addAttribute("diagnoses", diagnosisService.getAllCategories());
 //    model.addAttribute("specialists", specialistService.getAllSpecialists())
         return "patient/add";
     }
@@ -109,6 +109,13 @@ public class PatientFormController {
         return "patient/list";
     }
 
+    @GetMapping(path = "/patient/search/diagnosis", params = "name")
+    String findByDiagnosis(@RequestParam String name, Model model) {
+        List<Patient> patients = patientService.findByDiagnosisNameContains(name);
+        model.addAttribute("patients", patients);
+        return "patient/list";
+    }
+
     @GetMapping(path = "/patient/search/specialist", params = {"firstName", "lastName"})
     String findBySpecialist(@RequestParam String firstName, @RequestParam String lastName, Model model) {
         List<Patient> patients = patientService.findBySpecialistFullName(firstName, lastName);
@@ -116,17 +123,10 @@ public class PatientFormController {
         return "patient/list";
     }
 
-    @GetMapping(path = "/patient/search/category", params = "name")
-    String findByCategory(@RequestParam String name, Model model) {
-        List<Patient> patients = patientService.findByCategoryName(name);
-        model.addAttribute("patients", patients);
-        return "patient/list";
-    }
-
-    // umieszczenie w modelu pod kluczem 'categories' kolekcji obiektow Category
-    @ModelAttribute("categories")
-    Collection<Category> categories() {
-        return categoryService.findAll();
+    // umieszczenie w modelu pod kluczem 'diagnoses' kolekcji obiektow Diagnosis
+    @ModelAttribute("diagnoses")
+    Collection<Diagnosis> diagnoses() {
+        return diagnosisService.findAll();
     }
 
     @ModelAttribute("specialists")
