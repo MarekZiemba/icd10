@@ -37,6 +37,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @EntityGraph(attributePaths = {"specialist", "roles"})
     List<User> findByRolesName(String name);
 
-//    User findById(Class<User> userClass, Long id);
+    User findById(Class<User> userClass, Long id);
 
 }

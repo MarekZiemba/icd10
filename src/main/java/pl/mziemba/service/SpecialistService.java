@@ -25,10 +25,11 @@ public class SpecialistService {
     }
 
     public void deleteById(Long id){
-//        Specialist specialist = specialistRepository.findById(Specialist.class, id);
-//        specialist.removeAllPatients();
-//        specialist.removeSpecialization();
-
+        Specialist specialist = specialistRepository.findById(Specialist.class, id);
+        specialist.removeAllPatients();
+        specialist.removeAllTreatments();
+        specialist.removeUser();
+        specialist.removeAllVisits();
         specialistRepository.deleteById(id);
     }
 

@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.mapping.ValueVisitor;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -33,21 +34,25 @@ public class Treatment {
     private String description;
 
 //    @NotNull
-    @ManyToMany(cascade = CascadeType.REMOVE)
-//    @ManyToMany(cascade = CascadeType.REMOVE, mappedBy = "treatments")
+    @ManyToMany(fetch = FetchType.LAZY)
     private Set<Specialist> specialists = new HashSet<>();
 
-    //nie wie, że jest w Wizytach (USUWAM TO 2023-07-01)
-//    @OneToMany(cascade = CascadeType.REMOVE)
-//    @JoinColumn(name = "treatment_id")
-//    private List<Visit> visits = new ArrayList<>();
+    @OneToMany(mappedBy = "treatment")
+    private Set<Visit> visits;
 
+    public void removeAllSpecialists() {
+        for (Specialist specialist : specialists) {
+        specialist.getTreatments().remove(this);
+        }
+        specialists.clear();
+    }
 
-//    public void removeAllVisits() {
-//        for (Visit visit : visits) {
-//            visit.setPatient(null);
-//        }
-//        visits.clear();
-//    }
+    public void removeAllVisits() {
+        for (Visit visit : visits) {
+            visit.setTreatment(null);
+        }
+        visits.clear();
+    }
+
 
 }

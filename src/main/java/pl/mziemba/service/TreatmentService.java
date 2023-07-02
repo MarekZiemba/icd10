@@ -25,6 +25,9 @@ public class TreatmentService {
     }
 
     public void deleteById(Long id){
+        Treatment treatment = treatmentRepository.findById(Treatment.class, id);
+        treatment.removeAllSpecialists();
+        treatment.removeAllVisits();
         treatmentRepository.deleteById(id);
     }
 

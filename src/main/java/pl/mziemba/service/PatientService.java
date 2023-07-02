@@ -26,15 +26,12 @@ public class PatientService {
     }
 
     public void deleteById(Long id){
-        // Pobierz pacjenta, którego chcemy usunąć
-//        Patient patient = patientRepository.findById(Patient.class, id);
-//
-//        // Usuwamy powiązania pacjenta
-//        patient.removeAllSpecialists();
-////        (USUWAM TO 2023-07-01)
-////        patient.removeAllVisits();
-//        patient.removeAllDiagnoses();
-
+        // Pobieramy pacjenta, którego chcemy usunąć
+        Patient patient = patientRepository.findById(Patient.class, id);
+        // Usuwamy powiązania pacjenta
+        patient.removeAllDiagnoses();
+        patient.removeAllSpecialists();
+        patient.removeAllVisits();
         // Usuwamy pacjenta
         patientRepository.deleteById(id);
     }

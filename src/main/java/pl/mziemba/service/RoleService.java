@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.Role;
+import pl.mziemba.entity.User;
 import pl.mziemba.repository.RoleRepository;
 
 import java.util.List;
@@ -24,6 +25,8 @@ public class RoleService {
     }
 
     public void deleteById(Long id){
+        Role role = roleRepository.findById(Role.class, id);
+        role.removeUser();
         roleRepository.deleteById(id);
     }
 
@@ -38,4 +41,5 @@ public class RoleService {
     public List<Role> findByName(String name) {
         return roleRepository.findByName(name);
     }
+
 }

@@ -22,18 +22,20 @@ public class Diagnosis {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "{not.empty.error}")
-    @Size(min = 2, message = "{too.short.error}")
+//    @NotBlank(message = "{not.empty.error}")
+//    @Size(min = 2, message = "{too.short.error}")
     private String name;
 
-    @Size(max = 2000)
+//    @Size(max = 2000)
     private String evaluationCriteria;
 
-//    public void removeAllPatients() {
-//        for (Patient patient : patients) {
-////            patient.setDiagnoses(null);
-//            patient.getDiagnoses().remove(this);
-//        }
-//        patients.clear();
-//    }
+    @ManyToMany(mappedBy = "diagnoses")
+    private Set<Patient> patients;
+
+    public void removeAllPatients() {
+        for (Patient patient : patients) {
+            patient.getDiagnoses().remove(this);
+        }
+        patients.clear();
+    }
 }

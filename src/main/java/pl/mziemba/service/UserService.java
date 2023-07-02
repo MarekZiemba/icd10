@@ -39,9 +39,8 @@ public class UserService {
     }
 
     public void deleteById(Long id){
-//        User user = userRepository.findById(User.class, id);
-//        user.removeSpecialist();
-
+        User user = userRepository.findById(User.class, id);
+        user.removeSpecialist();
         userRepository.deleteById(id);
     }
 

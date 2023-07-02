@@ -25,9 +25,8 @@ public class DiagnosisService {
     }
 
     public void deleteById(Long id){
-//        Diagnosis diagnosis = diagnosisRepository.findById(Diagnosis.class, id);
-//        diagnosis.removeAllPatients();
-
+        Diagnosis diagnosis = diagnosisRepository.findById(Diagnosis.class, id);
+        diagnosis.removeAllPatients();
         diagnosisRepository.deleteById(id);
     }
 
@@ -43,8 +42,5 @@ public class DiagnosisService {
         return diagnosisRepository.findByName(name);
     }
 
-//    public List<Diagnosis> findByPatientsContains(Patient patient) {
-//        return diagnosisRepository.findByPatientsContains(patient);
-//    }
     
 }

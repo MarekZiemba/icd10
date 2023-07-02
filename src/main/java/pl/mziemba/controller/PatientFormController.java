@@ -31,8 +31,8 @@ public class PatientFormController {
     @GetMapping(path = "/patient/add")
     String showAddPatientForm(Model model) {
         model.addAttribute("patient", new Patient());
-//    model.addAttribute("diagnoses", diagnosisService.getAllCategories());
-//    model.addAttribute("specialists", specialistService.getAllSpecialists())
+//    model.addAttribute("diagnoses", diagnosisService.getClass());
+//    model.addAttribute("specialists", specialistService.getClass());
         return "patient/add";
     }
 

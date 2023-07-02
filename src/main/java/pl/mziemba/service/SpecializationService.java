@@ -3,6 +3,7 @@ package pl.mziemba.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pl.mziemba.entity.Specialist;
 import pl.mziemba.entity.Specialization;
 import pl.mziemba.repository.SpecializationRepository;
 
@@ -24,9 +25,8 @@ public class SpecializationService {
     }
 
     public void deleteById(Long id){
-//        Specialization specialization = specializationRepository.findById(Specialization.class, id);
-//        specialization.removeAllSpecialists();
-
+        Specialization specialization = specializationRepository.findById(Specialization.class, id);
+        specialization.removeAllSpecialists();
         specializationRepository.deleteById(id);
     }
 

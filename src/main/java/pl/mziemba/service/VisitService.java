@@ -28,11 +28,6 @@ public class VisitService {
     }
 
     public void deleteById(Long id){
-//        (USUWAM TO 2023-07-01)
-//                Visit visit = visitRepository.findById(Visit.class, id);
-//        visit.removePatient();
-//        visit.removeSpecialist();
-//        visit.removeTreatment();
         visitRepository.deleteById(id);
     }
 

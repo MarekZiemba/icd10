@@ -9,7 +9,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "roles")
@@ -25,11 +27,15 @@ public class Role {
 
     private String name;
 
-    // Rola nie widzi usera (USUWAM TO 2023-07-01)
-//    @OneToMany(fetch = FetchType.LAZY) // OK (2023-07-01)
-////    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-//    @JoinColumn(name="role_id")
-//    private List<User> users = new ArrayList<>();
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
+
+    public void removeUser(){
+        for (User user : users) {
+            user.getRoles().remove(this);
+        }
+        users.clear();
+    }
 
 }
 

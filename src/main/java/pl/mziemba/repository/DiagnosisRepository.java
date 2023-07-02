@@ -11,20 +11,14 @@ import java.util.Optional;
 public interface DiagnosisRepository  extends JpaRepository<Diagnosis, Long> {
 
     @Override
-//    @EntityGraph(attributePaths = "patients")
     List<Diagnosis> findAll();
 
     @Override
-//    @EntityGraph(attributePaths = "patients")
     Optional<Diagnosis> findById(Long id);
 
-//    @EntityGraph(attributePaths = "patients")
     List<Diagnosis> findByName(String name);
 
-//    @EntityGraph(attributePaths = "patients")
-//    Diagnosis findById(Class<Diagnosis> diagnosisClass, Long id);
-
-//    @EntityGraph(attributePaths = "patients")
-//    List<Diagnosis> findByPatientsContains(Patient patient);
+    @EntityGraph(attributePaths = "patients")
+    Diagnosis findById(Class<Diagnosis> diagnosisClass, Long id);
 
 }

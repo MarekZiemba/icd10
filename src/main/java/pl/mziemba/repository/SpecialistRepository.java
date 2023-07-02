@@ -12,35 +12,27 @@ import java.util.Optional;
 public interface SpecialistRepository extends JpaRepository<Specialist, Long> {
 
     @Override
-//    @EntityGraph(attributePaths = {"specialization", "patients", "treatments"})
     @EntityGraph(attributePaths = "specialization")
     List<Specialist> findAll();
 
     @Override
-//    @EntityGraph(attributePaths = {"specialization", "patients", "treatments"})
     @EntityGraph(attributePaths = "specialization")
     Optional<Specialist> findById(Long id);
 
-//    @EntityGraph(attributePaths = {"specialization", "patients", "treatments"})
     @EntityGraph(attributePaths = "specialization")
     List<Specialist> findByFirstNameContainsAndLastNameContains(String firstName, String lastName);
 
-//    @EntityGraph(attributePaths = {"specialization", "patients", "treatments"})
     @EntityGraph(attributePaths = "specialization")
     List<Specialist> findByDateOfBirth(String dateOfBirth);
 
-//    @EntityGraph(attributePaths = {"specialization", "patients", "treatments"})
     @EntityGraph(attributePaths = "specialization")
     List<Specialist> findByPesel(String pesel);
 
-//    @EntityGraph(attributePaths = {"specialization", "patients", "treatments"})
     @EntityGraph(attributePaths = "specialization")
     List<Specialist> findBySpecialization(@Param("specialization") Specialization specialization);
 
-//    @EntityGraph(attributePaths = {"specialization", "patients", "treatments"})
     @EntityGraph(attributePaths = "specialization")
     List<Specialist> findBySpecializationName(String name);
 
-//    Specialist findById(Class<Specialist> specialistClass, Long id);
-
+    Specialist findById(Class<Specialist> specialistClass, Long id);
 }

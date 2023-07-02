@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="Methode: safely delete from patients">
+    <list default="true" id="306e4a39-db30-4a8f-9306-cfd7a3e7b7ed" name="Changes" comment="Commit before new methods added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/UserFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/UserFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/controller/PatientFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Diagnosis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Diagnosis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Role.java" afterDir="false" />
@@ -19,6 +17,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/entity/Visit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/DiagnosisRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/DiagnosisRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/PatientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/RoleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecialistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecialistRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecializationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/SpecializationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/TreatmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/TreatmentRepository.java" afterDir="false" />
@@ -26,17 +25,14 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/VisitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/repository/VisitRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/DiagnosisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/DiagnosisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/PatientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/RoleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecialistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecialistService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecializationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/SpecializationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/TreatmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/TreatmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mziemba/service/VisitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/import.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/specialist/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/patient/edit.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +68,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/marek/Programowanie/06_Modul/Projekt koncowy/T2/icd10&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/marek/Programowanie/06_Modul/SpringSecurity/Marcin/ONL_JEE_W_20-spring-boot-demo&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -166,7 +162,8 @@
       <workItem from="1688166779012" duration="3391000" />
       <workItem from="1688205492683" duration="19931000" />
       <workItem from="1688236488629" duration="1225000" />
-      <workItem from="1688306014359" duration="5642000" />
+      <workItem from="1688306014359" duration="18409000" />
+      <workItem from="1688333336615" duration="5552000" />
     </task>
     <task id="LOCAL-00001" summary="Firts Commit">
       <created>1687203685991</created>
@@ -358,11 +355,30 @@
       <option name="project" value="LOCAL" />
       <updated>1688142592562</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Commit before new methods added">
+      <option name="closed" value="true" />
+      <created>1688311888888</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1688311888888</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Firts Commit" />
@@ -389,7 +405,8 @@
     <MESSAGE value="NEW: Diagnosis: Repo, Service, Controllers, Forms" />
     <MESSAGE value="DELETE: Category: Repo, Service, Controllers, Forms" />
     <MESSAGE value="Methode: safely delete from patients" />
-    <option name="LAST_COMMIT_MESSAGE" value="Methode: safely delete from patients" />
+    <MESSAGE value="Commit before new methods added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit before new methods added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

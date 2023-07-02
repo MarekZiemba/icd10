@@ -39,8 +39,7 @@
                     <form:input path="insurance" id="insurance"/>
                     <form:errors path="insurance" cssClass="error"/>
                 </div>
-                <div class="form-group">
-                    <label for="diagnoses"><p>Diagnoses:</p></label>
+                <div><p>Diagnoses (ICD 10):</p>
                     <form:select path="diagnoses" items="${diagnoses}" itemLabel="name" itemValue="id" multiple="true"/>
                     <form:errors path="diagnoses" cssClass="error"/>
                 </div>

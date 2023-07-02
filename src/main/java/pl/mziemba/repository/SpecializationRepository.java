@@ -16,6 +16,6 @@ public interface SpecializationRepository extends JpaRepository<Specialization, 
 
     List<Specialization> findByName(String name);
 
-//    Specialization findById(Class<Specialization> specializationClass, Long id);
+    Specialization findById(Class<Specialization> specializationClass, Long id);
 
 }

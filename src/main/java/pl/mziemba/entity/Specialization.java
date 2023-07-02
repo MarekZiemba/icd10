@@ -10,6 +10,7 @@ import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "specializations")
@@ -26,17 +27,14 @@ public class Specialization {
     @Size(min = 2, message = "{too.short.error}")
     private String name;
 
-////    specializacja nie wie o specialiscie
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-//    @JoinColumn(name="specialization_id")
-//    private List<Specialist> specialists = new ArrayList<>();
+    @OneToMany(mappedBy = "specialization")
+    private Set<Specialist> specialists ;
 
-//    @PreRemove
-//    public void removeAllSpecialists() {
-////        for (Specialist specialist : specialists) {
-////            specialist.getSpecialization().remove(this);
-////        }
-//        specialists.clear();
-//    }
+    public void removeAllSpecialists() {
+        for (Specialist specialist : specialists) {
+            specialist.setSpecialization(null);
+        }
+        specialists.clear();
+    }
 
 }

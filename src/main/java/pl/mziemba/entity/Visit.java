@@ -34,57 +34,17 @@ public class Visit {
 
 //    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
 //    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "treatment_id")
     private Treatment treatment;
 
 //    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "specialist_id")
     private Specialist specialist;
-
-//    @PreRemove
-    //(USUWAM TO 2023-07-01)
-//    public void removeSpecialist() {
-////        specialist.getVisits().remove(this);
-//        if (specialist != null) {
-//            specialist.getVisits().remove(this);
-//            specialist = null;
-//        }
-//    }
-
-//    public void removePatient() {
-//        if (patient != null) {
-//            patient.getVisits().remove(this);
-//            patient = null;
-//        }
-//        patient.getVisits().remove(this);
-//    }
-
-//    (USUWAM TO 2023-07-01)
-//    public void removeTreatment() {
-////        treatment.getVisits().remove(this);
-//        if (treatment != null) {
-//            treatment.getVisits().remove(this);
-//            treatment = null;
-//        }
-//    }
-
-//    (USUWAM TO 2023-07-01)
-//    public void removePatient() {
-//        if (patient != null) {
-//            patient.getVisits().remove(this);
-//            patient = null;
-//        }
-//    }
-
-
 
 }

@@ -39,49 +39,53 @@ public class Specialist {
     @PESEL
     private String pesel;
 
-////    @NotNull
-//    @ManyToMany(cascade = CascadeType.REMOVE)
-//    private Set<Patient> patients = new HashSet<>();
+//    @NotNull
+    @ManyToMany(mappedBy = "specialists")
+    private Set<Patient> patients;
 
 //    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Specialization specialization;
 
-//    Specialista nie wie o Visit (USUWAM TO 2023-07-01)
-//    @OneToMany(cascade = CascadeType.REMOVE)
-//    @JoinColumn(name="specialist_id")
-//    private List<Visit> visits = new ArrayList<>();
+    @ManyToMany(mappedBy = "specialists")
+    private Set<Treatment> treatments;
 
-//    Specialista nie wie o Treatment
-//    @ManyToMany(cascade = CascadeType.REMOVE)
-//    private Set<Treatment> treatments = new HashSet<>();
+    @OneToOne(mappedBy = "specialist")
+    private User user;
 
-    // dziala kasowanie specjalisty z usera, Specjalista nic nie wie o Userach
-//    @OneToOne(cascade = CascadeType.REMOVE)
-//    @JoinColumn(name = "id", unique=true)
-//    private User user = new User();
+    @OneToMany(mappedBy = "specialist")
+    private Set<Visit> visits;
 
     public String getFullName() {
         return firstName + " " + lastName;
     }
 
-//    @PreRemove
-//    public void removeAllPatients() {
-//        for (Patient patient : patients) {
-//            patient.getSpecialists().remove(this);
-//        }
-//        patients.clear();
-//    }
-//
-//    public void removeSpecialization() {
-////        specialization.getSpecialists().remove(this);
-//        if (specialization != null) {
-//            specialization.getSpecialists().remove(this);
-//            specialization = null;
-//
-//        }
-//    }
+    public void removeAllPatients() {
+        for (Patient patient : patients) {
+            patient.getSpecialists().remove(this);
+        }
+        patients.clear();
+    }
 
+    public void removeAllTreatments() {
+        for (Treatment treatment : treatments) {
+            treatment.getSpecialists().remove(this);
+        }
+        treatments.clear();
+    }
 
+    public void removeUser () {
+        if (user != null) {
+            user.setSpecialist(null);
+            user = null;
+        }
+
+    }
+    public void removeAllVisits() {
+        for (Visit visit : visits) {
+            visit.setSpecialist(null);
+        }
+        visits.clear();
+    }
 
 }
