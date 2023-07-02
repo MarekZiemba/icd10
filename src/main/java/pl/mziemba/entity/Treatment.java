@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -31,7 +33,21 @@ public class Treatment {
     private String description;
 
 //    @NotNull
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.REMOVE)
+//    @ManyToMany(cascade = CascadeType.REMOVE, mappedBy = "treatments")
     private Set<Specialist> specialists = new HashSet<>();
+
+    //nie wie, że jest w Wizytach (USUWAM TO 2023-07-01)
+//    @OneToMany(cascade = CascadeType.REMOVE)
+//    @JoinColumn(name = "treatment_id")
+//    private List<Visit> visits = new ArrayList<>();
+
+
+//    public void removeAllVisits() {
+//        for (Visit visit : visits) {
+//            visit.setPatient(null);
+//        }
+//        visits.clear();
+//    }
 
 }

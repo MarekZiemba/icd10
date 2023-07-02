@@ -7,8 +7,11 @@ import pl.mziemba.entity.Specialist;
 import pl.mziemba.entity.User;
 import pl.mziemba.service.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,7 +23,7 @@ public class UserController {
 
 
     @PostMapping(path = "/user")
-    void save(@RequestParam String username, @RequestParam String password, @RequestParam int enabled, @RequestParam String specialistFirstName, @RequestParam String specialistLastName,  @RequestParam String name) {
+    void save(@RequestParam String username, @RequestParam String password, @RequestParam int enabled, @RequestParam String specialistFirstName, @RequestParam String specialistLastName,  @RequestParam("roleId") Long[] roleId) {
 
         final User user = new User();
 
@@ -34,10 +37,10 @@ public class UserController {
         specialistService.save(specialist);
         user.setSpecialist(specialist);
         
-        Role role = new Role();
-        role.setName(name);
-        roleService.save(role);
-        user.setRole(role);
+        Set<Role> roles = Arrays.stream(roleId)
+                        .map(id -> new Role())
+                                .collect(Collectors.toSet());
+        user.setRoles(roles);
         
         userService.save(user);
     }
@@ -49,8 +52,8 @@ public class UserController {
     }
 
     @GetMapping(path = "/user/username", produces = "text/plain;charset=utf-8")
-    String findByDate(@RequestParam("username") String username) {
-        final Optional<User> users = userService.findByUsername(username);
+    String findByUsername(@RequestParam("username") String username) {
+        final List<User> users = userService.findByUsername(username);
         return users.toString();
     }
 
@@ -61,14 +64,14 @@ public class UserController {
     }
 
     @GetMapping(path = "/user/specialist", produces = "text/plain;charset=utf-8", params = {"firstName", "lastName"})
-    String findByPSpecialistFullName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
+    String findBySpecialistFullName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
         final List<User> users = userService.findBySpecialistByFullName(firstName, lastName);
         return users.toString();
     }
 
     @GetMapping(path = "/user/role", produces = "text/plain;charset=utf-8", params = "id")
     String findByTreatment(Role role) {
-        final List<User> users = userService.findByRole(role);
+        final List<User> users = userService.findByRoles(role);
         return users.toString();
     }
 

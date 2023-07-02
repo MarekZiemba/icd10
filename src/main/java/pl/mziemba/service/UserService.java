@@ -5,13 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.*;
 import pl.mziemba.exceptions.*;
-import pl.mziemba.exceptions.ValidationException;
 import pl.mziemba.repository.UserRepository;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -43,6 +39,9 @@ public class UserService {
     }
 
     public void deleteById(Long id){
+//        User user = userRepository.findById(User.class, id);
+//        user.removeSpecialist();
+
         userRepository.deleteById(id);
     }
 
@@ -54,8 +53,8 @@ public class UserService {
         return userRepository.findById(id).get();
     }
 
-    public Optional<User> findByUsername(String username) {
-        return userRepository.findByUsername(username);
+    public List<User> findByUsername(String username) {
+        return userRepository.findByUsernameContains(username);
     }
 
     public  List<User> findBySpecialist(Specialist specialist) {
@@ -65,12 +64,12 @@ public class UserService {
         return userRepository.findBySpecialistFirstNameAndSpecialistLastName(firstName, lastName);
     }
 
-    public  List<User> findByRole(Role role) {
-        return userRepository.findByRole(role);
+    public  List<User> findByRoles(Role role) {
+        return userRepository.findByRoles(role);
     }
 
     public  List<User> findByRoleName(String name) {
-        return userRepository.findByRoleName(name);
+        return userRepository.findByRolesName(name);
     }
     
 }

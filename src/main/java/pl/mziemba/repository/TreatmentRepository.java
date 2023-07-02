@@ -22,8 +22,8 @@ public interface TreatmentRepository extends JpaRepository<Treatment, Long> {
     @EntityGraph(attributePaths = "specialists")
     List<Treatment> findByName(String name);
 
-//    @EntityGraph(attributePaths = "specialists")
-//    List<Treatment> findBySpecialist(@Param("specialist") Specialist specialist);
+    @EntityGraph(attributePaths = "specialists")
+    List<Treatment> findBySpecialists(@Param("specialist") Specialist specialist);
 
     @EntityGraph(attributePaths = "specialists")
     List<Treatment> findBySpecialistsFirstNameAndSpecialistsLastName(String firstName, String lastName);

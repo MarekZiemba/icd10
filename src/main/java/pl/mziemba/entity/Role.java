@@ -25,8 +25,11 @@ public class Role {
 
     private String name;
 
-//    @OneToMany(fetch = FetchType.LAZY)
+    // Rola nie widzi usera (USUWAM TO 2023-07-01)
+//    @OneToMany(fetch = FetchType.LAZY) // OK (2023-07-01)
+////    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 //    @JoinColumn(name="role_id")
 //    private List<User> users = new ArrayList<>();
+
 }
 

@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "users")
 @Setter
@@ -33,12 +35,27 @@ public class User {
     private int enabled;
 
 //    @NotEmpty
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne
+//    @JoinColumn(name = "specialistt_id")
+//    @OneToOne(cascade = CascadeType.REMOVE) (USUWAM TO 2023-07-01)
+//    @JoinColumn(name = "specialist_id", unique=true) (USUWAM TO 2023-07-01)
     private Specialist specialist;
 
 //    @NotEmpty
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Role role;
+//    @ManyToOne(fetch = FetchType.LAZY) (USUWAM TO 2023-07-01)
+//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+//    private Role role;
+
+    @ManyToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private Set<Role> roles;
+
+    // dziala kasowanie specjalisty z usera, Specjalista nic nie wie o Userach (USUWAM TO 2023-07-01)
+//    public void removeSpecialist() {
+//        if (specialist != null) {
+//            specialist.getUser().remove(this);
+//            specialist = null;
+//        }
+//    }
 
 //    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = JoinColumn(name = "role_id"))

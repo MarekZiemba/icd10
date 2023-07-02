@@ -13,26 +13,30 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @Override
-    @EntityGraph(attributePaths = {"specialist", "role"})
+    @EntityGraph(attributePaths = {"specialist", "roles"})
     List<User> findAll();
 
     @Override
-    @EntityGraph(attributePaths = {"specialist", "role"})
+    @EntityGraph(attributePaths = {"specialist", "roles"})
     Optional<User> findById(Long id);
 
-    @EntityGraph(attributePaths = {"specialist", "role"})
+    @EntityGraph(attributePaths = {"specialist", "roles"})
     Optional<User> findByUsername(String username);
+    @EntityGraph(attributePaths = {"specialist", "roles"})
+    List<User> findByUsernameContains(String username);
 
-    @EntityGraph(attributePaths = {"specialist", "role"})
+    @EntityGraph(attributePaths = {"specialist", "roles"})
     List<User> findBySpecialist(@Param("specialist") Specialist specialist);
 
-    @EntityGraph(attributePaths = {"specialist", "role"})
+    @EntityGraph(attributePaths = {"specialist", "roles"})
     List<User> findBySpecialistFirstNameAndSpecialistLastName(String firstName, String lastName);
 
-    @EntityGraph(attributePaths = {"specialist", "role"})
-    List<User> findByRole(@Param("role") Role role);
+    @EntityGraph(attributePaths = {"specialist", "roles"})
+    List<User> findByRoles(@Param("roles") Role roles);
 
-    @EntityGraph(attributePaths = {"specialist", "role"})
-    List<User> findByRoleName(String name);
+    @EntityGraph(attributePaths = {"specialist", "roles"})
+    List<User> findByRolesName(String name);
+
+//    User findById(Class<User> userClass, Long id);
 
 }

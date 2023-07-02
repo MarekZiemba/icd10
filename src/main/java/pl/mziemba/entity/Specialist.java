@@ -39,21 +39,49 @@ public class Specialist {
     @PESEL
     private String pesel;
 
-//    @NotNull
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Patient> patients = new HashSet<>();
+////    @NotNull
+//    @ManyToMany(cascade = CascadeType.REMOVE)
+//    private Set<Patient> patients = new HashSet<>();
 
 //    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Specialization specialization;
+
+//    Specialista nie wie o Visit (USUWAM TO 2023-07-01)
+//    @OneToMany(cascade = CascadeType.REMOVE)
+//    @JoinColumn(name="specialist_id")
+//    private List<Visit> visits = new ArrayList<>();
+
+//    Specialista nie wie o Treatment
+//    @ManyToMany(cascade = CascadeType.REMOVE)
+//    private Set<Treatment> treatments = new HashSet<>();
+
+    // dziala kasowanie specjalisty z usera, Specjalista nic nie wie o Userach
+//    @OneToOne(cascade = CascadeType.REMOVE)
+//    @JoinColumn(name = "id", unique=true)
+//    private User user = new User();
 
     public String getFullName() {
         return firstName + " " + lastName;
     }
 
-    public void removePatient(Patient patient) {
-        patients.remove(patient);
-        patient.getSpecialists().remove(this);
-    }
+//    @PreRemove
+//    public void removeAllPatients() {
+//        for (Patient patient : patients) {
+//            patient.getSpecialists().remove(this);
+//        }
+//        patients.clear();
+//    }
+//
+//    public void removeSpecialization() {
+////        specialization.getSpecialists().remove(this);
+//        if (specialization != null) {
+//            specialization.getSpecialists().remove(this);
+//            specialization = null;
+//
+//        }
+//    }
+
+
 
 }

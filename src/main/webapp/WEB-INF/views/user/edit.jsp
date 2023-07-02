@@ -34,13 +34,12 @@
                     <form:select path="specialist.id" items="${specialists}" itemLabel="fullName" itemValue="id"/>
                     <form:errors path="specialist" cssClass="error"/>
                 </div>
-                <div class="form-group">
-                    <label for="role.id"><p>Role:</p></label>
-                    <form:select path="role.id" items="${roles}" itemLabel="name" itemValue="id"/>
-                    <form:errors path="role" cssClass="error"/>
+                <div class="form-group"><p>Roles:</p>
+                    <form:select path="roles" items="${roles}" itemLabel="name" itemValue="id" multiple="true"/>
+                    <form:errors path="roles" cssClass="error"/>
                 </div>
                 <input type="hidden" path="id"/>
-                <input type="submit" value="Update" class="button" class="button" id="yellow-button">
+                <input type="submit" value="Update" class="button" id="yellow-button">
             </form:form>
         </div>
         <div class="sub-container-bottom">

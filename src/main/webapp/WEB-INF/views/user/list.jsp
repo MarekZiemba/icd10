@@ -23,14 +23,18 @@
             <c:forEach items="${users}" var="user">
                 <tr>
                     <td>${user.id}</td>
+<%--                    <td>${user.username}</td>--%>
                     <td>${user.username}</td>
                     <td>${user.specialist.firstName} ${user.specialist.lastName}</td>
-                    <td>${user.role.name}</td>
+                    <td>
+                        <c:forEach items="${user.roles}" var="role">
+                            ${role.name}
+                        </c:forEach>
+                    </td>
                     <td>
                         <a href="<c:url value='/user/edit?id=${user.id}'/>" class="button">Edit</a>
                         <a href="<c:url value='/user/remove?id=${user.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
-
                 </tr>
             </c:forEach>
         </table>

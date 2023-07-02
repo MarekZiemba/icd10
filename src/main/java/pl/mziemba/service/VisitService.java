@@ -28,9 +28,11 @@ public class VisitService {
     }
 
     public void deleteById(Long id){
-//        Patient patient = patientRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid patient Id:" + id));
-//        List<Visit> visits = visitRepository.findByPatient(patient);
-//        visitRepository.deleteAll(visits);
+//        (USUWAM TO 2023-07-01)
+//                Visit visit = visitRepository.findById(Visit.class, id);
+//        visit.removePatient();
+//        visit.removeSpecialist();
+//        visit.removeTreatment();
         visitRepository.deleteById(id);
     }
 

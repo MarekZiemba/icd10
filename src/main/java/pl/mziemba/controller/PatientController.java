@@ -18,7 +18,7 @@ public class PatientController {
     private final PatientService patientService;
 
     @PostMapping(path = "/patient")
-    void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String insurance, @RequestParam("diagnosisId") Long[] diagnosisId, @RequestParam("categoryId") Long[] categoryIds,@RequestParam("specialistId") Long[] specialistIds) {
+    void save(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String dateOfBirth, @RequestParam String pesel, @RequestParam String insurance, @RequestParam("diagnosisId") Long[] diagnosisId,@RequestParam("specialistId") Long[] specialistIds) {
 
         final Patient patient = new Patient();
 

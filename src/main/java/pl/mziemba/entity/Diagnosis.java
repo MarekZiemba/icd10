@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "diagnoses")
 @Setter
@@ -26,4 +29,11 @@ public class Diagnosis {
     @Size(max = 2000)
     private String evaluationCriteria;
 
+//    public void removeAllPatients() {
+//        for (Patient patient : patients) {
+////            patient.setDiagnoses(null);
+//            patient.getDiagnoses().remove(this);
+//        }
+//        patients.clear();
+//    }
 }

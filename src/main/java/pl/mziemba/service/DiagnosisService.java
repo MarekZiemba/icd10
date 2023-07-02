@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.Diagnosis;
+import pl.mziemba.entity.Patient;
 import pl.mziemba.repository.DiagnosisRepository;
 
 import java.util.List;
@@ -24,6 +25,9 @@ public class DiagnosisService {
     }
 
     public void deleteById(Long id){
+//        Diagnosis diagnosis = diagnosisRepository.findById(Diagnosis.class, id);
+//        diagnosis.removeAllPatients();
+
         diagnosisRepository.deleteById(id);
     }
 
@@ -38,5 +42,9 @@ public class DiagnosisService {
     public List<Diagnosis> findByName(String name) {
         return diagnosisRepository.findByName(name);
     }
+
+//    public List<Diagnosis> findByPatientsContains(Patient patient) {
+//        return diagnosisRepository.findByPatientsContains(patient);
+//    }
     
 }

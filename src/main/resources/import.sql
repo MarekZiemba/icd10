@@ -10,7 +10,8 @@ insert into treatments(id, name, description) values (1, 'porada psychologiczna'
 
 insert into roles(id, name) values (1, 'admin'), (2, 'user');
 
-insert into users (id, enabled, role_id, specialist_id, username, password) values (1, 1, 1, 1, 'jan', '$2a$10$qWodKqdvvW0GWP.ajNceNuCl.yOdqUjPwBHKbyFDjLo99iX02Mc46'), (2, 1, 2, 2, 'anna', '$2a$10$uoYr5Y1b8Sa234ShpZx49Onp9F5FZKbrzStlwDepctBQVdntqlc.u'), (3, 1, 2, 3, 'zdzislaw', '$2a$10$uoYr5Y1b8Sa234ShpZx49Onp9F5FZKbrzStlwDepctBQVdntqlc.u'), (4, 1, 2, 4, 'daniel', '$2a$10$uoYr5Y1b8Sa234ShpZx49Onp9F5FZKbrzStlwDepctBQVdntqlc.u');
+insert into users (id, enabled, specialist_id, username, password) values (1, 1, 1, 'jan', '$2a$10$qWodKqdvvW0GWP.ajNceNuCl.yOdqUjPwBHKbyFDjLo99iX02Mc46'), (2, 1, 2, 'anna', '$2a$10$uoYr5Y1b8Sa234ShpZx49Onp9F5FZKbrzStlwDepctBQVdntqlc.u'), (3, 1, 3, 'zdzislaw', '$2a$10$uoYr5Y1b8Sa234ShpZx49Onp9F5FZKbrzStlwDepctBQVdntqlc.u'), (4, 1, 4, 'daniel', '$2a$10$uoYr5Y1b8Sa234ShpZx49Onp9F5FZKbrzStlwDepctBQVdntqlc.u');
+# insert into users (id, enabled, role_id, specialist_id, username, password) values (1, 1, 1, 1, 'jan', '$2a$10$qWodKqdvvW0GWP.ajNceNuCl.yOdqUjPwBHKbyFDjLo99iX02Mc46'), (2, 1, 2, 2, 'anna', '$2a$10$uoYr5Y1b8Sa234ShpZx49Onp9F5FZKbrzStlwDepctBQVdntqlc.u'), (3, 1, 2, 3, 'zdzislaw', '$2a$10$uoYr5Y1b8Sa234ShpZx49Onp9F5FZKbrzStlwDepctBQVdntqlc.u'), (4, 1, 2, 4, 'daniel', '$2a$10$uoYr5Y1b8Sa234ShpZx49Onp9F5FZKbrzStlwDepctBQVdntqlc.u');
 
 insert into visits(id, dateOfVisit, timeOfVisit, description, patient_id, treatment_id, specialist_id) values (1, '2023-06-01', '10:00:00', 'Od ostatniego spotkania, pacjent ... itd.itp.', 1, 4, 1);
 insert into visits(id, dateOfVisit, timeOfVisit, description, patient_id, treatment_id, specialist_id) values (2, '2023-06-01', '11:00:00', 'Od ostatniej porady, pacjent ... itd.itp.', 2, 2, 2);
@@ -19,10 +20,12 @@ insert into patients_specialists(patients_id, specialists_id)values (1, 1);
 insert into patients_specialists(patients_id, specialists_id)values (2, 2);
 insert into patients_specialists(patients_id, specialists_id)values (3, 1);
 insert into patients_specialists(patients_id, specialists_id)values (3, 2);
+
 insert into patients_diagnoses(patients_id, diagnoses_id)values (1, 1);
 insert into patients_diagnoses(patients_id, diagnoses_id)values (2, 1);
 insert into patients_diagnoses(patients_id, diagnoses_id)values (3, 1);
 # insert into patients_diagnoses(patients_id, diagnoses_id)values (3, 2);
+
 insert into treatments_specialists(specialists_id, treatments_id)values (1, 4);
 insert into treatments_specialists(specialists_id, treatments_id)values (2, 1);
 insert into treatments_specialists(specialists_id, treatments_id)values (2, 2);
@@ -31,3 +34,8 @@ insert into treatments_specialists(specialists_id, treatments_id)values (3, 3);
 insert into treatments_specialists(specialists_id, treatments_id)values (4, 5);
 insert into treatments_specialists(specialists_id, treatments_id)values (4, 6);
 insert into treatments_specialists(specialists_id, treatments_id)values (4, 7);
+
+insert into users_roles(roles_id, users_id) values (1, 1);
+insert into users_roles(roles_id, users_id) values (2, 2);
+insert into users_roles(roles_id, users_id) values (2, 3);
+insert into users_roles(roles_id, users_id) values (2, 4);

@@ -20,7 +20,7 @@
                 <th>Date Of Birth</th>
                 <th>PESEL</th>
                 <th>Insurance</th>
-                <th>Diagnoses (ICD 10)(</th>
+                <th>Diagnoses (ICD 10)</th>
                 <th>Specialists</th>
                 <th>Actions</th>
             </tr>

@@ -24,6 +24,9 @@ public class SpecializationService {
     }
 
     public void deleteById(Long id){
+//        Specialization specialization = specializationRepository.findById(Specialization.class, id);
+//        specialization.removeAllSpecialists();
+
         specializationRepository.deleteById(id);
     }
 

@@ -47,18 +47,17 @@ public class Patient {
     private String insurance;
 
 //    @NotNull
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.REMOVE)
     private Set<Diagnosis> diagnoses = new HashSet<>();
 
 //    @NotNull
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany
+//    @ManyToMany(cascade = CascadeType.REMOVE, mappedBy = "patients")
     private Set<Specialist> specialists = new HashSet<>();
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "patient_id")
-    private List<Visit> visits = new ArrayList<>();
-
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+//    pacjent nie wie, że jest w wizytach (USUWAM TO 2023-07-01)
+//    @OneToMany(cascade = CascadeType.REMOVE)
 //    @JoinColumn(name = "patient_id")
 //    private List<Visit> visits = new ArrayList<>();
 
@@ -66,22 +65,32 @@ public class Patient {
         return firstName + " " + lastName;
     }
 
-    public void removeAllSpecialists() {
-        for (Specialist specialist : specialists) {
-            specialist.getPatients().remove(this);
-        }
-        specialists.clear();
-    }
+//    public void removeSpecialist(Specialist specialist) {
+//        specialists.remove(specialist);
+//        specialist.getPatients().remove(this);
+//    }
 
-    public void removeAllVisits() {
-        for (Visit visit : visits) {
-            visit.setPatient(null);
-        }
-        visits.clear();
-    }
-
-    public void removeAllDiagnoses() {
-        diagnoses.clear();
-    }
+//    @PreRemove
+//    public void removeAllSpecialists() {
+//        for (Specialist specialist : specialists) {
+//            specialist.getPatients().remove(this);
+//        }
+//        specialists.clear();
+//    }
+//
+////    (USUWAM TO 2023-07-01)
+////    public void removeAllVisits() {
+////        for (Visit visit : visits) {
+////            visit.setPatient(null);
+////        }
+////        visits.clear();
+////    }
+//
+//    public void removeAllDiagnoses() {
+//        for (Diagnosis diagnosis: diagnoses) {
+//            diagnosis.setPatients(null);
+//        }
+//        diagnoses.clear();
+//    }
 
 }

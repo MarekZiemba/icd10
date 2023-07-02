@@ -80,7 +80,7 @@ public class UserFormController {
 
     @GetMapping(path = "/user/search", params = "username")
     String findByUsername(@RequestParam String username, Model model) {
-        Optional<User> users = userService.findByUsername(username);
+        List<User> users = userService.findByUsername(username);
         model.addAttribute("users", users);
         return "user/list";
     }
