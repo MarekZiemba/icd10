@@ -28,6 +28,7 @@ public class Specialization {
     private String name;
 
     @OneToMany(mappedBy = "specialization")
+    @ToString.Exclude
     private Set<Specialist> specialists ;
 
     public void removeAllSpecialists() {

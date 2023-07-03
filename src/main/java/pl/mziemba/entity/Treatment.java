@@ -38,6 +38,7 @@ public class Treatment {
     private Set<Specialist> specialists = new HashSet<>();
 
     @OneToMany(mappedBy = "treatment")
+    @ToString.Exclude
     private Set<Visit> visits;
 
     public void removeAllSpecialists() {

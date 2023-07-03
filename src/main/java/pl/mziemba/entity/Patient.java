@@ -56,6 +56,7 @@ public class Patient {
 
 
     @OneToMany(mappedBy = "patient")
+    @ToString.Exclude
     private Set<Visit> visits;
 
     public String getFullName() {

@@ -41,6 +41,7 @@ public class Specialist {
 
 //    @NotNull
     @ManyToMany(mappedBy = "specialists")
+    @ToString.Exclude
     private Set<Patient> patients;
 
 //    @NotNull
@@ -48,12 +49,15 @@ public class Specialist {
     private Specialization specialization;
 
     @ManyToMany(mappedBy = "specialists")
+    @ToString.Exclude
     private Set<Treatment> treatments;
 
     @OneToOne(mappedBy = "specialist")
+    @ToString.Exclude
     private User user;
 
     @OneToMany(mappedBy = "specialist")
+    @ToString.Exclude
     private Set<Visit> visits;
 
     public String getFullName() {

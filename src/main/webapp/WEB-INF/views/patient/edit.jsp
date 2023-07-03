@@ -43,13 +43,13 @@
                     <form:select path="diagnoses" items="${diagnoses}" itemLabel="name" itemValue="id" multiple="true"/>
                     <form:errors path="diagnoses" cssClass="error"/>
                 </div>
-                <div class="form-group">
+                <div>
                     <label for="specialists"><p>Specialists:</p></label>
                     <form:select path="specialists" items="${specialists}" itemLabel="fullName" itemValue="id" multiple="true"/>
                     <form:errors path="specialists" cssClass="error"/>
                 </div>
                 <input type="hidden" path="id"/>
-                <input type="submit" value="Update patient" class="button" class="button" id="yellow-button">
+                <input type="submit" value="Update patient" class="button" id="yellow-button">
             </form:form>
         </div>
         <div class="sub-container-bottom">

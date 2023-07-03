@@ -3,10 +3,7 @@ package pl.mziemba.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -30,6 +27,7 @@ public class Diagnosis {
     private String evaluationCriteria;
 
     @ManyToMany(mappedBy = "diagnoses")
+    @ToString.Exclude
     private Set<Patient> patients;
 
     public void removeAllPatients() {

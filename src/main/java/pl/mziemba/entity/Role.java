@@ -28,6 +28,7 @@ public class Role {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
+    @ToString.Exclude
     private Set<User> users;
 
     public void removeUser(){
