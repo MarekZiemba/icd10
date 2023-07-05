@@ -25,17 +25,17 @@
                     <td>${diagnosis.name}</td>
                     <td>${diagnosis.evaluationCriteria}</td>
                     <td>
-                        <a href="<c:url value='/diagnosis/edit?id=${diagnosis.id}'/>" class="button-admin">Edit</a>
-                        <a href="<c:url value='/diagnosis/remove?id=${diagnosis.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
+                        <a href="<c:url value='/admin/diagnosis/edit?id=${diagnosis.id}'/>" class="button-admin">Edit</a>
+                        <a href="<c:url value='/admin/diagnosis/remove?id=${diagnosis.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
                 </tr>
             </c:forEach>
         </table>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/diagnosis/add'/>" class="button-admin">Add new diagnosis</a>
-            <a href="<c:url value='/diagnosis/search'/>" class="button">Search in diagnosis</a>
-            <a href="<c:url value='/diagnosis/list'/>" class="button">Diagnosis List</a>
+            <a href="<c:url value='/admin/diagnosis/add'/>" class="button-admin">Add new diagnosis</a>
+            <a href="<c:url value='/user/diagnosis/search'/>" class="button">Search in diagnosis</a>
+            <a href="<c:url value='/user/diagnosis/list'/>" class="button">Diagnosis List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

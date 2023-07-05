@@ -28,7 +28,7 @@ public class PatientFormController {
     private final SpecialistService specialistService;
 
     // wyswietlenie formularza dodawania pacjenta
-    @GetMapping(path = "/patient/add")
+    @GetMapping(path = "/user/patient/add")
     String showAddPatientForm(Model model) {
         model.addAttribute("patient", new Patient());
 //    model.addAttribute("diagnoses", diagnosisService.getClass());
@@ -37,86 +37,86 @@ public class PatientFormController {
     }
 
     // obsluga formularza dodawania pacjentów
-    @PostMapping(path = "/patient/add")
+    @PostMapping(path = "/user/patient/add")
     String processAddPatientForm(@Valid Patient patient, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "patient/add";
         }
         patientService.save(patient);
-        return "redirect:/patient/list";
+        return "redirect:/user/patient/list";
     }
 
-    @GetMapping(path = "/patient/edit")
+    @GetMapping(path = "/user/patient/edit")
     String showEditPatientForm(@RequestParam Long id, Model model) {
         model.addAttribute("patient", patientService.findById(id));
         return "patient/edit";
     }
 
-    @PostMapping(path = "/patient/edit")
+    @PostMapping(path = "/user/patient/edit")
     String processEditPatientForm(@Valid Patient patient, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "patient/edit";
         }
         patientService.update(patient);
-        return "redirect:/patient/list";
+        return "redirect:/user/patient/list";
     }
 
-    @GetMapping(path = "/patient/remove")
+    @GetMapping(path = "/user/patient/remove")
     String processRemovePatient(@RequestParam Long id) {
         patientService.deleteById(id);
-        return "redirect:/patient/list";
+        return "redirect:/user/patient/list";
     }
 
     // wyswietlanie listy wszystkich pacjentów
-    @GetMapping(path = "/patient/list")
+    @GetMapping(path = "/user/patient/list")
     String showPatientList(Model model) {
         List<Patient> patients = patientService.findAll();
         model.addAttribute("patients", patients);
         return "patient/list";
     }
 
-    @GetMapping(path = "/patient/search")
+    @GetMapping(path = "/user/patient/search")
     String showSearchPatientForm() {
         return "patient/search";
     }
 
     // np. http://localhost:8080/patient/search?firstName&lastName=Jan+Kowalski
-    @GetMapping(path = "/patient/search", params = {"firstName", "lastName"})
+    @GetMapping(path = "/user/patient/search", params = {"firstName", "lastName"})
     String findByFirstNameAndLastName(@RequestParam String firstName, @RequestParam String lastName, Model model) {
         List<Patient> patients = patientService.findByFirstNameAndLastName(firstName,  lastName);
         model.addAttribute("patients", patients);
         return "patient/list";
     }
 
-    @GetMapping(path = "/patient/search", params = "dateOfBirth")
+    @GetMapping(path = "/user/patient/search", params = "dateOfBirth")
     String findByDateOfBirth(@RequestParam String dateOfBirth, Model model) {
         List<Patient> patients = patientService.findByDateOfBirth(dateOfBirth);
         model.addAttribute("patients", patients);
         return "patient/list";
     }
 
-    @GetMapping(path = "/patient/search", params = "pesel")
+    @GetMapping(path = "/user/patient/search", params = "pesel")
     String findByPesel(@RequestParam String pesel, Model model) {
         List<Patient> patients = patientService.findByPesel(pesel);
         model.addAttribute("patients", patients);
         return "patient/list";
     }
 
-    @GetMapping(path = "/patient/search", params = "insurance")
+    @GetMapping(path = "/user/patient/search", params = "insurance")
     String findByInsurance(@RequestParam String insurance, Model model) {
         List<Patient> patients = patientService.findByInsurance(insurance);
         model.addAttribute("patients", patients);
         return "patient/list";
     }
 
-    @GetMapping(path = "/patient/search/diagnosis", params = "name")
+    @GetMapping(path = "/user/patient/search/diagnosis", params = "name")
     String findByDiagnosis(@RequestParam String name, Model model) {
         List<Patient> patients = patientService.findByDiagnosisNameContains(name);
         model.addAttribute("patients", patients);
         return "patient/list";
     }
 
-    @GetMapping(path = "/patient/search/specialist", params = {"firstName", "lastName"})
+    @GetMapping(path = "/user/patient/search/specialist", params = {"firstName", "lastName"})
     String findBySpecialist(@RequestParam String firstName, @RequestParam String lastName, Model model) {
         List<Patient> patients = patientService.findBySpecialistFullName(firstName, lastName);
         model.addAttribute("patients", patients);

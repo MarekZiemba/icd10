@@ -25,64 +25,64 @@ public class TreatmentFormController {
     private final SpecialistService specialistService;
 
     // wyswietlenie formularza dodawania usługi (terapii, badania)
-    @GetMapping(path = "/treatment/add")
+    @GetMapping(path = "/admin/treatment/add")
     String showAddTreatmentForm(Model model) {
         model.addAttribute("treatment", new Treatment());
         return "treatment/add";
     }
 
     // obsluga formularza dodawania usługi
-    @PostMapping(path = "/treatment/add")
+    @PostMapping(path = "/admin/treatment/add")
     String processAddTreatmentForm(@Valid Treatment treatment, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "treatment/add";
         }
         treatmentService.save(treatment);
-        return "redirect:/treatment/list";
+        return "redirect:/user/treatment/list";
     }
 
-    @GetMapping(path = "/treatment/edit")
+    @GetMapping(path = "/admin/treatment/edit")
     String showEditTreatmentForm(@RequestParam Long id, Model model) {
         model.addAttribute("treatment", treatmentService.findById(id));
         return "treatment/edit";
     }
 
-    @PostMapping(path = "/treatment/edit")
+    @PostMapping(path = "/admin/treatment/edit")
     String processEditTreatmentForm(@Valid Treatment treatment, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "treatment/edit";
         }
         treatmentService.update(treatment);
-        return "redirect:/treatment/list";
+        return "redirect:/user/treatment/list";
     }
 
-    @GetMapping(path = "/treatment/remove")
+    @GetMapping(path = "/admin/treatment/remove")
     String processRemoveTreatment(@RequestParam Long id) {
         treatmentService.deleteById(id);
-        return "redirect:/treatment/list";
+        return "redirect:/user/treatment/list";
     }
 
     // wyswietlanie listy wszystkich pacjentów
-    @GetMapping(path = "/treatment/list")
+    @GetMapping(path = "/user/treatment/list")
     String showTreatmentList(Model model) {
         List<Treatment> treatments = treatmentService.findAll();
         model.addAttribute("treatments", treatments);
         return "treatment/list";
     }
 
-    @GetMapping(path = "/treatment/search")
+    @GetMapping(path = "/user/treatment/search")
     String showSearchTreatmentForm() {
         return "treatment/search";
     }
     
-    @GetMapping(path = "/treatment/search", params = "name")
+    @GetMapping(path = "/user/treatment/search", params = "name")
     String findByPesel(@RequestParam String name, Model model) {
         List<Treatment> treatments = treatmentService.findByName(name);
         model.addAttribute("treatments", treatments);
         return "treatment/list";
     }
     
-    @GetMapping(path = "/treatment/search/specialist", params = {"firstName", "lastName"})
+    @GetMapping(path = "/user/treatment/search/specialist", params = {"firstName", "lastName"})
     String findBySpecialist(@RequestParam String firstName, @RequestParam String lastName, Model model) {
         List<Treatment> treatments = treatmentService.findBySpecialistFullName(firstName, lastName);
         model.addAttribute("treatments", treatments);

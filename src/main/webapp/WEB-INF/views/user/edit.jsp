@@ -44,9 +44,9 @@
         </div>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/user/add'/>" class="button">Add new user</a>
-            <a href="<c:url value='/user/search'/>" class="button">Search in users</a>
-            <a href="<c:url value='/user/list'/>" class="button">Users List</a>
+            <a href="<c:url value='/admin/user/add'/>" class="button">Add new user</a>
+            <a href="<c:url value='/admin/user/search'/>" class="button">Search in users</a>
+            <a href="<c:url value='/admin/user/list'/>" class="button">Users List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 public class UserController {
 
     private final UserService userService;
-    private final SpecialistService specialistService;
 
     @PostMapping(path = "/user")
     void save(@RequestParam String username, @RequestParam String password, @RequestParam int enabled, @RequestParam String specialistFirstName, @RequestParam String specialistLastName,  @RequestParam("roleId") Long[] roleId) {
@@ -31,7 +30,6 @@ public class UserController {
         Specialist specialist = new Specialist();
         specialist.setFirstName(specialistFirstName);
         specialist.setLastName(specialistLastName);
-        specialistService.save(specialist);
         user.setSpecialist(specialist);
         
         Set<Role> roles = Arrays.stream(roleId)

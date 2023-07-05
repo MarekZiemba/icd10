@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.Diagnosis;
-import pl.mziemba.entity.Patient;
 import pl.mziemba.repository.DiagnosisRepository;
 
 import java.util.List;

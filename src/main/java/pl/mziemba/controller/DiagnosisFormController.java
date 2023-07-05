@@ -20,57 +20,57 @@ public class DiagnosisFormController {
     private final DiagnosisService diagnosisService;
 
     // wyswietlenie formularza dodawania rozpoznania
-    @GetMapping(path = "/diagnosis/add")
+    @GetMapping(path = "/admin/diagnosis/add")
     String showAddDiagnosisForm(Model model) {
         model.addAttribute("diagnosis", new Diagnosis());
         return "diagnosis/add";
     }
 
     // obsluga formularza dodawania rozpoznania
-    @PostMapping(path = "/diagnosis/add")
+    @PostMapping(path = "/admin/diagnosis/add")
     String processAddDiagnosisForm(@Valid Diagnosis diagnosis, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "diagnosis/add";
         }
         diagnosisService.save(diagnosis);
-        return "redirect:/diagnosis/list";
+        return "redirect:/user/diagnosis/list";
     }
 
-    @GetMapping(path = "/diagnosis/edit")
+    @GetMapping(path = "/admin/diagnosis/edit")
     String showEditDiagnosisForm(@RequestParam Long id, Model model) {
         model.addAttribute("diagnosis", diagnosisService.findById(id));
         return "diagnosis/edit";
     }
 
-    @PostMapping(path = "/diagnosis/edit")
+    @PostMapping(path = "/admin/diagnosis/edit")
     String processEditDiagnosisForm(@Valid Diagnosis diagnosis, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "diagnosis/edit";
         }
         diagnosisService.update(diagnosis);
-        return "redirect:/diagnosis/list";
+        return "redirect:/user/diagnosis/list";
     }
 
-    @GetMapping(path = "/diagnosis/remove")
+    @GetMapping(path = "/admin/diagnosis/remove")
     String processRemoveDiagnosis(@RequestParam Long id) {
         diagnosisService.deleteById(id);
-        return "redirect:/diagnosis/list";
+        return "redirect:/user/diagnosis/list";
     }
 
     // wyswietlanie listy wszystkich kategorii
-    @GetMapping(path = "/diagnosis/list")
+    @GetMapping(path = "/user/diagnosis/list")
     String showDiagnosisList(Model model) {
         List<Diagnosis> diagnoses = diagnosisService.findAll();
         model.addAttribute("diagnoses", diagnoses);
         return "diagnosis/list";
     }
 
-    @GetMapping(path = "/diagnosis/search")
+    @GetMapping(path = "/user/diagnosis/search")
     String showSearchDiagnosisForm() {
         return "diagnosis/search";
     }
 
-    @GetMapping(path = "/diagnosis/search", params = "name")
+    @GetMapping(path = "/user/diagnosis/search", params = "name")
     String findByName(@RequestParam String name, Model model) {
         List<Diagnosis> diagnoses = diagnosisService.findByName(name);
         model.addAttribute("diagnoses", diagnoses);

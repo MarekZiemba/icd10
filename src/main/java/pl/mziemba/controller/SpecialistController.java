@@ -28,7 +28,6 @@ public class SpecialistController {
 
         Specialization specialization = new Specialization();
         specialization.setName(specializationName);
-        specializationService.save(specialization); // Zapisz encję Specialization przed zapisem Specialist
         specialist.setSpecialization(specialization);
 
         specialistService.save(specialist);

@@ -20,9 +20,4 @@ class AuthenticationController {
         return "redirect:/login";
     }
 
-//    @GetMapping(path = "register")
-//    String register() {
-//        return "register";
-//    }
-
 }

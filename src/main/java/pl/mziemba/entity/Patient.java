@@ -11,9 +11,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.pl.PESEL;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -63,12 +60,6 @@ public class Patient {
         return firstName + " " + lastName;
     }
 
-//    public void removeSpecialist(Specialist specialist) {
-//        specialists.remove(specialist);
-//        specialist.getPatients().remove(this);
-//    }
-
-//    @PreRemove
     public void removeAllSpecialists() {
         for (Specialist specialist : specialists) {
             specialist.getPatients().remove(this);

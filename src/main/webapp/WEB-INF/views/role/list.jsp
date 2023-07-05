@@ -23,17 +23,17 @@
                     <td>${role.id}</td>
                     <td>${role.name}</td>
                     <td>
-                        <a href="<c:url value='/role/edit?id=${role.id}'/>" class="button" id="yellow-button">Edit</a>
-                        <a href="<c:url value='/role/remove?id=${role.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
+                        <a href="<c:url value='/admin/role/edit?id=${role.id}'/>" class="button" id="yellow-button">Edit</a>
+                        <a href="<c:url value='/adminrole/remove?id=${role.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
                 </tr>
             </c:forEach>
         </table>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/role/add'/>" class="button">Add role</a>
-            <a href="<c:url value='/role/search'/>" class="button">Search in roles</a>
-            <a href="<c:url value='/role/list'/>" class="button">Roles List</a>
+            <a href="<c:url value='/admin/role/add'/>" class="button">Add role</a>
+            <a href="<c:url value='/admin/role/search'/>" class="button">Search in roles</a>
+            <a href="<c:url value='/admin/role/list'/>" class="button">Roles List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

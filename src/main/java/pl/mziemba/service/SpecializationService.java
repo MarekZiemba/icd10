@@ -3,7 +3,6 @@ package pl.mziemba.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.mziemba.entity.Specialist;
 import pl.mziemba.entity.Specialization;
 import pl.mziemba.repository.SpecializationRepository;
 

@@ -25,7 +25,7 @@
 
     <div class="sub-container">
         <p>Find by Specialist</p>
-        <form action="<c:url value='/user/search/specialist'/>">
+        <form action="<c:url value='/admin/user/search/specialist'/>">
             <div class="form-group">
                 <label for="sFirstName">Specialist First Name:</label>
                 <input id="sFirstName" name="firstName" type="text"><br>
@@ -38,7 +38,7 @@
 
     <div class="sub-container">
         <p>Find by Role</p>
-        <form action="<c:url value='/user/search/role'/>">
+        <form action="<c:url value='/admin/user/search/role'/>">
             <div class="form-group">
                 <label for="rname">Role Name:</label>
                 <input id="rname" name="name" type="text">
@@ -51,9 +51,9 @@
 
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/user/add'/>" class="button">Add new user</a>
-            <a href="<c:url value='/user/search'/>" class="button">Search in users</a>
-            <a href="<c:url value='/user/list'/>" class="button">Users List</a>
+            <a href="<c:url value='/admin/user/add'/>" class="button">Add new user</a>
+            <a href="<c:url value='/admin/user/search'/>" class="button">Search in users</a>
+            <a href="<c:url value='/admin/user/list'/>" class="button">Users List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

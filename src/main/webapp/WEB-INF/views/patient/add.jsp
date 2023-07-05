@@ -32,9 +32,9 @@
         </div>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/patient/add'/>" class="button">Add new patient</a>
-            <a href="<c:url value='/patient/search'/>" class="button">Search in patients</a>
-            <a href="<c:url value='/patient/list'/>" class="button">Patients List</a>
+            <a href="<c:url value='/user/patient/add'/>" class="button">Add new patient</a>
+            <a href="<c:url value='/user/patient/search'/>" class="button">Search in patients</a>
+            <a href="<c:url value='/user/patient/list'/>" class="button">Patients List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

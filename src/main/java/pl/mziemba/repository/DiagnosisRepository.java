@@ -3,7 +3,6 @@ package pl.mziemba.repository;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.mziemba.entity.Diagnosis;
-import pl.mziemba.entity.Patient;
 
 import java.util.List;
 import java.util.Optional;

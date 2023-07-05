@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.Role;
-import pl.mziemba.entity.User;
 import pl.mziemba.repository.RoleRepository;
 
 import java.util.List;

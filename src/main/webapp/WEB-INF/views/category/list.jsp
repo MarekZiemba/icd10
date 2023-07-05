@@ -27,17 +27,17 @@
                     <td>${category.evaluationCriteria}</td>
                     <td>${category.description}</td>
                     <td>
-                        <a href="<c:url value='/category/edit?id=${category.id}'/>" class="button-admin">Edit</a>
-                        <a href="<c:url value='/category/remove?id=${category.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
+                        <a href="<c:url value='/admin/category/edit?id=${category.id}'/>" class="button-admin">Edit</a>
+                        <a href="<c:url value='/admin/category/remove?id=${category.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
                 </tr>
             </c:forEach>
         </table>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/category/add'/>" class="button-admin">Add new category</a>
-            <a href="<c:url value='/category/search'/>" class="button">Search in categories</a>
-            <a href="<c:url value='/category/list'/>" class="button">Categories List</a>
+            <a href="<c:url value='/admin/category/add'/>" class="button-admin">Add new category</a>
+            <a href="<c:url value='/user/category/search'/>" class="button">Search in categories</a>
+            <a href="<c:url value='/user/category/list'/>" class="button">Categories List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

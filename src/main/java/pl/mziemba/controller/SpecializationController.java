@@ -15,7 +15,6 @@ public class SpecializationController {
 
     @PostMapping(path = "/specialization")
     void save(@RequestParam String name) {
-
         final Specialization specialization = new Specialization();
         specialization.setName(name);
         specializationService.save(specialization);

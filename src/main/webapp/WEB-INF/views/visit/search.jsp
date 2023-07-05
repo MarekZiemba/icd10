@@ -55,7 +55,7 @@
 
         <div class="sub-container">
             <p>Find by Patient</p>
-            <form action="<c:url value='/visit/search/patient'/>">
+            <form action="<c:url value='/user/visit/search/patient'/>">
                 <div class="form-group">
                     <label for="pFirstName">Patient First Name:</label>
                     <input id="pFirstName" name="firstName" type="text"><br>
@@ -68,7 +68,7 @@
 
     <div class="sub-container">
         <p>Find by Treatment</p>
-        <form action="<c:url value='/visit/search/treatment'/>">
+        <form action="<c:url value='/user/visit/search/treatment'/>">
             <div class="form-group">
                 <label for="tname">Treatment Name:</label>
                 <input id="tname" name="name" type="text">
@@ -79,7 +79,7 @@
 
     <div class="sub-container">
         <p>Find by Specialist</p>
-        <form action="<c:url value='/visit/search/specialist'/>">
+        <form action="<c:url value='/user/visit/search/specialist'/>">
             <div class="form-group">
                 <label for="sFirstName">Specialist First Name:</label>
                 <input id="sFirstName" name="firstName" type="text"><br>
@@ -92,9 +92,9 @@
 
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/visit/add'/>" class="button">Add new visit</a>
-            <a href="<c:url value='/visit/search'/>" class="button">Search in visits</a>
-            <a href="<c:url value='/visit/list'/>" class="button">Visits List</a>
+            <a href="<c:url value='/user/visit/add'/>" class="button">Add new visit</a>
+            <a href="<c:url value='/user/visit/search'/>" class="button">Search in visits</a>
+            <a href="<c:url value='/user/visit/list'/>" class="button">Visits List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

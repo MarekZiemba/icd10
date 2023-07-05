@@ -33,8 +33,8 @@
                     <td>${visit.treatment.name}</td>
                     <td>${visit.specialist.firstName} ${visit.specialist.lastName}</td>
                     <td>
-                        <a href="<c:url value='/visit/edit?id=${visit.id}'/>" class="button" id="yellow-button">Edit</a>
-                        <a href="<c:url value='/visit/remove?id=${visit.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
+                        <a href="<c:url value='/user/visit/edit?id=${visit.id}'/>" class="button" id="yellow-button">Edit</a>
+                        <a href="<c:url value='/user/visit/remove?id=${visit.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
 
                 </tr>
@@ -42,9 +42,9 @@
         </table>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/visit/add'/>" class="button">Add new visit</a>
-            <a href="<c:url value='/visit/search'/>" class="button">Search in visits</a>
-            <a href="<c:url value='/visit/list'/>" class="button">Visits List</a>
+            <a href="<c:url value='/user/visit/add'/>" class="button">Add new visit</a>
+            <a href="<c:url value='/user/visit/search'/>" class="button">Search in visits</a>
+            <a href="<c:url value='/user/visit/list'/>" class="button">Visits List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

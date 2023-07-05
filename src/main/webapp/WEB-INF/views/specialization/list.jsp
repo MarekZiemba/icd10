@@ -23,17 +23,17 @@
                     <td>${specialization.id}</td>
                     <td>${specialization.name}</td>
                     <td>
-                        <a href="<c:url value='/specialization/edit?id=${specialization.id}'/>" class="button-admin">Edit</a>
-                        <a href="<c:url value='/specialization/remove?id=${specialization.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
+                        <a href="<c:url value='/admin/specialization/edit?id=${specialization.id}'/>" class="button-admin">Edit</a>
+                        <a href="<c:url value='/admin/specialization/remove?id=${specialization.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
                 </tr>
             </c:forEach>
         </table>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/specialization/add'/>" class="button-admin">Add specialization</a>
-            <a href="<c:url value='/specialization/search'/>" class="button">Search in specializations</a>
-            <a href="<c:url value='/specialization/list'/>" class="button">Specializations List</a>
+            <a href="<c:url value='/admin/specialization/add'/>" class="button-admin">Add specialization</a>
+            <a href="<c:url value='/user/specialization/search'/>" class="button">Search in specializations</a>
+            <a href="<c:url value='/user/specialization/list'/>" class="button">Specializations List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>

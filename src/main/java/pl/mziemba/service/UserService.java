@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.*;
 import pl.mziemba.exceptions.UserServiceTest;
-import pl.mziemba.exceptions.ValidationException;
 import pl.mziemba.repository.UserRepository;
 
 import java.util.Arrays;

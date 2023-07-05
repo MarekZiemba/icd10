@@ -64,14 +64,6 @@ public class PatientController {
         return patients.toString();
     }
 
-    /*
-    @GetMapping(path = "/patient/{pesel}", produces = "text/plain;charset=utf-8")
-String findByPatientPesel(@PathVariable @RequestParam("pesel") String pesel) {
-    final List<Patient> patients = patientService.findByPesel(pesel);
-    return patients.toString();
-}
-     */
-
     @GetMapping(path = "/patient/insurance", produces = "text/plain;charset=utf-8")
     String findByInsurance(@RequestParam("insurance") String insurance) {
         final List<Patient> patients = patientService.findByInsurance(insurance);

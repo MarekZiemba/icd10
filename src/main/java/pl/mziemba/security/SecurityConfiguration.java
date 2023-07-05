@@ -6,12 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 
@@ -32,17 +29,8 @@ public class SecurityConfiguration {
         );
         http
                 .authorizeHttpRequests((requests) -> requests
-
-                        .requestMatchers("/specialist/list/", "specialist/search/").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/specialist/add/", "/specialist/edit/", "/specialist/remove/").hasRole("ADMIN")
-                        .requestMatchers("/patient/").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/treatment/*").hasRole("ADMIN")
-                        .requestMatchers("/visit/list/*").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/category/*").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/specialization/*").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/user/*").hasRole("ADMIN")
-                        .requestMatchers("/admin/*").hasRole("ADMIN")
-                        .requestMatchers("/main/*").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/main/", "/user/**").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/admin/**", "/admin/**").hasRole("ADMIN")
                         .requestMatchers("/", "/home", "/register", "/logout").permitAll()
                         .anyRequest().authenticated()
                 )

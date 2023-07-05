@@ -13,7 +13,7 @@ public class MainController {
     private final LoggedInUserDetails loggedInUserDetails;
 
     @GetMapping("/main")
-    public String yourView(Model model) {
+    public String mainViewController(Model model) {
         String loggedInUserFullName = loggedInUserDetails.getLoggedInUserFullName();
         model.addAttribute("loggedInUserFullName", loggedInUserFullName);
         return "main";

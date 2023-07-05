@@ -25,78 +25,78 @@ public class SpecialistFormController {
     private final SpecializationService specializationService;
 
     // wyswietlenie formularza dodawania specjalisty
-    @GetMapping(path = "/specialist/add")
+    @GetMapping(path = "/admin/specialist/add")
     String showAddSpecialistForm(Model model) {
         model.addAttribute("specialist", new Specialist());
         return "specialist/add";
     }
 
     // obsluga formularza dodawania specjalistów
-    @PostMapping(path = "/specialist/add")
+    @PostMapping(path = "/admin/specialist/add")
     String processAddSpecialistForm(@Valid Specialist specialist, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "specialist/add";
         }
         specialistService.save(specialist);
-        return "redirect:/specialist/list";
+        return "redirect:/user/specialist/list";
     }
 
-    @GetMapping(path = "/specialist/edit")
+    @GetMapping(path = "/admin/specialist/edit")
     String showEditSpecialistForm(@RequestParam Long id, Model model) {
         model.addAttribute("specialist", specialistService.findById(id));
         return "specialist/edit";
     }
 
-    @PostMapping(path = "/specialist/edit")
+    @PostMapping(path = "/admin/specialist/edit")
     String processEditSpecialistForm(@Valid Specialist specialist, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "specialist/edit";
         }
         specialistService.update(specialist);
-        return "redirect:/specialist/list";
+        return "redirect:/user/specialist/list";
     }
 
-    @GetMapping(path = "/specialist/remove")
+    @GetMapping(path = "/admin/specialist/remove")
     String processRemoveSpecialist(@RequestParam Long id) {
         specialistService.deleteById(id);
-        return "redirect:/specialist/list";
+        return "redirect:/user/specialist/list";
     }
 
     // wyswietlanie listy wszystkich specjalistów
-    @GetMapping(path = "/specialist/list")
+    @GetMapping(path = "/user/specialist/list")
     String showSpecialistList(Model model) {
         List<Specialist> specialists = specialistService.findAll();
         model.addAttribute("specialists", specialists);
         return "specialist/list";
     }
 
-    @GetMapping(path = "/specialist/search")
+    @GetMapping(path = "/user/specialist/search")
     String showSearchSpecialistForm() {
         return "specialist/search";
     }
 
-    @GetMapping(path = "/specialist/search", params = {"firstName", "lastName"})
+    @GetMapping(path = "/user/specialist/search", params = {"firstName", "lastName"})
     String findByFirstNameAndLastName(@RequestParam String firstName, @RequestParam String lastName, Model model) {
         List<Specialist> specialists = specialistService.findByFirstNameAndLastName(firstName,  lastName);
         model.addAttribute("specialists", specialists);
         return "specialist/list";
     }
 
-    @GetMapping(path = "/specialist/search", params = "dateOfBirth")
+    @GetMapping(path = "/user/specialist/search", params = "dateOfBirth")
     String findByDateOfBirth(@RequestParam String dateOfBirth, Model model) {
         List<Specialist> specialists = specialistService.findByDateOfBirth(dateOfBirth);
         model.addAttribute("specialists", specialists);
         return "specialist/list";
     }
 
-    @GetMapping(path = "/specialist/search", params = "pesel")
+    @GetMapping(path = "/user/specialist/search", params = "pesel")
     String findByPesel(@RequestParam String pesel, Model model) {
         List<Specialist> specialists = specialistService.findByPesel(pesel);
         model.addAttribute("specialists", specialists);
         return "specialist/list";
     }
 
-    @GetMapping(path = "/specialist/search/specialization", params = "name")
+    @GetMapping(path = "/user/specialist/search/specialization", params = "name")
     String findBySpecializationByName(@RequestParam String name, Model model) {
         List<Specialist> specialists = specialistService.findBySpecializationByName(name);
         model.addAttribute("specialists", specialists);

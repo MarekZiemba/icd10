@@ -51,7 +51,7 @@
 
         <div class="sub-container">
             <p>Find by Specialization</p>
-            <form action="<c:url value='/specialist/search/specialization'/>">
+            <form action="<c:url value='/user/specialist/search/specialization'/>">
                 <div class="form-group">
                     <label for="sname">Specialization name:</label>
                     <input id="sname" name="name" type="text">
@@ -61,9 +61,9 @@
         </div>
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
-            <a href="<c:url value='/specialist/add'/>" class="button-admin">Add new specialist</a>
-            <a href="<c:url value='/specialist/search'/>" class="button">Search in specialists</a>
-            <a href="<c:url value='/specialist/list'/>" class="button">Specialists List</a>
+            <a href="<c:url value='/admin/specialist/add'/>" class="button-admin">Add new specialist</a>
+            <a href="<c:url value='/user/specialist/search'/>" class="button">Search in specialists</a>
+            <a href="<c:url value='/user/specialist/list'/>" class="button">Specialists List</a>
             <form action="/logout" method="post">
                 <sec:csrfInput/>
                 <input type="submit" value="Logout" class="button" id="red-logout"/>
