@@ -10,7 +10,7 @@
 <body>
     <div class="container" id="add-edit-search-container">
         <div class="sub-container" id="title-container-2">
-            <h3>Update existing Visit Information</h3>
+            <h3>Update existing User Information</h3>
         </div>
         <div class="sub-container">
             <form:form method="post" modelAttribute="user">

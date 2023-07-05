@@ -17,7 +17,7 @@ public class RoleController {
     void save(@RequestParam String name) {
 
         final Role role = new Role();
-        role.setName(name);
+        role.setName(name.toUpperCase());
         roleService.save(role);
     }
 

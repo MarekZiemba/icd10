@@ -10,7 +10,7 @@
 <body>
 <div class="container" id="add-edit-search-container">
         <div class="sub-container" id="title-container-2">
-            <h3>Add new Visit to Registry</h3>
+            <h3>Add new User to Registry</h3>
         </div>
         <div class="sub-container">
             <form:form method="post" modelAttribute="user">

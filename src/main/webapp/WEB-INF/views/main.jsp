@@ -3,12 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <html lang="en">
 <head>
-    <title>ICD10</title>
+    <title>ICD10-F</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <div class="container">
     <h1>ICD10</h1>
+        <div class="sub-container-top-small">
+            <span class="span-bold-big">LOGIN DETAILS:</span></br>
+            <span class="span-bold">Username: </span><sec:authentication property="principal.username" /></br>
+            <span class="span-bold">Full name: </span>${loggedInUserFullName}
+        </div>
         <div class="sub-container">
             For specialist:
             <a href="<c:url value='/patient/list'/>" class="button">Patients</a>

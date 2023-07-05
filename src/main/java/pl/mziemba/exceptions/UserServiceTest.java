@@ -32,13 +32,11 @@ public class UserServiceTest {
     }
 
     private List<String> validate(User user) {
-        Optional<User> byLogin = userRepository.findByUsername(user.getUsername());
-        if(byLogin.isPresent()){
-            return Arrays.asList("loginAlreadyExists");
+        Optional<User> byUser = userRepository.findByUsername(user.getUsername());
+        if(byUser.isPresent()){
+            return Arrays.asList("usernameAlreadyExists");
         }
         return Collections.emptyList();
     }
-
-
 
 }

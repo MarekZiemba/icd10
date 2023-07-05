@@ -9,13 +9,18 @@
 <body>
     <div class="sub-container">
         <p>Login form</p>
-        <form method="post">
-            Username: <input type="text" name="username">
-            Password: <input type="password" name="password">
-            <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
+        <form method="post" action="login">
+            Username: <label>
+            <input type="text" name="username">
+        </label>
+            Password: <label>
+            <input type="password" name="password">
+        </label>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <sec:csrfInput/>
             <input type="submit" value="Zaloguj" class="button">
         </form>
+        <a href="<c:url value='/register'/>" class="button">Register</a>
     </div>
 </body>
 </html>

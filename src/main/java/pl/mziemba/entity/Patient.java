@@ -46,11 +46,11 @@ public class Patient {
     @Size(min = 10, max = 26, message = "{not.between.error}")
     private String insurance;
 
-//    @NotNull
+    @NotNull
     @ManyToMany(fetch = FetchType.LAZY)
     private Set<Diagnosis> diagnoses;
 
-//    @NotNull
+    @NotNull
     @ManyToMany(fetch = FetchType.LAZY)
     private Set<Specialist> specialists;
 

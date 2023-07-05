@@ -9,7 +9,6 @@ import pl.mziemba.service.*;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -19,8 +18,6 @@ public class UserController {
 
     private final UserService userService;
     private final SpecialistService specialistService;
-    private final RoleService roleService;
-
 
     @PostMapping(path = "/user")
     void save(@RequestParam String username, @RequestParam String password, @RequestParam int enabled, @RequestParam String specialistFirstName, @RequestParam String specialistLastName,  @RequestParam("roleId") Long[] roleId) {

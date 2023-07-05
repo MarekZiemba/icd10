@@ -45,6 +45,19 @@ table {
     border-collapse: collapse;
     border-radius: 2px;
 }
+.span-bold-big {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #333333;
+}
+
+.span-bold {
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333333;
+}
 
 .container {
     margin: 0 auto;
@@ -72,6 +85,15 @@ table {
     border: 2px solid #333333;
     border-radius: 8px;
     background-color: #edfadf;
+}
+
+.sub-container-top-small {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    background-color: #edfadf;
+    max-width: 240px;
 }
 
 #title-container {

@@ -10,7 +10,7 @@
 <body>
 <div class="container" id="add-edit-search-container">
     <div class="sub-container" id="title-container">
-            <h3>Search User in Registry</h3>
+            <h3>Search Users in Registry</h3>
         </div>
         <div class="sub-container">
             <p>Find by Username</p>
