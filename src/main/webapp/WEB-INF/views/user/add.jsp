@@ -25,6 +25,11 @@
                     <form:errors path="password" cssClass="error"/>
                 </div>
                 <div class="form-group">
+                    <label for="newPassword"><p>confirm Password:</p></label>
+                    <form:password path="newPassword" id="newPassword"/>
+                    <form:errors path="newPassword" cssClass="error"/>
+                </div>
+                <div class="form-group">
                     <label for="enabled"><p>Enabled:</p></label>
                     <form:input path="enabled" id="enabled"/>
                     <form:errors path="enabled" cssClass="error"/>

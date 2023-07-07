@@ -1,6 +1,4 @@
 spring:
-#  autoconfigure:
-#    exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
   datasource:
     url: jdbc:mysql://localhost:3306/icd10?serverTimezone=UTC
     username: root
@@ -19,6 +17,3 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-#  security:
-#    logout:
-#      logout-success-url: /login

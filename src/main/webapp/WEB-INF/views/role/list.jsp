@@ -24,7 +24,7 @@
                     <td>${role.name}</td>
                     <td>
                         <a href="<c:url value='/admin/role/edit?id=${role.id}'/>" class="button" id="yellow-button">Edit</a>
-                        <a href="<c:url value='/adminrole/remove?id=${role.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
+                        <a href="<c:url value='/admin/role/remove?id=${role.id}'/>" class="button" id="red-button" onclick="return confirm('Are you sure?')">Remove</a>
                     </td>
                 </tr>
             </c:forEach>

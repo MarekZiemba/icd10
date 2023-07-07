@@ -18,6 +18,4 @@ public class MainController {
         model.addAttribute("loggedInUserFullName", loggedInUserFullName);
         return "main";
     }
-
-
 }

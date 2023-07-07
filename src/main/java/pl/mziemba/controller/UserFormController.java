@@ -2,6 +2,7 @@ package pl.mziemba.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,6 +25,8 @@ public class UserFormController {
     private final UserService userService;
     private final SpecialistService specialistService;
     private final RoleService roleService;
+    private final PasswordEncoder passwordEncoder;
+
 
     // wyswietlenie formularza dodawania użytkownika
     @GetMapping(path = "/admin/user/add")
@@ -34,10 +37,16 @@ public class UserFormController {
 
     // obsluga formularza dodawania użytkownika
     @PostMapping(path = "/admin/user/add")
-    String processAddUserForm(@Valid User user, BindingResult bindingResult) {
+    String processAddUserForm(@Valid User user, BindingResult bindingResult, @RequestParam String newPassword) {
         if (bindingResult.hasErrors()) {
             return "user/add";
         }
+        // Jeśli podano nowe hasło, zaktualizuj je w encji użytkownika
+        if (!newPassword.isEmpty()) {
+            user.setPassword(passwordEncoder.encode(newPassword));
+        }
+        // Usuń pole newPassword przed zapisem do bazy danych
+        user.setNewPassword(null);
         userService.save(user);
         return "redirect:/admin/user/list";
     }
@@ -49,10 +58,17 @@ public class UserFormController {
     }
 
     @PostMapping(path = "/admin/user/edit")
-    String processEditUserForm(@Valid User user, BindingResult bindingResult) {
+    String processEditUserForm(@Valid User user, BindingResult bindingResult, @RequestParam String newPassword) {
         if (bindingResult.hasErrors()) {
             return "user/edit";
         }
+        // Jeśli podano nowe hasło, zaktualizuj je w encji użytkownika
+        if (!newPassword.isEmpty()) {
+            user.setPassword(passwordEncoder.encode(newPassword));
+        }
+        // Usuń pole newPassword przed zapisem do bazy danych
+        user.setNewPassword(null);
+
         userService.update(user);
         return "redirect:/admin/user/list";
     }
@@ -63,7 +79,7 @@ public class UserFormController {
         return "redirect:/admin/user/list";
     }
 
-    // wyswietlanie listy wszystkich użytkowników
+    // wyswietlanie listy wszystkich użytkownikówbo
     @GetMapping(path = "/admin/user/list")
     String showUserList( Model model) {
         List<User> users = userService.findAll();

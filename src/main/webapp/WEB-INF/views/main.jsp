@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="container">
-    <h1>ICD10</h1>
+    <h1>ICD10-F</h1>
         <div class="sub-container-top-small">
             <span class="span-bold-big">Logged in as:</span></br>
             <span class="span-bold">Username: </span><sec:authentication property="principal.username" /></br>
-            <span class="span-bold">Full name: </span>${loggedInUserFullName}
+            <span class="span-bold">Full name : </span>${loggedInUserFullName}
         </div>
         <div class="sub-container">
             For specialist:

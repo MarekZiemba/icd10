@@ -28,7 +28,6 @@ public class UserServiceTest {
         } else {
             throw new ValidationException(validationFailures);
         }
-
     }
 
     private List<String> validate(User user) {

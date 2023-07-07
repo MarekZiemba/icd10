@@ -20,9 +20,14 @@
                     <form:errors path="username" cssClass="error"/>
                 </div>
                 <div class="form-group">
-                    <label for="password"><p>Password:</p></label>
+                    <label for="password"><p>leave encrypted Password as it in database:</p></label>
                     <form:input path="password" id="password"/>
                     <form:errors path="password" cssClass="error"/>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword"><p>or enter New Password below:</p></label>
+                    <form:password path="newPassword" id="newPassword"/>
+                    <form:errors path="newPassword" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="enabled"><p>Enabled:</p></label>

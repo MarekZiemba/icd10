@@ -2,52 +2,42 @@ package pl.mziemba.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 import pl.mziemba.entity.User;
+import pl.mziemba.exceptions.ValidationException;
 import pl.mziemba.repository.UserRepository;
 
-//@Controller
-//@RequestMapping("register")
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+
 @RestController
 @RequiredArgsConstructor
 public class RegistrationController {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-
-    @GetMapping(path = "/registration", produces = "text/plain;charset=utf-8")
-    public void registerUser(@RequestParam String username, @RequestParam String password) {
+    @GetMapping(path = "/register", produces = "text/plain;charset=utf-8")
+    public User registerUser(@RequestParam String username, @RequestParam String password) throws ValidationException {
         User user = new User();
         user.setUsername(username);
         user.setPassword(passwordEncoder.encode(password));
-        userRepository.save(user);
+
+        List<String> validationFailures = validate(user);
+        if(validationFailures.isEmpty()){
+            return userRepository.save(user);
+        } else {
+            throw new ValidationException(validationFailures);
+        }
     }
-
-//    @GetMapping(path = "/register")
-//    @ResponseBody
-//    public boolean createUser(@RequestParam String username, @RequestParam String password, @RequestParam String matchingPassword) {
-//        //
-//
-//        User user = new User();
-////        user.setUsername(userDto.getUsername());
-//        user.setUsername(username);
-////        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-//        user.setPassword(passwordEncoder.encode(password));
-//        userRepository.save(user);
-//        return "redirect:/login;
-//    }
+    private List<String> validate(User user) {
+        Optional<User> byUser = userRepository.findByUsername(user.getUsername());
+        if(byUser.isPresent()){
+            return Arrays.asList("usernameAlreadyExists");
+        }
+        return Collections.emptyList();
+    }
 }
-
-//        User user = new User();
-//        user.setUsername("Admin");
-//        user.setPassword(passwordEncoder.encode("admin"));
-//        userRepository.save(user);
-//
-//        User user2 = new User();
-//        user2.setUsername("User");
-//        user2.setPassword(passwordEncoder.encode("user"));
-//        userRepository.save(user2);
-//        return true;
-//    }
-//}

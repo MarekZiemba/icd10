@@ -30,7 +30,7 @@ public class RoleFormController {
     @PostMapping(path = "/admin/role/add")
     String processAddRoleForm(@Valid Role role, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "/adminrole/add";
+            return "/role/add";
         }
         roleService.save(role);
         return "redirect:/admin/role/list";
@@ -56,6 +56,7 @@ public class RoleFormController {
         roleService.deleteById(id);
         return "redirect:/admin/role/list";
     }
+
     @GetMapping(path = "/admin/role/list")
     String showRoleList(Model model) {
         List<Role> roles = roleService.findAll();

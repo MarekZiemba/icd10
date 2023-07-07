@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <title>Login form</title>
@@ -11,10 +12,10 @@
         <p>Login form</p>
         <form method="post" action="login">
             Username: <label>
-            <input type="text" name="username">
+            <input type="text" name="username" placeholder="Enter username">
         </label>
             Password: <label>
-            <input type="password" name="password">
+            <input type="password" name="password" placeholder="Enter password">
         </label>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <sec:csrfInput/>
