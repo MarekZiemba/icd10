@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Search categories in registry</title>
@@ -17,7 +18,7 @@
             <form>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input id="name" name="name" type="text">
+                    <input id="name" name="name" type="text" placeholder="Enter category name">
                 </div>
                 <input type="submit" value="Search" class="button">
             </form>

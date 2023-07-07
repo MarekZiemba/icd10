@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Update patient</title>
@@ -16,27 +17,27 @@
             <form:form method="post" modelAttribute="patient">
                 <div class="form-group">
                     <label for="firstName"><p>First Name:</p></label>
-                    <form:input path="firstName" id="firstName"/>
+                    <form:input path="firstName" id="firstName" placeholder="Enter First Name" title="Enter first name"/>
                     <form:errors path="firstName" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="lastName"><p>Last Name:</p></label>
-                    <form:input path="lastName" id="lastName"/>
+                    <form:input path="lastName" id="lastName" placeholder="Enter Last Name" title="Enter last name"/>
                     <form:errors path="lastName" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="dateOfBirth"><p>Date Of Birth:</p></label>
-                    <form:input path="dateOfBirth" id="dateOfBirth"/>
+                    <form:input path="dateOfBirth" id="dateOfBirth" placeholder="[yyyy-MM-dd]" pattern="\d{4}-\d{2}-\d{2}" title="Please enter a date in the format yyyy-MM-DD"/>
                     <form:errors path="dateOfBirth" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="pesel"><p>PESEL:</p></label>
-                    <form:input path="pesel" id="pesel"/>
+                    <form:input path="pesel" id="pesel" placeholder="Enter PESEL" title="Enter PESEL"/>
                     <form:errors path="pesel" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="insurance"><p>Insurance:</p></label>
-                    <form:input path="insurance" id="insurance"/>
+                    <form:input path="insurance" id="insurance" placeholder="Enter Insurance Number" title="Enter Insurance numer (numbers only)"/>
                     <form:errors path="insurance" cssClass="error"/>
                 </div>
                 <div><p>Diagnoses (ICD 10):</p>

@@ -166,6 +166,31 @@ table {
 
 .error {
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     color: #b01111;
+}
+
+.div-access-denied {
+    padding: 40px;
+    max-width: 750px;
+}
+
+.access-denied {
+    max-width: 650px;
+    padding: 0 20px;
+    border: 2px solid #333333;
+    border-radius: 4px;
+    background-color: #ff5959;
+    font-weight: 600;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+textarea {
+    background-color: #f6f6f2;
+}
+
+.p-small {
+    font-weight: 400;
+    font-size: 12px;
 }

@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Search treatments in registry</title>
@@ -17,7 +18,7 @@
             <form>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input id="name" name="name" type="text">
+                    <input id="name" name="name" type="text" placeholder="Enter Treatment name">
                 </div>
                 <input type="submit" value="Search" class="button">
             </form>
@@ -27,11 +28,11 @@
             <form action="<c:url value='/treatment/search/specialist'/>">
                 <div class="form-group">
                     <label for="sfirstName">Specialist first name:</label>
-                    <input id="sfirstName" name="firstName" type="text">
+                    <input id="sfirstName" name="firstName" type="text" placeholder="Enter first name">
                 </div>
                 <div class="form-group">
                     <label for="slastName">Specialist last name:</label>
-                    <input id="slastName" name="lastName" type="text">
+                    <input id="slastName" name="lastName" type="text" placeholder="Enter last name">
                 </div>
                 <input type="submit" value="Search" class="button">
             </form>

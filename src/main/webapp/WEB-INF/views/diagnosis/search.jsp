@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Search Diagnosis (ICD 10) in registry</title>
@@ -17,12 +18,8 @@
             <form>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input id="name" name="name" type="text">
+                    <input id="name" name="name" type="text" placeholder="Enter Diagnosis name">
                 </div>
-<%--                <div><p>Diagnosis Name (ICD 10):</p>--%>
-<%--                    <form:select path="diagnoses" items="${diagnoses}" itemLabel="name" itemValue="id" multiple="true"/>--%>
-<%--                    <form:errors path="diagnoses" cssClass="error"/>--%>
-<%--                </div>--%>
                 <input type="submit" value="Search" class="button">
             </form>
         </div>

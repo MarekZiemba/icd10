@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Search specialists in registry</title>
@@ -17,11 +18,11 @@
             <form>
                 <div class="form-group">
                     <label for="firstName">First name:</label>
-                    <input id="firstName" name="firstName" type="text">
+                    <input id="firstName" name="firstName" type="text" placeholder="Enter first name">
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last name:</label>
-                    <input id="lastName" name="lastName" type="text">
+                    <input id="lastName" name="lastName" type="text" placeholder="Enter last name">
                 </div>
                 <input type="submit" value="Search" class="button">
             </form>
@@ -32,7 +33,7 @@
             <form>
                 <div class="form-group">
                     <label for="dateOfBirth">Date of birth:</label>
-                    <input id="dateOfBirth" name="dateOfBirth" type="text">
+                    <input id="dateOfBirth" name="dateOfBirth" type="text" placeholder="[yyyy-MM-dd]">
                 </div>
                 <input type="submit" value="Search" class="button">
             </form>
@@ -43,7 +44,7 @@
             <form>
                 <div class="form-group">
                     <label for="pesel">PESEL:</label>
-                    <input id="pesel" name="pesel" type="text">
+                    <input id="pesel" name="pesel" type="text" placeholder="Enter PESEL">
                 </div>
                 <input type="submit" value="Search" class="button">
             </form>
@@ -54,7 +55,7 @@
             <form action="<c:url value='/user/specialist/search/specialization'/>">
                 <div class="form-group">
                     <label for="sname">Specialization name:</label>
-                    <input id="sname" name="name" type="text">
+                    <input id="sname" name="name" type="text" placeholder="Enter specialization name">
                 </div>
                 <input type="submit" value="Search" class="button">
             </form>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.mziemba.entity.*;
+import pl.mziemba.security.LoggedInUserDetails;
 import pl.mziemba.service.*;
 
 import java.time.LocalDate;
@@ -25,11 +26,20 @@ public class VisitFormController {
     private final PatientService patientService;
     private final TreatmentService treatmentService;
     private final SpecialistService specialistService;
+    private final LoggedInUserDetails loggedInUserDetails;
 
     // wyswietlenie formularza dodawania wizyty
     @GetMapping(path = "/user/visit/add")
     String showAddVisitForm(Model model) {
         model.addAttribute("visit", new Visit());
+
+        // Odczytaj aktualnie zalogowanego specjalistę
+        String loggedInSpecialistId = loggedInUserDetails.getLoggedInSpecialistId();
+        model.addAttribute("loggedInSpecialistId", loggedInSpecialistId);
+
+        String loggedInUserFullName = loggedInUserDetails.getLoggedInUserFullName();
+        model.addAttribute("loggedInUserFullName", loggedInUserFullName);
+
         return "visit/add";
     }
 
@@ -46,6 +56,14 @@ public class VisitFormController {
     @GetMapping(path = "/user/visit/edit")
     String showEditVisitForm(@RequestParam Long id, Model model) {
         model.addAttribute("visit", visitService.findById(id));
+
+        // Odczytaj aktualnie zalogowanego specjalistę
+        String loggedInSpecialistId = loggedInUserDetails.getLoggedInSpecialistId();
+        model.addAttribute("loggedInSpecialistId", loggedInSpecialistId);
+
+        String loggedInUserFullName = loggedInUserDetails.getLoggedInUserFullName();
+        model.addAttribute("loggedInUserFullName", loggedInUserFullName);
+
         return "visit/edit";
     }
 

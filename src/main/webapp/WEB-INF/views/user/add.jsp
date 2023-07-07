@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Add user</title>
@@ -16,22 +17,25 @@
             <form:form method="post" modelAttribute="user">
                 <div class="form-group">
                     <label for="username"><p>Username:</p></label>
-                    <form:input path="username" id="username"/>
+                    <form:input path="username" id="username" placeholder="Username"/>
                     <form:errors path="username" cssClass="error"/>
                 </div>
                 <div class="form-group">
-                    <label for="password"><p>Password:</p></label>
-                    <form:input path="password" id="password"/>
+                    <label for="password" title="Enter password"><p>Password:</p></label>
+                    <form:input path="password" id="password" placeholder="Enter password"/>
                     <form:errors path="password" cssClass="error"/>
                 </div>
                 <div class="form-group">
-                    <label for="newPassword"><p>confirm Password:</p></label>
-                    <form:password path="newPassword" id="newPassword"/>
+                    <label for="newPassword" title="Reenter password"><p>confirm Password:</p></label>
+                    <form:password path="newPassword" id="newPassword" placeholder="Reenter password"/>
                     <form:errors path="newPassword" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="enabled"><p>Enabled:</p></label>
-                    <form:input path="enabled" id="enabled"/>
+                    <form:select path="enabled" id="enabled">
+                        <form:option value="true">True</form:option>
+                        <form:option value="false">False</form:option>
+                    </form:select>
                     <form:errors path="enabled" cssClass="error"/>
                 </div>
                 <div class="form-group">

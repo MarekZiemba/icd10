@@ -28,5 +28,18 @@ public class LoggedInUserDetails {
         }
         return null;
     }
-}
 
+    public String getLoggedInSpecialistId() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.isAuthenticated()) {
+            String username = authentication.getName();
+            List<User> users = userService.findByUsername(username);
+            User user = users.isEmpty() ? null : users.get(0);
+            if (user != null && user.getSpecialist() != null) {
+                Specialist specialist = user.getSpecialist();
+                return String.valueOf(specialist.getId());
+            }
+        }
+        return null;
+    }
+}

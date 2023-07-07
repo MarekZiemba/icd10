@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -21,23 +22,25 @@ public class SecurityConfiguration {
 
         http.authorizeHttpRequests((authorize) -> authorize
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
-                // ... the rest of your authorization rules
         );
         http
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/main", "/user/**").hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/validate", "/admin/**", "/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/", "/home", "/register", "/logout").permitAll()
+                        .requestMatchers("/", "/home", "/register", "/logout", "/error", "403").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/main")
+                        .failureUrl("/login?error=disabled")
                         .permitAll()
                 )
+                // .failureHandler(authenticationFailureHandler())
                 .logout((logout) -> logout.logoutUrl("/logout").logoutSuccessUrl("/login")
                         .invalidateHttpSession(true).deleteCookies("JSESSIONID").permitAll());
+
 
         return http.build();
     }

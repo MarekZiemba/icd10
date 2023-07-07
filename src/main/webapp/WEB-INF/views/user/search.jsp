@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Search users in registry</title>
@@ -17,38 +18,33 @@
             <form>
                 <div class="form-group">
                     <label for="username">Username:</label>
-                    <input id="username" name="username" type="text">
+                    <input id="username" name="username" type="text" placeholder="Eneter username">
                 </div>
                 <input type="submit" value="Search" class="button">
             </form>
         </div>
-
     <div class="sub-container">
         <p>Find by Specialist</p>
         <form action="<c:url value='/admin/user/search/specialist'/>">
             <div class="form-group">
                 <label for="sFirstName">Specialist First Name:</label>
-                <input id="sFirstName" name="firstName" type="text"><br>
+                <input id="sFirstName" name="firstName" type="text" placeholder="Enter first name"><br>
                 <label for="sLastName">Specialist Last Name:</label>
-                <input id="sLastName" name="lastName" type="text">
+                <input id="sLastName" name="lastName" type="text"placeholder="Enter last name">
             </div>
             <input type="submit" value="Search" class="button">
         </form>
     </div>
-
     <div class="sub-container">
         <p>Find by Role</p>
         <form action="<c:url value='/admin/user/search/role'/>">
             <div class="form-group">
                 <label for="rname">Role Name:</label>
-                <input id="rname" name="name" type="text">
+                <input id="rname" name="name" type="text" placeholder="Enter role name">
             </div>
             <input type="submit" value="Search" class="button">
         </form>
     </div>
-
-
-
         <div class="sub-container-bottom">
             <a href="<c:url value='/main'/>" class="button" id="blue-button">Back to main</a>
             <a href="<c:url value='/admin/user/add'/>" class="button">Add new user</a>

@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>All specializations</title>
@@ -9,6 +10,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="sub-container-top-small">
+            <span class="span-bold-big">Logged in as: </span><sec:authentication property="principal.username" />
+        </div>
         <div class="sub-container" id="title-container-2">
             <h3>List of all Specializations in Database</h3>
         </div>

@@ -34,11 +34,11 @@ public class User {
 
     @Column
 //    @NotBlank(message = "{not.empty.error}")
-    @Size(min = 8, message = "{too.short.error}")
+//    @Size(min = 8, message = "{too.short.error}")
     private String newPassword;
 
-//    @Column(nullable = false)
-    private int enabled;
+    @Column(nullable = false)
+    private boolean enabled;
 
     @OneToOne
     private Specialist specialist;

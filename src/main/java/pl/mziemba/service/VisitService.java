@@ -17,7 +17,6 @@ import java.util.List;
 public class VisitService {
 
     public final VisitRepository visitRepository;
-    private final PatientRepository patientRepository;
 
     public void save(Visit visit) {
         visitRepository.save(visit);

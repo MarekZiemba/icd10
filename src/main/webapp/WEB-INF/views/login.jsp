@@ -10,6 +10,9 @@
 <body>
     <div class="sub-container">
         <p>Login form</p>
+        <sec:authorize access="${param.error == 'disabled'}">
+            <p>${errorMessage}</p>
+        </sec:authorize>
         <form method="post" action="login">
             Username: <label>
             <input type="text" name="username" placeholder="Enter username">

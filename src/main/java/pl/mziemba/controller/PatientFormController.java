@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.mziemba.entity.Diagnosis;
 import pl.mziemba.entity.Patient;
 import pl.mziemba.entity.Specialist;
+import pl.mziemba.security.LoggedInUserDetails;
 import pl.mziemba.service.DiagnosisService;
 import pl.mziemba.service.PatientService;
 import pl.mziemba.service.SpecialistService;
@@ -26,13 +27,20 @@ public class PatientFormController {
     private final PatientService patientService;
     private final DiagnosisService diagnosisService;
     private final SpecialistService specialistService;
+    private final LoggedInUserDetails loggedInUserDetails;
 
     // wyswietlenie formularza dodawania pacjenta
     @GetMapping(path = "/user/patient/add")
     String showAddPatientForm(Model model) {
         model.addAttribute("patient", new Patient());
-//    model.addAttribute("diagnoses", diagnosisService.getClass());
-//    model.addAttribute("specialists", specialistService.getClass());
+
+        // Odczytaj aktualnie zalogowanego specjalistę
+        String loggedInSpecialistId = loggedInUserDetails.getLoggedInSpecialistId();
+        model.addAttribute("loggedInSpecialistId", loggedInSpecialistId);
+
+        String loggedInUserFullName = loggedInUserDetails.getLoggedInUserFullName();
+        model.addAttribute("loggedInUserFullName", loggedInUserFullName);
+
         return "patient/add";
     }
 
@@ -49,6 +57,14 @@ public class PatientFormController {
     @GetMapping(path = "/user/patient/edit")
     String showEditPatientForm(@RequestParam Long id, Model model) {
         model.addAttribute("patient", patientService.findById(id));
+
+        // Odczytaj aktualnie zalogowanego specjalistę
+        String loggedInSpecialistId = loggedInUserDetails.getLoggedInSpecialistId();
+        model.addAttribute("loggedInSpecialistId", loggedInSpecialistId);
+
+        String loggedInUserFullName = loggedInUserDetails.getLoggedInUserFullName();
+        model.addAttribute("loggedInUserFullName", loggedInUserFullName);
+
         return "patient/edit";
     }
 

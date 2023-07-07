@@ -16,22 +16,22 @@
             <form:form method="post" modelAttribute="specialist">
                 <div>
                     <p>First Name:</p>
-                    <form:input path="firstName"/>
+                    <form:input path="firstName" placeholder="Enter First Name" title="Enter first name"/>
                     <form:errors path="firstName" cssClass="error"/>
                 </div>
                 <div>
                     <p>Last Name:</p>
-                    <form:input path="lastName"/>
+                    <form:input path="lastName" placeholder="Enter Last Name" title="Enter last name"/>
                     <form:errors path="lastName" cssClass="error"/>
                 </div>
                 <div>
                     <p>Date Of Birth:</p>
-                    <form:input path="dateOfBirth"/>
+                    <form:input path="dateOfBirth" placeholder="date format [yyyy-MM-dd]" pattern="\d{4}-\d{2}-\d{2}" title="Please enter a date in the format yyyy-MM-DD"/>
                     <form:errors path="dateOfBirth" cssClass="error"/>
                 </div>
                 <div>
                     <p>PESEL:</p>
-                    <form:input path="pesel"/>
+                    <form:input path="pesel" placeholder="Enter PESEL" title="Enter PESEL"/>
                     <form:errors path="pesel" cssClass="error"/>
                 </div>
                 <div>

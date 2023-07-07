@@ -19,7 +19,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping(path = "/user")
-    void save(@RequestParam String username, @RequestParam String password, @RequestParam int enabled, @RequestParam String specialistFirstName, @RequestParam String specialistLastName,  @RequestParam("roleId") Long[] roleId) {
+    void save(@RequestParam String username, @RequestParam String password, @RequestParam boolean enabled, @RequestParam String specialistFirstName, @RequestParam String specialistLastName,  @RequestParam("roleId") Long[] roleId) {
 
         final User user = new User();
 

@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Update user</title>
@@ -20,18 +21,25 @@
                     <form:errors path="username" cssClass="error"/>
                 </div>
                 <div class="form-group">
-                    <label for="password"><p>leave encrypted Password as it in database:</p></label>
-                    <form:input path="password" id="password"/>
+                    <label for="password"><p>Password:</p></label>
+                    <form:input path="password" id="password" readonly="true"/>
                     <form:errors path="password" cssClass="error"/>
                 </div>
-                <div class="form-group">
-                    <label for="newPassword"><p>or enter New Password below:</p></label>
-                    <form:password path="newPassword" id="newPassword"/>
+                <div class="form-group" title="Check to open new password field">
+                    <label for="changePassword"><p class="p-small"title="If you want to keep the old password, leave this field empty!">Check below, to change Password:</p></label>
+                    <input type="checkbox" id="changePassword" onclick="togglePasswordInput(this)" />
+                </div>
+                <div class="form-group" id="newPasswordContainer" style="display: none;">
+                    <label for="newPassword"><p>New Password:</p></label>
+                    <form:password path="newPassword" id="newPassword" placeholder="Input new password"/>
                     <form:errors path="newPassword" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="enabled"><p>Enabled:</p></label>
-                    <form:input path="enabled" id="enabled"/>
+                    <form:select path="enabled" id="enabled">
+                        <form:option value="true">True</form:option>
+                        <form:option value="false">False</form:option>
+                    </form:select>
                     <form:errors path="enabled" cssClass="error"/>
                 </div>
                 <div class="form-group">
@@ -58,5 +66,11 @@
             </form>
         </div>
     </div>
+    <script>
+        function togglePasswordInput(checkbox) {
+            var newPasswordContainer = document.getElementById("newPasswordContainer");
+            newPasswordContainer.style.display = checkbox.checked ? "block" : "none";
+        }
+    </script>
 </body>
 </html>

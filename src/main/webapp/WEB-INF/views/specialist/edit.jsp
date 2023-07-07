@@ -16,22 +16,22 @@
             <form:form method="post" modelAttribute="specialist">
                 <div class="form-group">
                     <label for="firstName"><p>First Name:</p></label>
-                    <form:input path="firstName" id="firstName"/>
+                    <form:input path="firstName" id="firstName" placeholder="Enter First Name" title="Enter first name"/>
                     <form:errors path="firstName" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="lastName"><p>Last Name:</p></label>
-                    <form:input path="lastName" id="lastName"/>
+                    <form:input path="lastName" id="lastName" placeholder="Enter Last Name" title="Enter last name"/>
                     <form:errors path="lastName" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="dateOfBirth"><p>Date Of Birth:</p></label>
-                    <form:input path="dateOfBirth" id="dateOfBirth"/>
+                    <form:input path="dateOfBirth" id="dateOfBirth" placeholder="date format [yyyy-MM-dd]" pattern="\d{4}-\d{2}-\d{2}" title="Please enter a date in the format yyyy-MM-DD"/>
                     <form:errors path="dateOfBirth" cssClass="error"/>
                 </div>
                 <div class="form-group">
                     <label for="pesel"><p>PESEL:</p></label>
-                    <form:input path="pesel" id="pesel"/>
+                    <form:input path="pesel" id="pesel" placeholder="Enter PESEL" title="Enter PESEL"/>
                     <form:errors path="pesel" cssClass="error"/>
                 </div>
                 <div class="form-group">
