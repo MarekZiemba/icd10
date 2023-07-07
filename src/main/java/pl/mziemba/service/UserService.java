@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.mziemba.entity.*;
-import pl.mziemba.exceptions.UserServiceTest;
 import pl.mziemba.repository.UserRepository;
 
 import java.util.Arrays;
@@ -18,7 +17,6 @@ import java.util.Optional;
 public class UserService {
 
     public final UserRepository userRepository;
-    public final UserServiceTest userServiceTest;
 
     private List<String> validate(User user) {
         Optional<User> byUser = userRepository.findByUsername(user.getUsername());

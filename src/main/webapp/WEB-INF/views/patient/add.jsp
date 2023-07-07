@@ -27,12 +27,7 @@
                     <form:select path="diagnoses" items="${diagnoses}" itemLabel="name" itemValue="id" multiple="true"/>
                     <form:errors path="diagnoses" cssClass="error"/>
                 </div>
-<%--                <input type="hidden" name="specialist.id" value="${loggedInSpecialistId}" />--%>
-                <div>
-                    <label for="specialists"><p>Specialists:</p></label>
-                    <form:select path="specialists" items="${specialists}" itemLabel="fullName" itemValue="id" multiple="true"/>
-                    <form:errors path="specialists" cssClass="error"/>
-                </div>
+                <form:hidden path="specialists" value="${loggedInSpecialistId}"/><form:errors path="diagnoses" cssClass="error"/>
                 <input type="submit" value="Add patient" class="button" id="yellow-button">
             </form:form>
             <span class="span-bold">You are adding a new patient to </span>${loggedInUserFullName}<span>'s List of Patients</span>
